@@ -1,5 +1,14 @@
 class DatabaseConfig:
-    """数据库连接配置（已废用，推荐使用 DatabaseCredentials）"""
+    """
+    【已弃用】数据库连接配置
+    
+    ⚠️ 此类已废弃，不应再使用
+    
+    迁移说明：
+    - 新代码应使用 config.db_credentials.DatabaseCredentials
+    - 此类仅保留用于向后兼容
+    - 计划在下一个主版本中删除
+    """
     DB_TYPE = "mysql"
     DB_HOST = "localhost"
     DB_PORT = 3306

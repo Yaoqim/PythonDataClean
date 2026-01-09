@@ -15,10 +15,7 @@ from typing import Optional
 from datetime import datetime, timedelta
 from pathlib import Path
 
-from config.settings import (
-    LOG_DIR, LOG_LEVEL, LOG_FORMAT, LOG_DATE_FORMAT,
-    LOG_FILE_MAX_SIZE_MB, LOG_FILE_BACKUP_COUNT, LOG_RETENTION_DAYS
-)
+from config import yaml_loader
 
 
 class LoggerManager:
@@ -50,25 +47,26 @@ class LoggerManager:
             return cls._loggers[name]
         
         # 创建日志目录
-        log_dir = Path(LOG_DIR)
+        log_config = yaml_loader.get_log_config()
+        log_dir = Path(log_config.get('dir', 'logs'))
         log_dir.mkdir(parents=True, exist_ok=True)
         
         # 创建日志器
         logger = logging.getLogger(name)
-        logger.setLevel(getattr(logging, LOG_LEVEL))
+        logger.setLevel(getattr(logging, log_config.get('level', 'INFO')))
         
         # 清除已有的处理器
         logger.handlers.clear()
         
         # 创建格式化器
         formatter = logging.Formatter(
-            fmt=LOG_FORMAT,
-            datefmt=LOG_DATE_FORMAT
+            fmt=log_config.get('format', '[%(asctime)s] [%(levelname)s] [%(name)s] %(message)s'),
+            datefmt=log_config.get('date_format', '%Y-%m-%d %H:%M:%S')
         )
         
         # 控制台处理器
         console_handler = logging.StreamHandler()
-        console_handler.setLevel(getattr(logging, LOG_LEVEL))
+        console_handler.setLevel(getattr(logging, log_config.get('level', 'INFO')))
         console_handler.setFormatter(formatter)
         logger.addHandler(console_handler)
         
@@ -76,11 +74,11 @@ class LoggerManager:
         log_file = log_dir / f"{name}.log"
         file_handler = logging.handlers.RotatingFileHandler(
             filename=str(log_file),
-            maxBytes=LOG_FILE_MAX_SIZE_MB * 1024 * 1024,
-            backupCount=LOG_FILE_BACKUP_COUNT,
+            maxBytes=log_config.get('file_max_size_mb', 100) * 1024 * 1024,
+            backupCount=log_config.get('file_backup_count', 10),
             encoding='utf-8'
         )
-        file_handler.setLevel(getattr(logging, LOG_LEVEL))
+        file_handler.setLevel(getattr(logging, log_config.get('level', 'INFO')))
         file_handler.setFormatter(formatter)
         logger.addHandler(file_handler)
         
@@ -103,11 +101,12 @@ class LoggerManager:
         
         按照 LOG_RETENTION_DAYS 配置删除超期的日志文件
         """
-        log_dir = Path(LOG_DIR)
+        log_config = yaml_loader.get_log_config()
+        log_dir = Path(log_config.get('dir', 'logs'))
         if not log_dir.exists():
             return
         
-        cutoff_date = datetime.now() - timedelta(days=LOG_RETENTION_DAYS)
+        cutoff_date = datetime.now() - timedelta(days=log_config.get('retention_days', 30))
         
         try:
             for log_file in log_dir.glob("*.log*"):

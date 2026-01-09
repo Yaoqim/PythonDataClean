@@ -2,12 +2,12 @@
 """
 数据库凭证管理模块
 
-本模块负责管理数据库连接凭证，支持从环境变量或配置文件加载。
+本模块负责管理数据库连接凭证，统一从YAML配置文件读取。
 遵循安全最佳实践：敏感信息不应该硬编码在代码中。
 """
 
-import os
 from typing import Dict, Any, Optional
+from config import yaml_loader
 
 
 class DatabaseCredentials:
@@ -15,7 +15,7 @@ class DatabaseCredentials:
     数据库凭证管理器
     
     负责：
-    1. 从环境变量加载数据库连接信息
+    1. 从YAML配置文件加载数据库连接信息
     2. 支持多数据库类型（MySQL、PostgreSQL、SQLite）
     3. 提供安全的凭证访问接口
     """
@@ -27,34 +27,24 @@ class DatabaseCredentials:
     
     def _load_credentials(self) -> None:
         """
-        从环境变量加载数据库凭证
-        
-        支持以下环境变量：
-        - DB_TYPE: 数据库类型 (postgresql/mysql/sqlite)
-        - DB_HOST: 数据库服务器地址
-        - DB_PORT: 数据库服务器端口
-        - DB_NAME: 数据库名称
-        - DB_USER: 数据库用户名
-        - DB_PASSWORD: 数据库密码
-        - DB_CHARSET: 字符集（默认utf8mb4）
+        从YAML配置文件加载数据库凭证
         """
+        db_config = yaml_loader.get_db_config()
+        
         # 主数据库配置
         self._credentials['primary'] = {
-            'type': os.getenv('DB_TYPE', 'mysql'),
-            'host': os.getenv('DB_HOST', 'localhost'),
-            'port': int(os.getenv('DB_PORT', '3306')),
-            'database': os.getenv('DB_NAME', 'data_clean'),
-            'user': os.getenv('DB_USER', 'root'),
-            'password': os.getenv('DB_PASSWORD', ''),
-            'charset': os.getenv('DB_CHARSET', 'utf8mb4'),
+            'type': db_config.get('type', 'mysql'),
+            'host': db_config.get('host', 'localhost'),
+            'port': db_config.get('port', 3306),
+            'database': db_config.get('name', 'data_clean'),
+            'user': db_config.get('user', 'root'),
+            'password': db_config.get('password', ''),
+            'charset': db_config.get('charset', 'utf8mb4'),
         }
         
         # 支持SQLite用于本地开发
         if self._credentials['primary']['type'] == 'sqlite':
-            self._credentials['primary']['database'] = os.getenv(
-                'DB_PATH', 
-                'data_clean.db'
-            )
+            self._credentials['primary']['database'] = db_config.get('name') or 'data_clean.db'
     
     def get_credentials(self, database_name: str = 'primary') -> Dict[str, Any]:
         """

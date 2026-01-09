@@ -209,13 +209,12 @@ PythonDataClean/
 ### 环境变量
 
 ```bash
-# 数据库配置
-DB_TYPE=postgresql              # postgresql/mysql/sqlite
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=data_clean
-DB_USER=admin
+# 数据库密码
 DB_PASSWORD=password
+
+# 阿里云配置
+OSS_ACCESS_KEY_ID=your_key_id
+OSS_ACCESS_KEY_SECRET=your_key_secret
 
 # LLM配置
 OPENAI_API_KEY=sk-...

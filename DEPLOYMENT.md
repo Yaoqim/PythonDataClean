@@ -40,11 +40,8 @@ docker-compose logs -f api
 
 | 服务 | 端口 | 说明 |
 |------|------|------|
-| PostgreSQL | 5432 | 数据库 |
+| MySQL | 3306 | 数据库 |
 | API | 5000 | MCP 清洗服务 |
-| Redis | 6379 | 缓存（可选） |
-| Prometheus | 9090 | 监控指标收集 |
-| Grafana | 3000 | 监控仪表板 |
 
 ## 🚀 生产部署
 
@@ -54,26 +51,12 @@ docker-compose logs -f api
 
 ```bash
 # 数据库配置
-DB_TYPE=postgresql
-DB_HOST=postgres  # Docker 环境使用 postgres，本地使用 localhost
-DB_PORT=5432
-DB_NAME=data_clean
-DB_USER=admin
+RUN_MODE=prod
 DB_PASSWORD=your_secure_password
 
-# API 配置
-API_HOST=0.0.0.0
-API_PORT=5000
-RUN_MODE=production
-
-# 日志配置
-LOG_LEVEL=INFO
-LOG_RETENTION_DAYS=30
-
-# LLM 配置（可选）
-OPENAI_API_KEY=your_api_key
-OPENAI_API_BASE=https://api.openai.com/v1
-OPENAI_MODEL=gpt-3.5-turbo
+# 阿里云配置
+OSS_ACCESS_KEY_ID=your_access_key_id
+OSS_ACCESS_KEY_SECRET=your_access_key_secret
 ```
 
 ### 使用 Docker Compose 部署
@@ -84,7 +67,7 @@ cp .env.example .env
 # 编辑 .env 配置数据库密码等
 
 # 2. 启动所有服务
-docker-compose -f docker-compose.yml up -d
+docker-compose up -d
 
 # 3. 等待服务启动
 sleep 30
@@ -94,37 +77,8 @@ docker-compose exec -T api python scripts/init_db.py
 
 # 5. 验证服务
 curl http://localhost:5000/health
-
-# 6. 查看 Prometheus 指标
-# 访问 http://localhost:9090
-
-# 7. 查看 Grafana 仪表板
-# 访问 http://localhost:3000 (admin/admin)
 ```
 
-## 📊 监控和指标
-
-### Prometheus 指标
-
-所有关键指标已通过 Prometheus 客户端暴露：
-
-- **清洗指标**：请求数、耗时、吞吐量、记录数
-- **质量指标**：质量评分、去重率、缺失率
-- **数据库指标**：操作耗时、入库记录数、连接池状态
-- **API 指标**：请求数、耗时、状态码
-
-### 访问方式
-
-```
-# Prometheus 查询接口
-http://localhost:9090
-
-# 指标导出接口
-http://localhost:8000/metrics
-
-# Grafana 仪表板
-http://localhost:3000
-```
 
 ## 🧪 性能测试
 
@@ -162,8 +116,11 @@ PythonDataClean/
 ├── docker-compose.yml       # Docker Compose 配置
 │
 ├── config/                  # 配置模块
-│   ├── settings.py         # 全局设置
-│   └── db_credentials.py   # 数据库凭证
+│   ├── yaml_loader.py     # YAML配置加载器
+│   ├── dev.yaml           # 开发环境配置
+│   ├── test.yaml          # 测试环境配置
+│   ├── prod.yaml          # 生产环境配置
+│   └── db_credentials.py  # 数据库凭证
 │
 ├── src/                     # 源代码
 │   ├── utils/              # 工具模块
@@ -180,8 +137,7 @@ PythonDataClean/
 │   ├── init_db.py          # 数据库初始化
 │   └── performance_test.py # 性能测试
 │
-└── monitoring/
-    └── prometheus.yml      # Prometheus 配置
+└── docker-compose.yml       # Docker Compose 配置
 ```
 
 ## 🛠️ 故障排查
@@ -196,41 +152,28 @@ docker-compose logs api
 lsof -i :5000
 
 # 检查数据库连接
-docker-compose exec postgres psql -U admin -d data_clean
+docker-compose exec mysql mysql -u root -p data_clean
 ```
 
 ### 数据库连接失败
 
 ```bash
-# 验证 PostgreSQL 是否运行
+# 验证 MySQL 是否运行
 docker-compose ps
 
 # 重启数据库
-docker-compose restart postgres
+docker-compose restart mysql
 
 # 检查数据库日志
-docker-compose logs postgres
-```
-
-### 监控无数据
-
-```bash
-# 验证 Prometheus 连接
-curl http://localhost:8000/metrics
-
-# 检查 Prometheus 配置
-docker-compose exec prometheus cat /etc/prometheus/prometheus.yml
-
-# 重启 Prometheus
-docker-compose restart prometheus
+docker-compose logs mysql
 ```
 
 ## 📈 性能优化建议
 
 1. **数据库优化**
    - 为高频字段添加索引
-   - 定期进行 VACUUM 和 ANALYZE
    - 调整连接池大小
+   - 定期备份数据库
 
 2. **API 优化**
    - 启用响应压缩（gzip）
@@ -241,11 +184,6 @@ docker-compose restart prometheus
    - 启用批处理处理
    - 使用 LLM 缓存
    - 并行处理多个请求
-
-4. **监控优化**
-   - 调整 Prometheus 抓取间隔
-   - 设置告警规则
-   - 定期清理旧数据
 
 ## 📞 支持和反馈
 

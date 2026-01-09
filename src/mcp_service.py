@@ -133,18 +133,19 @@ class MCPDataCleaningService:
         """
         from src.metadata.business_type_registry import BusinessTypeRegistry
         
-        business_types = BusinessTypeRegistry.list_business_types()
+        business_types = BusinessTypeRegistry.list_all_business_types()
         business_type_configs = []
         
         for bt_id in business_types:
-            config = BusinessTypeRegistry.get_business_type_config(bt_id)
-            business_type_configs.append({
-                'business_type_id': bt_id,
-                'name': config.get('name'),
-                'description': config.get('description'),
-                'table_name': config.get('table_name'),
-                'data_carrier_type': config.get('data_carrier_type')
-            })
+            config = BusinessTypeRegistry.get(bt_id)
+            if config:
+                business_type_configs.append({
+                    'business_type_id': bt_id,
+                    'name': config.get('business_type_name'),
+                    'description': config.get('description'),
+                    'table_name': config.get('table_name'),
+                    'data_carrier_type': config.get('data_structure_type')
+                })
         
         return {
             'code': 0,

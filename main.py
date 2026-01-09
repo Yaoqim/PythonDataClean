@@ -25,7 +25,7 @@ if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
 from src.utils.logger import get_logger
-from src.orchestrator.orchestrator import DataCleaningOrchestrator
+from src.orchestrator.orchestrator import CleaningOrchestrator
 
 logger = get_logger(__name__)
 
@@ -66,8 +66,35 @@ def main():
     try:
         logger.info("开始处理数据...")
         
-        # 调用编排器处理文件
-        results = DataCleaningOrchestrator.process_batch_files(valid_files, enable_llm=False)
+        # 逐个处理文件
+        results = []
+        for file_path in valid_files:
+            logger.info(f"处理文件：{file_path}")
+            result = CleaningOrchestrator.process_cleaning_task(file_path, enable_llm=False)
+            
+            # 转换结果格式
+            if result.get('code') == 0:
+                data = result.get('data', {})
+                summary = data.get('summary', {})
+                results.append({
+                    'status': 'success',
+                    'business_type': data.get('business_type_id'),
+                    'original_count': summary.get('original_count', 0),
+                    'cleaned_count': summary.get('cleaned_count', 0),
+                    'stored_count': result.get('storage_info', [{}])[0].get('inserted_count', 0) if result.get('storage_info') else 0,
+                    'table_name': result.get('storage_info', [{}])[0].get('table_name') if result.get('storage_info') else 'N/A',
+                    'errors': []
+                })
+            else:
+                results.append({
+                    'status': 'failed',
+                    'business_type': 'N/A',
+                    'original_count': 0,
+                    'cleaned_count': 0,
+                    'stored_count': 0,
+                    'table_name': 'N/A',
+                    'errors': [result.get('message', '未知错误')]
+                })
         
         # 统计结果
         success_count = sum(1 for r in results if r.get('status') == 'success')

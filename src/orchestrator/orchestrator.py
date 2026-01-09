@@ -89,7 +89,19 @@ class CleaningOrchestrator:
         try:
             # 第1步：文件获取
             logger.info("第1步：获取数据文件...")
-            records = FileHandler.read_file(data_file_path)
+            from src.file_service.file_handler import load_json_file, load_csv_file
+            
+            file_format = FileHandler.get_file_format(data_file_path)
+            if file_format == '.json' or file_format == '.jsonl':
+                records = load_json_file(data_file_path)
+            elif file_format == '.csv':
+                records = load_csv_file(data_file_path)
+            else:
+                return CleaningOrchestrator._build_error_response(
+                    f"不支持的文件格式：{file_format}",
+                    task_id
+                )
+            
             if not records:
                 return CleaningOrchestrator._build_error_response(
                     f"无法读取数据文件：{data_file_path}",
@@ -100,21 +112,29 @@ class CleaningOrchestrator:
             
             # 第2步：元数据处理
             logger.info("第2步：加载和验证元数据...")
-            metadata = MetadataLoader.load_metadata(data_file_path)
+            metadata_path = MetadataLoader.find_metadata_file(data_file_path)
+            if not metadata_path:
+                return CleaningOrchestrator._build_error_response(
+                    f"无法找到元数据文件：{data_file_path}",
+                    task_id
+                )
+            
+            metadata = MetadataLoader.load_metadata(metadata_path)
             if not metadata:
                 return CleaningOrchestrator._build_error_response(
-                    f"无法加载元数据：{data_file_path}",
+                    f"无法加载元数据：{metadata_path}",
                     task_id
                 )
             
-            is_valid, errors = MetadataValidator.validate(metadata)
-            if not is_valid:
+            # 验证元数据必需字段
+            missing_fields = MetadataLoader.REQUIRED_FIELDS - set(metadata.keys())
+            if missing_fields:
                 return CleaningOrchestrator._build_error_response(
-                    f"元数据验证失败：{errors}",
+                    f"元数据缺失必需字段：{missing_fields}",
                     task_id
                 )
             
-            business_type_id = MetadataValidator.get_business_type_id(metadata)
+            business_type_id = metadata.get('business_type_id')
             logger.info(f"业务类型：{business_type_id}")
             
             # 第3步：业务类型特定清洗
@@ -139,11 +159,26 @@ class CleaningOrchestrator:
             
             # 第4步：结果入库
             logger.info("第4步：入库...")
+            from src.metadata.business_type_registry import BusinessTypeRegistry
             db_manager = DatabaseManager()
-            storage_info = db_manager.insert_records(
-                business_type_id,
-                cleaning_result['records']
-            )
+            
+            table_name = BusinessTypeRegistry.get_table_name(business_type_id)
+            if not table_name:
+                logger.warning(f"业务类型{business_type_id}无对应的表配置")
+                storage_info = {'success': False, 'error': '无表配置'}
+            else:
+                success_count, failed_count = db_manager.insert_records(
+                    table_name,
+                    cleaning_result['records']
+                )
+                storage_info = {
+                    'success': failed_count == 0,
+                    'table_name': table_name,
+                    'inserted_count': success_count,
+                    'failed_count': failed_count,
+                    'database': 'production',
+                    'error': f"失败{failed_count}条" if failed_count > 0 else None
+                }
             
             if not storage_info.get('success'):
                 logger.warning(f"数据入库失败：{storage_info.get('error')}")

@@ -14,7 +14,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.utils.logger import get_logger
 from src.mcp_service import MCPDataCleaningService
-from config.settings import Settings
+from config import yaml_loader
 
 logger = get_logger(__name__)
 
@@ -162,10 +162,12 @@ def internal_error(error):
 
 
 if __name__ == '__main__':
-    logger.info(f"启动MCP数据清洗服务，端口：{Settings.API_PORT}")
+    api_config = yaml_loader.get_api_config()
+    app_config = yaml_loader.get("app")
+    logger.info(f"启动MCP数据清洗服务，端口：{api_config.get('port')}")
     app.run(
-        host=Settings.API_HOST,
-        port=Settings.API_PORT,
-        debug=Settings.DEBUG,
+        host=api_config.get('host', '0.0.0.0'),
+        port=api_config.get('port', 5000),
+        debug=app_config.get('debug', False),
         threaded=True
     )

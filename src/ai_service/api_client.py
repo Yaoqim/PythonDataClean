@@ -17,7 +17,7 @@ from typing import Optional, Dict, Any, List
 import requests
 import time
 
-from config.settings import Settings
+from config import yaml_loader
 from src.utils.logger import get_logger
 from src.utils.error_handler import ErrorHandler
 
@@ -36,11 +36,12 @@ class AIClient:
     
     def __init__(self):
         """初始化AI客户端"""
-        self.api_key = Settings.LLM_API_KEY
-        self.api_base = Settings.LLM_API_BASE
-        self.model = Settings.LLM_MODEL
-        self.temperature = Settings.LLM_TEMPERATURE
-        self.max_tokens = Settings.LLM_MAX_TOKENS
+        llm_config = yaml_loader.get("llm", {})
+        self.api_key = llm_config.get('api_key', '')
+        self.api_base = llm_config.get('api_base', 'https://api.openai.com/v1')
+        self.model = llm_config.get('model', 'gpt-3.5-turbo')
+        self.temperature = llm_config.get('temperature', 0.7)
+        self.max_tokens = llm_config.get('max_tokens', 2000)
         
         # 检查是否配置了API
         self.enabled = bool(self.api_key and self.api_base)

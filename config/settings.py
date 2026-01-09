@@ -1,15 +1,22 @@
 # -*- coding: utf-8 -*-
 """
-全局配置参数模块
+全局配置参数模块（已弃用）
 
-本模块定义项目运行的全局配置参数，包括：
-- 文件处理配置
-- 数据库配置
-- 清洗策略配置
-- 性能优化参数
+【重要】此文件已被环境特定配置所取代。
+新的配置系统使用：
+- config/config_loader.py - 配置加载器（根据RUN_MODE选择）
+- config/settings_dev.py - 开发环境配置
+- config/settings_test.py - 测试环境配置
+- config/settings_prod.py - 生产环境配置
+
+迁移说明：
+从 'from config import settings' 改为 'from config.config_loader import *'
+或 'from config import config_loader as settings'
+
+兼容性注意：
+本文件保留用于向后兼容，建议逐步迁移到新配置系统。
 """
 
-import os
 from typing import Dict, Any
 
 # ============================================================

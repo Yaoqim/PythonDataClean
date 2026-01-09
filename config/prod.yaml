@@ -1,0 +1,69 @@
+# 生产环境配置文件
+# 敏感信息从环境变量读取
+
+app:
+  name: PythonDataClean
+  version: "1.0.0"
+  run_mode: prod
+  debug: false
+
+database:
+  type: mysql
+  host: 47.93.99.161
+  port: 3309
+  name: aimerchanter_test
+  user: ai_test
+  password: ${DB_PASSWORD}
+  charset: utf8mb4
+  pool_size: 5
+  pool_overflow: 10
+  connect_timeout: 30
+
+file_processing:
+  temp_dir: /data/temp
+  processed_dir: /data/processed
+  failed_dir: /data/failed
+  max_file_size_mb: 5000
+  supported_formats:
+    - json
+    - csv
+    - jsonl
+
+logging:
+  level: INFO
+  format: "[%(asctime)s] [%(levelname)s] [%(name)s] %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+  dir: /logs
+  file_max_size_mb: 500
+  file_backup_count: 30
+  retention_days: 90
+
+api:
+  host: "0.0.0.0"
+  port: 5000
+
+processing:
+  enable_parallel: true
+  max_workers: 8
+  timeout_seconds: 1200
+
+llm:
+  enable_cleaning: true
+  api_type: openai
+  api_key: ${OPENAI_API_KEY}
+  api_base: ${OPENAI_API_BASE:https://api.openai.com/v1}
+  model: gpt-3.5-turbo
+  api_timeout: 60
+  max_retries: 3
+
+quality:
+  score_excellent: 85
+  score_good: 70
+  score_fair: 50
+  missing_rate_core: 0.1
+  missing_rate_optional: 0.5
+
+aliyun:
+  oss:
+    endpoint: https://oss-cn-beijing.aliyuncs.com
+    bucketName: letwx
