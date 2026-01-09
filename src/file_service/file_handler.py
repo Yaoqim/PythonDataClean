@@ -2,20 +2,22 @@
 """
 文件读写处理模块
 
-支持多种文件格式：JSON、CSV、JSONL、Parquet等
-实现UTF-8编码检查和转换
+负责从本地或远程服务器读取临时数据文件。
+
+功能：
+- 支持JSON、CSV、TXT格式文件读取
+- 自动编码检测和转换（UTF-8）
+- 大文件分批读取
+- 文件验证（大小、完整性）
 """
 
 import json
 import csv
 import os
-from typing import List, Dict, Any, Optional, Union
 from pathlib import Path
-
-import pandas as pd
-
+from typing import List, Dict, Any, Optional, Union, Iterator
 from src.utils.logger import get_logger
-from src.utils.encoding_checker import convert_to_utf8
+from src.utils.encoding_checker import EncodingChecker
 from src.utils.error_handler import ErrorHandler
 
 logger = get_logger(__name__)
@@ -26,193 +28,322 @@ class FileHandler:
     文件处理器
     
     负责：
-    1. 读取各种格式的数据文件
-    2. 验证文件编码
-    3. 处理文件错误
+    1. 文件格式检测和读取
+    2. 编码自动检测和转换
+    3. 大文件分批读取
+    4. 文件校验
     """
     
-    SUPPORTED_FORMATS = ["json", "csv", "jsonl", "parquet", "xml", "txt"]
+    # 支持的文件格式
+    SUPPORTED_FORMATS = {'.json', '.csv', '.txt', '.jsonl'}
+    
+    # 最大单次加载大小（MB）
+    MAX_CHUNK_SIZE_MB = 100
     
     @staticmethod
-    def read_file(file_path: str, file_format: Optional[str] = None) -> Union[List[Dict[str, Any]], pd.DataFrame, None]:
+    def check_file_exists(file_path: str) -> bool:
         """
-        通用文件读取接口
+        检查文件是否存在
         
         Args:
             file_path: 文件路径
-            file_format: 文件格式（自动检测如果为None）
         
         Returns:
-            读取的数据（格式取决于文件类型）
+            True表示存在，False表示不存在
         """
-        file_path = str(file_path)
+        path = Path(file_path)
+        exists = path.exists() and path.is_file()
         
-        # 检查文件存在性
-        if not os.path.exists(file_path):
-            logger.error(f"文件不存在：{file_path}")
-            ErrorHandler.handle_file_read_error(file_path, FileNotFoundError("文件不存在"))
-            return None
+        if not exists:
+            logger.warning(f"文件不存在：{file_path}")
         
-        # 自动检测格式
-        if file_format is None:
-            file_format = os.path.splitext(file_path)[1].lstrip('.').lower()
+        return exists
+    
+    @staticmethod
+    def get_file_size_mb(file_path: str) -> float:
+        """
+        获取文件大小（MB）
         
+        Args:
+            file_path: 文件路径
+        
+        Returns:
+            文件大小（MB），如果文件不存在返回0
+        """
         try:
-            if file_format == "json":
-                return FileHandler.read_json_file(file_path)
-            elif file_format == "csv":
-                return FileHandler.read_csv_file(file_path)
-            elif file_format == "jsonl":
-                return FileHandler.read_jsonl_file(file_path)
-            elif file_format == "parquet":
-                return FileHandler.read_parquet_file(file_path)
-            else:
-                logger.error(f"不支持的文件格式：{file_format}")
+            size_bytes = Path(file_path).stat().st_size
+            return size_bytes / (1024 * 1024)
+        except Exception as e:
+            logger.error(f"获取文件大小失败：{file_path}，错误：{e}")
+            return 0.0
+    
+    @staticmethod
+    def get_file_format(file_path: str) -> Optional[str]:
+        """
+        获取文件格式
+        
+        Args:
+            file_path: 文件路径
+        
+        Returns:
+            文件扩展名（如.json），如果不支持返回None
+        """
+        path = Path(file_path)
+        suffix = path.suffix.lower()
+        
+        if suffix in FileHandler.SUPPORTED_FORMATS:
+            return suffix
+        
+        logger.warning(f"不支持的文件格式：{suffix}")
+        return None
+    
+    @staticmethod
+    def read_file_bytes(file_path: str) -> Optional[bytes]:
+        """
+        读取文件的原始字节数据
+        
+        Args:
+            file_path: 文件路径
+        
+        Returns:
+            字节数据，如果读取失败返回None
+        """
+        try:
+            with open(file_path, 'rb') as f:
+                return f.read()
+        except Exception as e:
+            logger.error(f"读取文件字节失败：{file_path}，错误：{e}")
+            return None
+    
+    @staticmethod
+    def read_file_text(file_path: str) -> Optional[str]:
+        """
+        读取文件为文本
+        
+        自动检测编码并转换为UTF-8
+        
+        Args:
+            file_path: 文件路径
+        
+        Returns:
+            文件内容（UTF-8文本），如果读取失败返回None
+        """
+        try:
+            # 读取原始字节
+            data = FileHandler.read_file_bytes(file_path)
+            if data is None:
                 return None
-        
+            
+            # 自动检测编码并转换
+            text, detected_encoding = EncodingChecker.convert_to_utf8(data)
+            
+            logger.debug(f"文件编码检测：{file_path}，检测编码：{detected_encoding}")
+            
+            return text
+            
         except Exception as e:
-            ErrorHandler.handle_file_read_error(file_path, e)
+            logger.error(f"读取文件文本失败：{file_path}，错误：{e}")
             return None
+
+
+def load_json_file(file_path: str, chunk_lines: Optional[int] = None) -> Union[List[Dict], Iterator[Dict], None]:
+    """
+    加载JSON文件
     
-    @staticmethod
-    def read_json_file(file_path: str) -> Optional[List[Dict[str, Any]]]:
-        """
-        读取JSON文件
+    支持：
+    - 标准JSON数组：[{...}, {...}]
+    - JSONL格式：每行一个JSON对象
+    
+    Args:
+        file_path: 文件路径
+        chunk_lines: 如果指定，返回分块迭代器（每次读取chunk_lines行）
+    
+    Returns:
+        JSON对象列表或迭代器，如果加载失败返回None
+    
+    示例：
+        # 一次加载全部
+        records = load_json_file("data.json")
         
-        Args:
-            file_path: JSON文件路径
+        # 分块加载大文件
+        for chunk in load_json_file("large_data.jsonl", chunk_lines=1000):
+            process_records(chunk)
+    """
+    try:
+        if not FileHandler.check_file_exists(file_path):
+            return None
         
-        Returns:
-            解析后的数据（列表或字典）
-        """
+        text = FileHandler.read_file_text(file_path)
+        if text is None:
+            return None
+        
+        # 如果指定了分块，返回迭代器
+        if chunk_lines:
+            return _json_chunk_iterator(file_path, chunk_lines)
+        
+        # 尝试解析为标准JSON数组
         try:
-            with open(file_path, 'rb') as f:
-                data_bytes = f.read()
-            
-            # 检查编码
-            text, encoding = convert_to_utf8(data_bytes)
-            logger.debug(f"JSON文件编码：{encoding}")
-            
-            # 解析JSON
             data = json.loads(text)
-            
-            # 如果是单个对象，转为列表
-            if isinstance(data, dict):
-                data = [data]
-            
-            logger.info(f"成功读取JSON文件：{file_path}，记录数：{len(data) if isinstance(data, list) else 1}")
-            return data if isinstance(data, list) else [data]
-            
-        except Exception as e:
-            logger.error(f"JSON文件读取失败：{file_path}，错误：{e}")
-            raise
-    
-    @staticmethod
-    def read_csv_file(
-        file_path: str,
-        encoding: str = 'utf-8',
-        delimiter: str = ','
-    ) -> Optional[List[Dict[str, Any]]]:
-        """
-        读取CSV文件
+            if isinstance(data, list):
+                logger.info(f"成功加载JSON数组：{file_path}，记录数：{len(data)}")
+                return data
+        except json.JSONDecodeError:
+            pass
         
-        Args:
-            file_path: CSV文件路径
-            encoding: 文件编码
-            delimiter: 分隔符
-        
-        Returns:
-            记录列表
-        """
-        try:
-            # 首先尝试读取字节并检测编码
-            with open(file_path, 'rb') as f:
-                first_bytes = f.read(1024)
-            
-            text, detected_encoding = convert_to_utf8(first_bytes)
-            actual_encoding = detected_encoding if detected_encoding else encoding
-            
-            logger.debug(f"CSV文件编码：{actual_encoding}")
-            
-            # 使用pandas读取CSV
-            df = pd.read_csv(
-                file_path,
-                encoding=actual_encoding,
-                delimiter=delimiter,
-                keep_default_na=False
-            )
-            
-            # 转为字典列表
-            records = df.to_dict('records')
-            logger.info(f"成功读取CSV文件：{file_path}，记录数：{len(records)}")
-            return records
-            
-        except Exception as e:
-            logger.error(f"CSV文件读取失败：{file_path}，错误：{e}")
-            raise
-    
-    @staticmethod
-    def read_jsonl_file(file_path: str) -> Optional[List[Dict[str, Any]]]:
-        """
-        读取JSONL文件（行式JSON）
-        
-        Args:
-            file_path: JSONL文件路径
-        
-        Returns:
-            记录列表
-        """
+        # 尝试解析为JSONL格式（每行一个JSON对象）
         records = []
-        try:
-            with open(file_path, 'rb') as f:
-                for line_num, line in enumerate(f, 1):
-                    if not line.strip():
-                        continue
-                    
-                    try:
-                        # 检查编码
-                        text, _ = convert_to_utf8(line)
-                        record = json.loads(text)
-                        records.append(record)
-                    except json.JSONDecodeError as e:
-                        logger.warning(f"第{line_num}行JSON解析失败：{e}")
-                        continue
+        for line_num, line in enumerate(text.strip().split('\n'), 1):
+            if not line.strip():
+                continue
             
-            logger.info(f"成功读取JSONL文件：{file_path}，记录数：{len(records)}")
-            return records
-            
-        except Exception as e:
-            logger.error(f"JSONL文件读取失败：{file_path}，错误：{e}")
-            raise
+            try:
+                record = json.loads(line)
+                records.append(record)
+            except json.JSONDecodeError as e:
+                logger.warning(f"第{line_num}行JSON解析失败：{e}")
+                continue
+        
+        logger.info(f"成功加载JSONL文件：{file_path}，记录数：{len(records)}")
+        return records if records else None
+        
+    except Exception as e:
+        logger.error(f"加载JSON文件失败：{file_path}，错误：{e}")
+        return None
+
+
+def load_csv_file(
+    file_path: str,
+    delimiter: str = ',',
+    encoding: Optional[str] = None,
+    chunk_lines: Optional[int] = None
+) -> Union[List[Dict], Iterator[Dict], None]:
+    """
+    加载CSV文件
     
-    @staticmethod
-    def read_parquet_file(file_path: str) -> Optional[List[Dict[str, Any]]]:
-        """
-        读取Parquet文件
+    Args:
+        file_path: 文件路径
+        delimiter: 分隔符（默认逗号）
+        encoding: 编码（如果为None会自动检测）
+        chunk_lines: 如果指定，返回分块迭代器
+    
+    Returns:
+        记录列表（每行转为字典）或迭代器，如果加载失败返回None
+    
+    示例：
+        # 一次加载全部
+        records = load_csv_file("data.csv")
         
-        Args:
-            file_path: Parquet文件路径
+        # 分块加载大文件
+        for chunk in load_csv_file("large_data.csv", chunk_lines=5000):
+            process_records(chunk)
+    """
+    try:
+        if not FileHandler.check_file_exists(file_path):
+            return None
         
-        Returns:
-            记录列表
-        """
-        try:
-            df = pd.read_parquet(file_path)
-            records = df.to_dict('records')
-            logger.info(f"成功读取Parquet文件：{file_path}，记录数：{len(records)}")
-            return records
+        text = FileHandler.read_file_text(file_path)
+        if text is None:
+            return None
+        
+        # 如果指定了分块，返回迭代器
+        if chunk_lines:
+            return _csv_chunk_iterator(file_path, delimiter, encoding, chunk_lines)
+        
+        # 一次性加载
+        records = []
+        reader = csv.DictReader(text.strip().split('\n'), delimiter=delimiter)
+        
+        for row_num, row in enumerate(reader, 1):
+            # 过滤空行
+            if any(row.values()):
+                records.append(dict(row))
+        
+        logger.info(f"成功加载CSV文件：{file_path}，记录数：{len(records)}")
+        return records if records else None
+        
+    except Exception as e:
+        logger.error(f"加载CSV文件失败：{file_path}，错误：{e}")
+        return None
+
+
+def _json_chunk_iterator(file_path: str, chunk_lines: int) -> Iterator[List[Dict]]:
+    """
+    JSONL文件分块迭代器
+    
+    Args:
+        file_path: 文件路径
+        chunk_lines: 每个块的行数
+    
+    Yields:
+        每个块包含的记录列表
+    """
+    try:
+        text = FileHandler.read_file_text(file_path)
+        if text is None:
+            return
+        
+        chunk = []
+        for line in text.strip().split('\n'):
+            if not line.strip():
+                continue
             
-        except Exception as e:
-            logger.error(f"Parquet文件读取失败：{file_path}，错误：{e}")
-            raise
+            try:
+                record = json.loads(line)
+                chunk.append(record)
+                
+                if len(chunk) >= chunk_lines:
+                    yield chunk
+                    chunk = []
+            except json.JSONDecodeError as e:
+                logger.warning(f"JSON行解析失败：{e}")
+                continue
+        
+        # 返回剩余的行
+        if chunk:
+            yield chunk
+            
+    except Exception as e:
+        logger.error(f"JSONL分块迭代失败：{file_path}，错误：{e}")
 
 
-# 便利函数
-def read_json_file(file_path: str) -> Optional[List[Dict[str, Any]]]:
-    """快速读取JSON文件"""
-    return FileHandler.read_json_file(file_path)
-
-
-def read_csv_file(file_path: str, delimiter: str = ',') -> Optional[List[Dict[str, Any]]]:
-    """快速读取CSV文件"""
-    return FileHandler.read_csv_file(file_path, delimiter=delimiter)
+def _csv_chunk_iterator(
+    file_path: str,
+    delimiter: str,
+    encoding: Optional[str],
+    chunk_lines: int
+) -> Iterator[List[Dict]]:
+    """
+    CSV文件分块迭代器
+    
+    Args:
+        file_path: 文件路径
+        delimiter: 分隔符
+        encoding: 编码
+        chunk_lines: 每个块的行数
+    
+    Yields:
+        每个块包含的记录字典列表
+    """
+    try:
+        text = FileHandler.read_file_text(file_path)
+        if text is None:
+            return
+        
+        lines = text.strip().split('\n')
+        reader = csv.DictReader(lines, delimiter=delimiter)
+        
+        chunk = []
+        for row in reader:
+            if any(row.values()):
+                chunk.append(dict(row))
+            
+            if len(chunk) >= chunk_lines:
+                yield chunk
+                chunk = []
+        
+        # 返回剩余的行
+        if chunk:
+            yield chunk
+            
+    except Exception as e:
+        logger.error(f"CSV分块迭代失败：{file_path}，错误：{e}")

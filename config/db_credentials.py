@@ -40,12 +40,12 @@ class DatabaseCredentials:
         """
         # 主数据库配置
         self._credentials['primary'] = {
-            'type': os.getenv('DB_TYPE', 'postgresql'),
+            'type': os.getenv('DB_TYPE', 'mysql'),
             'host': os.getenv('DB_HOST', 'localhost'),
-            'port': int(os.getenv('DB_PORT', '5432')),
+            'port': int(os.getenv('DB_PORT', '3306')),
             'database': os.getenv('DB_NAME', 'data_clean'),
-            'user': os.getenv('DB_USER', 'admin'),
-            'password': os.getenv('DB_PASSWORD', 'password'),
+            'user': os.getenv('DB_USER', 'root'),
+            'password': os.getenv('DB_PASSWORD', ''),
             'charset': os.getenv('DB_CHARSET', 'utf8mb4'),
         }
         

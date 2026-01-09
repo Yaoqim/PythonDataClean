@@ -1,54 +1,123 @@
+# -*- coding: utf-8 -*-
+"""
+MCP数据清洗服务 - 主程序入口
+
+这是项目的主入口点，负责：
+1. 初始化系统（数据库、日志等）
+2. 启动清洗流程
+3. 返回处理结果
+
+执行方式：
+python main.py [file1.json] [file2.json] ...
+
+示例：
+python main.py data/EC_GOODS_PHONE_20240108_0001.json
+"""
+
+import sys
 import os
-import json
-import pandas as pd
-from src.utils.logger import Logger
-from src.metadata.metadata_loader import MetadataLoader
-from src.cleaner.base_cleaner import BaseCleaner
-from src.storage.db_handler import DatabaseHandler
+from pathlib import Path
+from typing import List
 
-logger = Logger.setup_logger(__name__)
+# 添加项目根路径
+project_root = str(Path(__file__).parent)
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
-def process_files(file_paths: list):
-    """处理文件的主函数"""
-    for file_path in file_paths:
-        try:
-            logger.info(f"开始处理文件: {file_path}")
-            
-            # 1. 加载元数据
-            metadata_file = file_path.replace(".json", ".metadata.json")
-            metadata = MetadataLoader.load_metadata(metadata_file)
-            logger.info(f"已加载元数据: {metadata['business_type_id']}")
-            
-            # 2. 加载数据
-            data = pd.read_json(file_path, encoding='utf-8')
-            logger.info(f"已加载数据: {len(data)} 条记录")
-            
-            # 3. 执行清洗
-            cleaner = BaseCleaner(metadata)
-            cleaned_data = cleaner.clean(data)
-            logger.info(f"清洗完成: {len(cleaned_data)} 条有效记录")
-            
-            # 4. 保存到数据库
-            db_handler = DatabaseHandler()
-            table_name = metadata.get("storage_config", {}).get("database_config", {}).get("table_name", "default_table")
-            db_handler.save_data(cleaned_data, table_name)
-            
-            logger.info(f"文件处理完成: {file_path}")
-            
-        except Exception as e:
-            logger.error(f"处理文件失败: {file_path}, 错误: {e}")
-            continue
+from src.utils.logger import get_logger
+from src.orchestrator.orchestrator import DataCleaningOrchestrator
+
+logger = get_logger(__name__)
+
 
 def main():
-    """主程序"""
-    # 创建必要的目录
-    os.makedirs("config/metadata_rules", exist_ok=True)
-    os.makedirs("data/temp", exist_ok=True)
-    os.makedirs("data/processed", exist_ok=True)
-    os.makedirs("logs", exist_ok=True)
+    """主程序入口"""
     
-    logger.info("Python MCP 数据清洗服务启动")
-    logger.info("服务就绪，等待请求")
+    logger.info("=" * 80)
+    logger.info("MCP 数据清洗服务启动")
+    logger.info("=" * 80)
+    
+    # 获取命令行参数
+    if len(sys.argv) < 2:
+        logger.error("错误：未指定文件路径")
+        logger.info("用法：python main.py <文件路径> [文件路径2] ...")
+        logger.info("示例：python main.py data/EC_GOODS_PHONE_20240108_0001.json")
+        return 1
+    
+    # 收集所有文件路径
+    file_paths: List[str] = sys.argv[1:]
+    
+    logger.info(f"待处理文件数：{len(file_paths)}")
+    
+    # 验证文件存在性
+    valid_files = []
+    for file_path in file_paths:
+        if not os.path.exists(file_path):
+            logger.warning(f"文件不存在：{file_path}")
+        else:
+            valid_files.append(file_path)
+            logger.info(f"文件有效：{file_path}")
+    
+    if not valid_files:
+        logger.error("没有找到任何有效的文件")
+        return 1
+    
+    # 执行清洗流程
+    try:
+        logger.info("开始处理数据...")
+        
+        # 调用编排器处理文件
+        results = DataCleaningOrchestrator.process_batch_files(valid_files, enable_llm=False)
+        
+        # 统计结果
+        success_count = sum(1 for r in results if r.get('status') == 'success')
+        partial_count = sum(1 for r in results if r.get('status') == 'partial_success')
+        failed_count = sum(1 for r in results if r.get('status') == 'failed')
+        
+        total_original = sum(r.get('original_count', 0) for r in results)
+        total_cleaned = sum(r.get('cleaned_count', 0) for r in results)
+        total_stored = sum(r.get('stored_count', 0) for r in results)
+        
+        # 输出最终结果
+        logger.info("=" * 80)
+        logger.info("处理完成 - 最终统计")
+        logger.info("=" * 80)
+        logger.info(f"文件总数：{len(results)}")
+        logger.info(f"  成功：{success_count}")
+        logger.info(f"  部分成功：{partial_count}")
+        logger.info(f"  失败：{failed_count}")
+        logger.info("")
+        logger.info(f"数据统计：")
+        logger.info(f"  原始记录数：{total_original}")
+        logger.info(f"  清洗后记录数：{total_cleaned}")
+        logger.info(f"  存储成功记录数：{total_stored}")
+        logger.info("=" * 80)
+        
+        # 详细输出每个文件的结果
+        logger.info("")
+        logger.info("详细结果：")
+        for i, result in enumerate(results, 1):
+            logger.info(f"\n{i}. 文件处理结果")
+            logger.info(f"   状态：{result.get('status')}")
+            logger.info(f"   业务类型：{result.get('business_type', 'N/A')}")
+            logger.info(f"   原始数：{result.get('original_count', 0)}")
+            logger.info(f"   清洗数：{result.get('cleaned_count', 0)}")
+            logger.info(f"   存储表：{result.get('table_name', 'N/A')}")
+            
+            if result.get('errors'):
+                logger.warning(f"   错误信息：")
+                for error in result.get('errors', []):
+                    logger.warning(f"     - {error}")
+        
+        logger.info("=" * 80)
+        
+        # 返回退出码
+        return 0 if failed_count == 0 else 1
+        
+    except Exception as e:
+        logger.error(f"处理异常：{e}", exc_info=True)
+        return 1
 
-if __name__ == "__main__":
-    main()
+
+if __name__ == '__main__':
+    sys.exit(main())

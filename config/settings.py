@@ -55,22 +55,22 @@ MAX_FILE_SIZE_MB = int(os.getenv("MAX_FILE_SIZE_MB", "5000"))
 # ============================================================
 
 # 数据库类型
-DB_TYPE = os.getenv("DB_TYPE", "postgresql")
+DB_TYPE = os.getenv("DB_TYPE", "mysql")
 
 # 数据库主机
 DB_HOST = os.getenv("DB_HOST", "localhost")
 
 # 数据库端口
-DB_PORT = int(os.getenv("DB_PORT", "5432"))
+DB_PORT = int(os.getenv("DB_PORT", "3306"))
 
 # 数据库名称
 DB_NAME = os.getenv("DB_NAME", "data_clean")
 
 # 数据库用户名
-DB_USER = os.getenv("DB_USER", "admin")
+DB_USER = os.getenv("DB_USER", "root")
 
 # 数据库密码
-DB_PASSWORD = os.getenv("DB_PASSWORD", "password")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "")
 
 # 数据库字符集
 DB_CHARSET = os.getenv("DB_CHARSET", "utf8mb4")
