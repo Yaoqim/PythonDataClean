@@ -20,6 +20,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    restart: unless-stopped
 
   # MCP 数据清洗服务
   api:
@@ -48,50 +49,8 @@ services:
       - data_clean_network
     restart: unless-stopped
 
-  # Redis 缓存（可选）
-  redis:
-    image: redis:7-alpine
-    container_name: data_clean_redis
-    ports:
-      - "6379:6379"
-    networks:
-      - data_clean_network
-    restart: unless-stopped
-
-  # Prometheus 监控（可选）
-  prometheus:
-    image: prom/prometheus:latest
-    container_name: data_clean_prometheus
-    volumes:
-      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
-      - prometheus_data:/prometheus
-    ports:
-      - "9090:9090"
-    networks:
-      - data_clean_network
-    restart: unless-stopped
-
-  # Grafana 仪表板（可选）
-  grafana:
-    image: grafana/grafana:latest
-    container_name: data_clean_grafana
-    environment:
-      GF_SECURITY_ADMIN_USER: admin
-      GF_SECURITY_ADMIN_PASSWORD: admin
-    volumes:
-      - grafana_data:/var/lib/grafana
-    ports:
-      - "3000:3000"
-    depends_on:
-      - prometheus
-    networks:
-      - data_clean_network
-    restart: unless-stopped
-
 volumes:
   postgres_data:
-  prometheus_data:
-  grafana_data:
 
 networks:
   data_clean_network:
