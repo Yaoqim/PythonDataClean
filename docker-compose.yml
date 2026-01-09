@@ -1,0 +1,98 @@
+version: '3.8'
+
+services:
+  # PostgreSQL 数据库
+  postgres:
+    image: postgres:13-alpine
+    container_name: data_clean_postgres
+    environment:
+      POSTGRES_USER: ${DB_USER:-admin}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-password}
+      POSTGRES_DB: ${DB_NAME:-data_clean}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - data_clean_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d data_clean"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # MCP 数据清洗服务
+  api:
+    build: .
+    container_name: data_clean_api
+    environment:
+      DB_TYPE: postgresql
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-data_clean}
+      DB_USER: ${DB_USER:-admin}
+      DB_PASSWORD: ${DB_PASSWORD:-password}
+      API_HOST: 0.0.0.0
+      API_PORT: 5000
+      RUN_MODE: production
+      LOG_LEVEL: INFO
+    ports:
+      - "5000:5000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+    networks:
+      - data_clean_network
+    restart: unless-stopped
+
+  # Redis 缓存（可选）
+  redis:
+    image: redis:7-alpine
+    container_name: data_clean_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - data_clean_network
+    restart: unless-stopped
+
+  # Prometheus 监控（可选）
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: data_clean_prometheus
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - data_clean_network
+    restart: unless-stopped
+
+  # Grafana 仪表板（可选）
+  grafana:
+    image: grafana/grafana:latest
+    container_name: data_clean_grafana
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+    networks:
+      - data_clean_network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  data_clean_network:
+    driver: bridge

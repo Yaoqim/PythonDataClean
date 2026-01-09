@@ -1,0 +1,19 @@
+{
+  "business_type_id": "DEFAULT_TYPE",
+  "business_type_name": "默认业务类型",
+  "business_description": "默认业务类型配置示例",
+  "clean_config": {
+    "must_clean_fields": [],
+    "field_standard_rule": {},
+    "missing_value_handle": {},
+    "abnormal_value_handle": "删除或标注",
+    "data_quality_check": "完整性检查"
+  },
+  "storage_config": {
+    "database_config": {
+      "table_name": "default_table",
+      "primary_key": "id",
+      "field_mapping": {}
+    }
+  }
+}

@@ -1,0 +1,5 @@
+[2026-01-09 10:47:42] [INFO] [src.business_cleaner.ec_goods_phone_cleaner] 开始清洗电商商品数据，记录数：2
+[2026-01-09 10:48:24] [INFO] [src.business_cleaner.ec_goods_phone_cleaner] 开始清洗电商商品数据，记录数：2
+[2026-01-09 10:48:24] [INFO] [src.business_cleaner.ec_goods_phone_cleaner] 电商商品清洗完成：2/2，去重率：0.00%
+[2026-01-09 10:54:00] [INFO] [src.business_cleaner.ec_goods_phone_cleaner] 开始清洗电商商品数据，记录数：2
+[2026-01-09 10:54:00] [INFO] [src.business_cleaner.ec_goods_phone_cleaner] 电商商品清洗完成：2/2，去重率：0.00%

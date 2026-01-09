@@ -1,0 +1,146 @@
+{
+  "business_meta": {
+    "business_type_id": "SOCIAL_PLATFORM_COMMENT",
+    "business_type_name": "社交平台评论-通用类目",
+    "business_description": "适用于微博、知乎等社交平台的用户评论数据抓取与清洗，用于情感分析、热点追踪、用户画像等场景",
+    "version": "v1.1",
+    "update_time": "2024-10-10 15:30:00",
+    "responsible_person": "social_data_team",
+    "contact": "social_data_team@company.com"
+  },
+  "crawl_config": {
+    "available_carrier": ["JSON接口", "HTML页面"],
+    "carrier_tool_mapping": {
+      "JSON接口": ["requests", "Postman", "Scrapy"],
+      "HTML页面": ["BeautifulSoup4", "Scrapy", "八爪鱼"]
+    },
+    "field_config": {
+      "must_crawl_fields": [
+        {
+          "field_name": "comment_id",
+          "field_type": "str",
+          "constraint": "非空/纯数字/长度≤32",
+          "extraction_rule": "JSON:取comment_id字段;HTML:定位div.comment-item的data-id属性"
+        },
+        {
+          "field_name": "post_id",
+          "field_type": "str",
+          "constraint": "非空/纯数字/长度≤32",
+          "extraction_rule": "JSON:取post_id字段;HTML:从页面URL提取（如weibo.com/xxx/{post_id}）"
+        },
+        {
+          "field_name": "comment_content",
+          "field_type": "str",
+          "constraint": "非空/长度≥1且≤500",
+          "extraction_rule": "JSON:取content字段;HTML:定位p.comment-content标签的文本内容"
+        },
+        {
+          "field_name": "comment_time",
+          "field_type": "str",
+          "constraint": "非空/格式为相对时间或绝对时间",
+          "extraction_rule": "JSON:取create_time字段;HTML:定位span.comment-time标签的文本内容"
+        }
+      ],
+      "optional_crawl_fields": [
+        {
+          "field_name": "user_id",
+          "field_type": "str",
+          "constraint": "纯数字/长度≤32",
+          "extraction_rule": "JSON:取user.id字段;HTML:定位a.user-name的data-userid属性"
+        },
+        {
+          "field_name": "like_count",
+          "field_type": "int",
+          "constraint": "≥0",
+          "extraction_rule": "JSON:取like_count字段;HTML:定位span.like-num标签的文本，去除“赞”字"
+        },
+        {
+          "field_name": "user_location",
+          "field_type": "str",
+          "constraint": "长度≤50",
+          "extraction_rule": "JSON:取user.location字段;HTML:定位span.user-location标签的文本内容"
+        }
+      ]
+    },
+    "pre_filter_rule": {
+      "must_filter_rules": [
+        "comment_id重复→保留第一条",
+        "comment_content为空→剔除",
+        "comment_content纯表情/无意义字符（如“👍👍”“啊啊啊”）→剔除",
+        "post_id为空→剔除"
+      ],
+      "filter_error_handle": "剔除的数据记录到crawl_error_{batch_id}.log，格式：[时间] [批次] [原因] [comment_id/post_id] [原始数据片段]"
+    },
+    "temp_data_rule": {
+      "format": "JSON",
+      "encoding": "utf-8",
+      "file_naming_rule": "{business_type_id}_{platform}_{crawl_date}_{batch_id}.json",
+      "save_path_rule": "/data/temp/{business_type_id}/{platform}/{crawl_date}/",
+      "compression_rule": "单文件>50MB→gzip压缩，压缩后后缀为.json.gz",
+      "batch_size_rule": "每批次最多存储10000条评论，超过自动分批次"
+    }
+  },
+  "clean_config": {
+    "field_standard_rule": {
+      "comment_id": "去除首尾空格/特殊字符，保留纯数字，长度超过32则截断后32位",
+      "post_id": "同comment_id处理规则",
+      "comment_content": "1. 去除HTML标签；2. 去除URL链接；3. 去除@用户名；4. 去除表情符号；5. 去除首尾空格；6. 替换特殊字符（如\\n/\\t→空格）",
+      "comment_time": "1. 相对时间转绝对时间（如“1小时前”→抓取时间-1小时；“昨天”→抓取时间-1天）；2. 统一格式为YYYY-MM-DD HH:MM:SS",
+      "user_id": "同comment_id处理规则，空值填充为“未知”",
+      "like_count": "1. 去除非数字字符；2. 空值填充为0；3. 负数修正为0",
+      "user_location": "1. 去除特殊字符；2. 统一省市区格式（如“北京朝阳”→“北京市-朝阳区”）；3. 空值填充为“未知”"
+    },
+    "missing_value_handle": {
+      "must_field_missing": "直接剔除记录，写入clean_missing_{batch_id}.log，标注缺失字段",
+      "optional_field_missing": "按field_standard_rule填充默认值，标注missing_tag=1"
+    },
+    "abnormal_value_handle": {
+      "comment_content_too_long": "长度超过500→截断前500字，标注abnormal_tag=content_too_long",
+      "comment_time_invalid": "无法转换为标准格式→标注abnormal_tag=time_invalid，保留原始时间",
+      "like_count_too_large": "超过100000→标注abnormal_tag=like_too_large，不参与后续热度分析"
+    },
+    "quality_check_rule": {
+      "pass_rate_threshold": "95%",
+      "check_items": [
+        "must_field_completeness（必选字段完整率≥98%）",
+        "field_format_correctness（格式正确字段占比≥95%）",
+        "abnormal_data_rate（异常数据占比≤5%）"
+      ],
+      "unpass_handle": "1. 暂停当前批次清洗；2. 发送告警邮件至responsible_person；3. 输出质量校验报告，标注未通过项"
+    }
+  },
+  "storage_config": {
+    "final_data_format": ["JSON", "MySQL"],
+    "json_rule": {
+      "save_path": "/data/final/{business_type_id}/{platform}/{crawl_date}/",
+      "file_naming_rule": "{business_type_id}_{platform}_{crawl_date}_{batch_id}_final.json",
+      "compression_rule": "单文件>100MB→gzip压缩"
+    },
+    "mysql_rule": {
+      "db_name": "social_data",
+      "table_name": "social_platform_comment",
+      "primary_key": "comment_id",
+      "unique_key": "UNIQUE KEY idx_comment_post (comment_id, post_id)",
+      "field_mapping": {
+        "comment_id": "comment_id VARCHAR(32) NOT NULL",
+        "post_id": "post_id VARCHAR(32) NOT NULL",
+        "comment_content": "comment_content VARCHAR(500) NOT NULL",
+        "comment_time": "comment_time DATETIME NOT NULL",
+        "user_id": "user_id VARCHAR(32) DEFAULT '未知'",
+        "like_count": "like_count INT UNSIGNED DEFAULT 0",
+        "user_location": "user_location VARCHAR(50) DEFAULT '未知'",
+        "missing_tag": "missing_tag TINYINT DEFAULT 0",
+        "abnormal_tag": "abnormal_tag VARCHAR(50) DEFAULT 'normal'",
+        "crawl_date": "crawl_date DATE NOT NULL",
+        "platform": "platform VARCHAR(20) NOT NULL"
+      },
+      "index_rule": [
+        "CREATE INDEX idx_post_id ON social_platform_comment(post_id)",
+        "CREATE INDEX idx_comment_time ON social_platform_comment(comment_time)",
+        "CREATE INDEX idx_platform_crawl_date ON social_platform_comment(platform, crawl_date)"
+      ]
+    },
+    "expire_rule": "临时数据保留3天，最终JSON数据保留30天，MySQL数据永久归档",
+    "backup_rule": "MySQL数据每日凌晨2点全量备份，备份文件存储至/data/backup/social_data/"
+  }
+}
