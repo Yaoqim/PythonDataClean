@@ -62,5 +62,5 @@ quality:
 
 aliyun:
   oss:
-    endpoint: https://oss-cn-beijing.aliyuncs.com
+    endpoint: https://oss-cn-shanghai.aliyuncs.com
     bucketName: letwx

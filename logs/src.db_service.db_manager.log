@@ -1,0 +1,937 @@
+[2026-01-10 09:07:06] [INFO] [src.db_service.db_manager] 正在初始化数据库连接：aimerchanter_test?charset=utf8mb4
+[2026-01-10 09:07:06] [ERROR] [src.db_service.db_manager] 数据库初始化失败：'DatabaseCredentials' object has no attribute 'get_type'
+[2026-01-10 09:07:06] [ERROR] [src.db_service.db_manager] Traceback (most recent call last):
+  File "E:\workSpace\idea\PythonDataClean\src\db_service\db_manager.py", line 71, in _init_engine
+    db_type = credentials.get_type()
+              ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DatabaseCredentials' object has no attribute 'get_type'
+
+[2026-01-10 09:15:52] [INFO] [src.db_service.db_manager] 正在初始化数据库连接：aimerchanter_test?charset=utf8mb4
+[2026-01-10 09:15:52] [ERROR] [src.db_service.db_manager] 数据库初始化失败：No module named 'pymysql'
+[2026-01-10 09:15:52] [ERROR] [src.db_service.db_manager] Traceback (most recent call last):
+  File "E:\workSpace\idea\PythonDataClean\src\db_service\db_manager.py", line 78, in _init_engine
+    cls._engine = create_engine(
+                  ~~~~~~~~~~~~~^
+        connection_string,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        echo=False
+        ^^^^^^^^^^
+    )
+    ^
+  File "<string>", line 2, in create_engine
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\util\deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\engine\create.py", line 617, in create_engine
+    dbapi = dbapi_meth(**dbapi_args)
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\dialects\mysql\pymysql.py", line 89, in import_dbapi
+    return __import__("pymysql")
+ModuleNotFoundError: No module named 'pymysql'
+
+[2026-01-10 09:16:22] [INFO] [src.db_service.db_manager] 正在初始化数据库连接：aimerchanter_test?charset=utf8mb4
+[2026-01-10 09:16:23] [INFO] [src.db_service.db_manager] 数据库连接成功
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_001', 'product_name': '', 'category': '', 'price': 8100.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_001', 'product_name': '', 'category': '', 'price': 8100.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_002', 'product_name': '', 'category': '', 'price': 8200.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_002', 'product_name': '', 'category': '', 'price': 8200.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_003', 'product_name': '', 'category': '', 'price': 8300.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_003', 'product_name': '', 'category': '', 'price': 8300.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_004', 'product_name': '', 'category': '', 'price': 8400.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_004', 'product_name': '', 'category': '', 'price': 8400.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_005', 'product_name': '', 'category': '', 'price': 8500.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_005', 'product_name': '', 'category': '', 'price': 8500.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_006', 'product_name': '', 'category': '', 'price': 999.99, 'sales': None, 'rating': 4.5, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_006', 'product_name': '', 'category': '', 'price': 999.99, 'sales': None, 'rating': 4.5, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_007', 'product_name': '', 'category': '', 'price': 1899.0, 'sales': None, 'rating': 4.9, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_007', 'product_name': '', 'category': '', 'price': 1899.0, 'sales': None, 'rating': 4.9, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_008', 'product_name': '', 'category': '', 'price': 3999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_008', 'product_name': '', 'category': '', 'price': 3999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_009', 'product_name': '', 'category': '', 'price': 5999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_009', 'product_name': '', 'category': '', 'price': 5999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_010', 'product_name': '', 'category': '', 'price': 4999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_010', 'product_name': '', 'category': '', 'price': 4999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_011', 'product_name': '', 'category': '', 'price': 1899.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_011', 'product_name': '', 'category': '', 'price': 1899.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_012', 'product_name': '', 'category': '', 'price': 2999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_012', 'product_name': '', 'category': '', 'price': 2999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_014', 'product_name': '', 'category': '', 'price': 3299.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_014', 'product_name': '', 'category': '', 'price': 3299.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_015', 'product_name': '', 'category': '', 'price': None, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_015', 'product_name': '', 'category': '', 'price': None, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_016', 'product_name': '', 'category': '', 'price': 4999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_016', 'product_name': '', 'category': '', 'price': 4999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_017', 'product_name': '', 'category': '', 'price': 6299.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_017', 'product_name': '', 'category': '', 'price': 6299.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_018', 'product_name': '', 'category': '', 'price': None, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_018', 'product_name': '', 'category': '', 'price': None, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_019', 'product_name': '', 'category': '', 'price': 9999999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_019', 'product_name': '', 'category': '', 'price': 9999999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_020', 'product_name': '', 'category': '', 'price': 599.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_020', 'product_name': '', 'category': '', 'price': 599.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:23] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_001', 'product_name': '', 'category': '', 'price': 8999.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_001', 'product_name': '', 'category': '', 'price': 8999.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:24] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_021', 'product_name': '', 'category': '', 'price': 2999.0, 'sales': None, 'rating': 4.7, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_021', 'product_name': '', 'category': '', 'price': 2999.0, 'sales': None, 'rating': 4.7, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:24] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_022', 'product_name': '', 'category': '', 'price': 4999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_022', 'product_name': '', 'category': '', 'price': 4999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:24] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_023', 'product_name': '', 'category': '', 'price': 5999.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_023', 'product_name': '', 'category': '', 'price': 5999.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:24] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_024', 'product_name': '', 'category': '', 'price': 5499.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_024', 'product_name': '', 'category': '', 'price': 5499.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:24] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_025', 'product_name': '', 'category': '', 'price': 8000.0, 'sales': None, 'rating': 4.5, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_025', 'product_name': '', 'category': '', 'price': 8000.0, 'sales': None, 'rating': 4.5, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:24] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_026', 'product_name': '', 'category': '', 'price': 8200.0, 'sales': None, 'rating': 4.6, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_026', 'product_name': '', 'category': '', 'price': 8200.0, 'sales': None, 'rating': 4.6, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:24] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_027', 'product_name': '', 'category': '', 'price': 8400.0, 'sales': None, 'rating': 4.7, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_027', 'product_name': '', 'category': '', 'price': 8400.0, 'sales': None, 'rating': 4.7, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:24] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_028', 'product_name': '', 'category': '', 'price': 8600.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_028', 'product_name': '', 'category': '', 'price': 8600.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:24] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_029', 'product_name': '', 'category': '', 'price': 8800.0, 'sales': None, 'rating': 4.9, 'description': ''}，错误：(pymysql.err.ProgrammingError) (1146, "Table 'aimerchanter_test.ec_product_info' doesn't exist")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_029', 'product_name': '', 'category': '', 'price': 8800.0, 'sales': None, 'rating': 4.9, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[2026-01-10 09:16:24] [INFO] [src.db_service.db_manager] 批次1提交：成功0条，失败29条
+[2026-01-10 09:16:24] [INFO] [src.db_service.db_manager] 记录插入完成：成功0条，失败29条
+[2026-01-10 09:18:06] [INFO] [src.db_service.db_manager] 正在初始化数据库连接：aimerchanter_test?charset=utf8mb4
+[2026-01-10 09:18:06] [INFO] [src.db_service.db_manager] 数据库连接成功
+[2026-01-10 09:18:07] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_001', 'product_name': '', 'category': '', 'price': 8999.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_001' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_001', 'product_name': '', 'category': '', 'price': 8999.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:18:07] [INFO] [src.db_service.db_manager] 批次1提交：成功28条，失败1条
+[2026-01-10 09:18:07] [INFO] [src.db_service.db_manager] 记录插入完成：成功28条，失败1条
+[2026-01-10 09:25:04] [INFO] [src.db_service.db_manager] 正在初始化数据库连接：aimerchanter_test?charset=utf8mb4
+[2026-01-10 09:25:05] [INFO] [src.db_service.db_manager] 数据库连接成功
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_001', 'product_name': '', 'category': '', 'price': 8100.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_001', 'product_name': '', 'category': '', 'price': 8100.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_002', 'product_name': '', 'category': '', 'price': 8200.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_002', 'product_name': '', 'category': '', 'price': 8200.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_003', 'product_name': '', 'category': '', 'price': 8300.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_003', 'product_name': '', 'category': '', 'price': 8300.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_004', 'product_name': '', 'category': '', 'price': 8400.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_004', 'product_name': '', 'category': '', 'price': 8400.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_005', 'product_name': '', 'category': '', 'price': 8500.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_005', 'product_name': '', 'category': '', 'price': 8500.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_006', 'product_name': '', 'category': '', 'price': 999.99, 'sales': None, 'rating': 4.5, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_006', 'product_name': '', 'category': '', 'price': 999.99, 'sales': None, 'rating': 4.5, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_007', 'product_name': '', 'category': '', 'price': 1899.0, 'sales': None, 'rating': 4.9, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_007', 'product_name': '', 'category': '', 'price': 1899.0, 'sales': None, 'rating': 4.9, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_008', 'product_name': '', 'category': '', 'price': 3999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_008', 'product_name': '', 'category': '', 'price': 3999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_009', 'product_name': '', 'category': '', 'price': 5999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_009', 'product_name': '', 'category': '', 'price': 5999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_010', 'product_name': '', 'category': '', 'price': 4999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_010', 'product_name': '', 'category': '', 'price': 4999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_011', 'product_name': '', 'category': '', 'price': 1899.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_011', 'product_name': '', 'category': '', 'price': 1899.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_012', 'product_name': '', 'category': '', 'price': 2999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_012', 'product_name': '', 'category': '', 'price': 2999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_014', 'product_name': '', 'category': '', 'price': 3299.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_014', 'product_name': '', 'category': '', 'price': 3299.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_015', 'product_name': '', 'category': '', 'price': None, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_015', 'product_name': '', 'category': '', 'price': None, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_016', 'product_name': '', 'category': '', 'price': 4999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_016', 'product_name': '', 'category': '', 'price': 4999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_017', 'product_name': '', 'category': '', 'price': 6299.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_017', 'product_name': '', 'category': '', 'price': 6299.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_018', 'product_name': '', 'category': '', 'price': None, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_018', 'product_name': '', 'category': '', 'price': None, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_019', 'product_name': '', 'category': '', 'price': 9999999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_019', 'product_name': '', 'category': '', 'price': 9999999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_020', 'product_name': '', 'category': '', 'price': 599.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_020', 'product_name': '', 'category': '', 'price': 599.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_001', 'product_name': '', 'category': '', 'price': 8999.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_001', 'product_name': '', 'category': '', 'price': 8999.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_021', 'product_name': '', 'category': '', 'price': 2999.0, 'sales': None, 'rating': 4.7, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_021', 'product_name': '', 'category': '', 'price': 2999.0, 'sales': None, 'rating': 4.7, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_022', 'product_name': '', 'category': '', 'price': 4999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_022', 'product_name': '', 'category': '', 'price': 4999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_023', 'product_name': '', 'category': '', 'price': 5999.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_023', 'product_name': '', 'category': '', 'price': 5999.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_024', 'product_name': '', 'category': '', 'price': 5499.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_024', 'product_name': '', 'category': '', 'price': 5499.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_025', 'product_name': '', 'category': '', 'price': 8000.0, 'sales': None, 'rating': 4.5, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_025', 'product_name': '', 'category': '', 'price': 8000.0, 'sales': None, 'rating': 4.5, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_026', 'product_name': '', 'category': '', 'price': 8200.0, 'sales': None, 'rating': 4.6, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_026', 'product_name': '', 'category': '', 'price': 8200.0, 'sales': None, 'rating': 4.6, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:05] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_027', 'product_name': '', 'category': '', 'price': 8400.0, 'sales': None, 'rating': 4.7, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_027', 'product_name': '', 'category': '', 'price': 8400.0, 'sales': None, 'rating': 4.7, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:06] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_028', 'product_name': '', 'category': '', 'price': 8600.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_028', 'product_name': '', 'category': '', 'price': 8600.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:06] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_029', 'product_name': '', 'category': '', 'price': 8800.0, 'sales': None, 'rating': 4.9, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_029', 'product_name': '', 'category': '', 'price': 8800.0, 'sales': None, 'rating': 4.9, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:25:06] [INFO] [src.db_service.db_manager] 批次1提交：成功0条，失败29条
+[2026-01-10 09:25:06] [INFO] [src.db_service.db_manager] 记录插入完成：成功0条，失败29条
+[2026-01-10 09:26:44] [INFO] [src.db_service.db_manager] 正在初始化数据库连接：aimerchanter_test?charset=utf8mb4
+[2026-01-10 09:26:45] [INFO] [src.db_service.db_manager] 数据库连接成功
+[2026-01-10 09:26:45] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_001', 'product_name': '', 'category': '', 'price': 8100.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_001', 'product_name': '', 'category': '', 'price': 8100.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:26:45] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_002', 'product_name': '', 'category': '', 'price': 8200.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_002', 'product_name': '', 'category': '', 'price': 8200.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:26:45] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_003', 'product_name': '', 'category': '', 'price': 8300.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_003', 'product_name': '', 'category': '', 'price': 8300.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:26:45] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_004', 'product_name': '', 'category': '', 'price': 8400.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_004', 'product_name': '', 'category': '', 'price': 8400.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:26:45] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_005', 'product_name': '', 'category': '', 'price': 8500.0, 'sales': None, 'rating': 4.8, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_005', 'product_name': '', 'category': '', 'price': 8500.0, 'sales': None, 'rating': 4.8, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:26:45] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_006', 'product_name': '', 'category': '', 'price': 999.99, 'sales': None, 'rating': 4.5, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_006', 'product_name': '', 'category': '', 'price': 999.99, 'sales': None, 'rating': 4.5, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:26:45] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_007', 'product_name': '', 'category': '', 'price': 1899.0, 'sales': None, 'rating': 4.9, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_007', 'product_name': '', 'category': '', 'price': 1899.0, 'sales': None, 'rating': 4.9, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:26:45] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_008', 'product_name': '', 'category': '', 'price': 3999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_008', 'product_name': '', 'category': '', 'price': 3999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:26:45] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_009', 'product_name': '', 'category': '', 'price': 5999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_009', 'product_name': '', 'category': '', 'price': 5999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:26:45] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_010', 'product_name': '', 'category': '', 'price': 4999.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_010', 'product_name': '', 'category': '', 'price': 4999.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:26:45] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_011', 'product_name': '', 'category': '', 'price': 1899.0, 'sales': None, 'rating': None, 'description': ''}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'product_name' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, product_name, category, price, sales, rating, description)
+                                VALUES (%(product_id)s, %(product_name)s, %(category)s, %(price)s, %(sales)s, %(rating)s, %(description)s)
+                            ]
+[parameters: {'product_id': 'PROD_011', 'product_name': '', 'category': '', 'price': 1899.0, 'sales': None, 'rating': None, 'description': ''}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:54] [INFO] [src.db_service.db_manager] 正在初始化数据库连接：aimerchanter_test?charset=utf8mb4
+[2026-01-10 09:28:54] [INFO] [src.db_service.db_manager] 数据库连接成功
+[2026-01-10 09:28:54] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_001', 'title': 'Apple iPhone 15 Pro Max 正品 1', 'price': 8100.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_001', 'title': 'Apple iPhone 15 Pro Max 正品 1', 'price': 8100.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:54] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_002', 'title': 'Apple iPhone 15 Pro Max 正品 2', 'price': 8200.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_002', 'title': 'Apple iPhone 15 Pro Max 正品 2', 'price': 8200.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:54] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_003', 'title': 'Apple iPhone 15 Pro Max 正品 3', 'price': 8300.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_003', 'title': 'Apple iPhone 15 Pro Max 正品 3', 'price': 8300.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:54] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_004', 'title': 'Apple iPhone 15 Pro Max 正品 4', 'price': 8400.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_004', 'title': 'Apple iPhone 15 Pro Max 正品 4', 'price': 8400.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:54] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_005', 'title': 'Apple iPhone 15 Pro Max 正品 5', 'price': 8500.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_005', 'title': 'Apple iPhone 15 Pro Max 正品 5', 'price': 8500.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:54] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_006', 'title': 'Samsung Galaxy S24 Ultra', 'price': 999.99, 'currency_code': 'USD', 'shop_name': 'Amazon', 'source_platform': 'Amazon', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.5, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_006', 'title': 'Samsung Galaxy S24 Ultra', 'price': 999.99, 'currency_code': 'USD', 'shop_name': 'Amazon', 'source_platform': 'Amazon', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.5, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:54] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_007', 'title': 'MacBook Pro 16英寸', 'price': 1899.0, 'currency_code': 'EUR', 'shop_name': 'Apple Store', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.9, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_007', 'title': 'MacBook Pro 16英寸', 'price': 1899.0, 'currency_code': 'EUR', 'shop_name': 'Apple Store', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.9, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:54] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_008', 'title': '小米 14 Pro', 'price': 3999.0, 'currency_code': 'CNY', 'shop_name': '小米官方', 'source_platform': 'Taobao', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_008', 'title': '小米 14 Pro', 'price': 3999.0, 'currency_code': 'CNY', 'shop_name': '小米官方', 'source_platform': 'Taobao', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:54] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_009', 'title': 'iPad Pro 12.9" 最新款 性价比之选', 'price': 5999.0, 'currency_code': 'CNY', 'shop_name': 'Apple专卖店', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_009', 'title': 'iPad Pro 12.9" 最新款 性价比之选', 'price': 5999.0, 'currency_code': 'CNY', 'shop_name': 'Apple专卖店', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_010', 'title': '华为Mate 60 Pro', 'price': 4999.0, 'currency_code': 'CNY', 'shop_name': '华为官方', 'source_platform': 'Taobao', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_010', 'title': '华为Mate 60 Pro', 'price': 4999.0, 'currency_code': 'CNY', 'shop_name': '华为官方', 'source_platform': 'Taobao', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_011', 'title': 'AirPods Pro 第二代', 'price': 1899.0, 'currency_code': 'CNY', 'shop_name': 'Apple', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_011', 'title': 'AirPods Pro 第二代', 'price': 1899.0, 'currency_code': 'CNY', 'shop_name': 'Apple', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_012', 'title': 'Apple Watch Series 9', 'price': 2999.0, 'currency_code': 'CNY', 'shop_name': 'Apple', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_012', 'title': 'Apple Watch Series 9', 'price': 2999.0, 'currency_code': 'CNY', 'shop_name': 'Apple', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_016', 'title': 'OPPO Find X7', 'price': 4999.0, 'currency_code': 'CNY', 'shop_name': '未知', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_016', 'title': 'OPPO Find X7', 'price': 4999.0, 'currency_code': 'CNY', 'shop_name': '未知', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_017', 'title': 'Google Pixel 8', 'price': 6299.0, 'currency_code': 'CNY', 'shop_name': 'Google', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_017', 'title': 'Google Pixel 8', 'price': 6299.0, 'currency_code': 'CNY', 'shop_name': 'Google', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_019', 'title': '高端商务笔记本', 'price': 9999999.0, 'currency_code': 'CNY', 'shop_name': 'Dell', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_019', 'title': '高端商务笔记本', 'price': 9999999.0, 'currency_code': 'CNY', 'shop_name': 'Dell', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_020', 'title': 'JBL Flip 6', 'price': 599.0, 'currency_code': 'CNY', 'shop_name': 'JBL', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_020', 'title': 'JBL Flip 6', 'price': 599.0, 'currency_code': 'CNY', 'shop_name': 'JBL', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_001', 'title': 'Apple iPhone 15 Pro Max', 'price': 8999.0, 'currency_code': 'CNY', 'shop_name': '官方店', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_001', 'title': 'Apple iPhone 15 Pro Max', 'price': 8999.0, 'currency_code': 'CNY', 'shop_name': '官方店', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_021', 'title': 'Beats Studio Pro', 'price': 2999.0, 'currency_code': 'CNY', 'shop_name': 'Beats', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.7, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_021', 'title': 'Beats Studio Pro', 'price': 2999.0, 'currency_code': 'CNY', 'shop_name': 'Beats', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.7, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_022', 'title': 'ASUS VivoBook', 'price': 4999.0, 'currency_code': 'CNY', 'shop_name': 'ASUS', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_022', 'title': 'ASUS VivoBook', 'price': 4999.0, 'currency_code': 'CNY', 'shop_name': 'ASUS', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_023', 'title': 'Lenovo ThinkPad', 'price': 5999.0, 'currency_code': 'CNY', 'shop_name': 'Lenovo', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_023', 'title': 'Lenovo ThinkPad', 'price': 5999.0, 'currency_code': 'CNY', 'shop_name': 'Lenovo', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_024', 'title': 'HP Pavilion', 'price': 5499.0, 'currency_code': 'CNY', 'shop_name': 'HP', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_024', 'title': 'HP Pavilion', 'price': 5499.0, 'currency_code': 'CNY', 'shop_name': 'HP', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_025', 'title': '第25个电子产品', 'price': 8000.0, 'currency_code': 'CNY', 'shop_name': '店铺25', 'source_platform': 'JD', 'brand': '品牌25', 'category': None, 'sales_volume': 0, 'rating': 4.5, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_025', 'title': '第25个电子产品', 'price': 8000.0, 'currency_code': 'CNY', 'shop_name': '店铺25', 'source_platform': 'JD', 'brand': '品牌25', 'category': None, 'sales_volume': 0, 'rating': 4.5, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_026', 'title': '第26个电子产品', 'price': 8200.0, 'currency_code': 'CNY', 'shop_name': '店铺26', 'source_platform': 'JD', 'brand': '品牌26', 'category': None, 'sales_volume': 0, 'rating': 4.6, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_026', 'title': '第26个电子产品', 'price': 8200.0, 'currency_code': 'CNY', 'shop_name': '店铺26', 'source_platform': 'JD', 'brand': '品牌26', 'category': None, 'sales_volume': 0, 'rating': 4.6, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_027', 'title': '第27个电子产品', 'price': 8400.0, 'currency_code': 'CNY', 'shop_name': '店铺27', 'source_platform': 'JD', 'brand': '品牌27', 'category': None, 'sales_volume': 0, 'rating': 4.7, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_027', 'title': '第27个电子产品', 'price': 8400.0, 'currency_code': 'CNY', 'shop_name': '店铺27', 'source_platform': 'JD', 'brand': '品牌27', 'category': None, 'sales_volume': 0, 'rating': 4.7, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_028', 'title': '第28个电子产品', 'price': 8600.0, 'currency_code': 'CNY', 'shop_name': '店铺28', 'source_platform': 'JD', 'brand': '品牌28', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_028', 'title': '第28个电子产品', 'price': 8600.0, 'currency_code': 'CNY', 'shop_name': '店铺28', 'source_platform': 'JD', 'brand': '品牌28', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_029', 'title': '第29个电子产品', 'price': 8800.0, 'currency_code': 'CNY', 'shop_name': '店铺29', 'source_platform': 'JD', 'brand': '品牌29', 'category': None, 'sales_volume': 0, 'rating': 4.9, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.OperationalError) (1054, "Unknown column 'category' in 'field list'")
+[SQL: 
+                                INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, category, sales_volume, rating, data_crawl_date, is_cleaned)
+                                VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(category)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                            ]
+[parameters: {'product_id': 'PROD_029', 'title': '第29个电子产品', 'price': 8800.0, 'currency_code': 'CNY', 'shop_name': '店铺29', 'source_platform': 'JD', 'brand': '品牌29', 'category': None, 'sales_volume': 0, 'rating': 4.9, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-10 09:28:55] [INFO] [src.db_service.db_manager] 批次1提交：成功0条，失败26条
+[2026-01-10 09:28:55] [INFO] [src.db_service.db_manager] 记录插入完成：成功0条，失败26条
+[2026-01-10 09:29:35] [INFO] [src.db_service.db_manager] 正在初始化数据库连接：aimerchanter_test?charset=utf8mb4
+[2026-01-10 09:29:35] [INFO] [src.db_service.db_manager] 数据库连接成功
+[2026-01-10 09:29:36] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_001', 'title': 'Apple iPhone 15 Pro Max', 'price': 8999.0, 'currency_code': 'CNY', 'shop_name': '官方店', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_001' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_001', 'title': 'Apple iPhone 15 Pro Max', 'price': 8999.0, 'currency_code': 'CNY', 'shop_name': '官方店', 'source_platform': 'JD', 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:29:36] [INFO] [src.db_service.db_manager] 批次1提交：成功25条，失败1条
+[2026-01-10 09:29:36] [INFO] [src.db_service.db_manager] 记录插入完成：成功25条，失败1条
+[2026-01-10 09:29:45] [INFO] [src.db_service.db_manager] 正在初始化数据库连接：aimerchanter_test?charset=utf8mb4
+[2026-01-10 09:29:46] [INFO] [src.db_service.db_manager] 数据库连接成功
+[2026-01-10 09:29:46] [ERROR] [src.db_service.db_manager] 会话执行出错，已回滚：object is not iterable
+[2026-01-10 09:29:46] [ERROR] [src.db_service.db_manager] SQL执行失败：SELECT COUNT(*) as cnt FROM ec_product_info，错误：object is not iterable
+[2026-01-10 09:29:52] [INFO] [src.db_service.db_manager] 正在初始化数据库连接：aimerchanter_test?charset=utf8mb4
+[2026-01-10 09:29:52] [INFO] [src.db_service.db_manager] 数据库连接成功
+[2026-01-10 09:29:52] [ERROR] [src.db_service.db_manager] 会话执行出错，已回滚：dictionary update sequence element #0 has length 8; 2 is required
+[2026-01-10 09:29:57] [INFO] [src.db_service.db_manager] 正在初始化数据库连接：aimerchanter_test?charset=utf8mb4
+[2026-01-10 09:29:57] [INFO] [src.db_service.db_manager] 数据库连接成功
+[2026-01-10 09:33:47] [INFO] [src.db_service.db_manager] 正在初始化数据库连接：aimerchanter_test?charset=utf8mb4
+[2026-01-10 09:33:47] [INFO] [src.db_service.db_manager] 数据库连接成功
+[2026-01-10 09:33:47] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_001', 'title': 'Apple iPhone 15 Pro Max 正品 1', 'price': 8100.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_001' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_001', 'title': 'Apple iPhone 15 Pro Max 正品 1', 'price': 8100.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:47] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_002', 'title': 'Apple iPhone 15 Pro Max 正品 2', 'price': 8200.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_002' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_002', 'title': 'Apple iPhone 15 Pro Max 正品 2', 'price': 8200.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:47] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_003', 'title': 'Apple iPhone 15 Pro Max 正品 3', 'price': 8300.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_003' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_003', 'title': 'Apple iPhone 15 Pro Max 正品 3', 'price': 8300.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:47] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_004', 'title': 'Apple iPhone 15 Pro Max 正品 4', 'price': 8400.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_004' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_004', 'title': 'Apple iPhone 15 Pro Max 正品 4', 'price': 8400.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_005', 'title': 'Apple iPhone 15 Pro Max 正品 5', 'price': 8500.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_005' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_005', 'title': 'Apple iPhone 15 Pro Max 正品 5', 'price': 8500.0, 'currency_code': 'CNY', 'shop_name': '官方旗舰店', 'source_platform': 'JD', 'brand': 'Apple', 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_006', 'title': 'Samsung Galaxy S24 Ultra', 'price': 999.99, 'currency_code': 'USD', 'shop_name': 'Amazon', 'source_platform': 'Amazon', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.5, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_006' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_006', 'title': 'Samsung Galaxy S24 Ultra', 'price': 999.99, 'currency_code': 'USD', 'shop_name': 'Amazon', 'source_platform': 'Amazon', 'sales_volume': 0, 'rating': 4.5, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_007', 'title': 'MacBook Pro 16英寸', 'price': 1899.0, 'currency_code': 'EUR', 'shop_name': 'Apple Store', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.9, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_007' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_007', 'title': 'MacBook Pro 16英寸', 'price': 1899.0, 'currency_code': 'EUR', 'shop_name': 'Apple Store', 'source_platform': 'JD', 'sales_volume': 0, 'rating': 4.9, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_008', 'title': '小米 14 Pro', 'price': 3999.0, 'currency_code': 'CNY', 'shop_name': '小米官方', 'source_platform': 'Taobao', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_008' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_008', 'title': '小米 14 Pro', 'price': 3999.0, 'currency_code': 'CNY', 'shop_name': '小米官方', 'source_platform': 'Taobao', 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_009', 'title': 'iPad Pro 12.9" 最新款 性价比之选', 'price': 5999.0, 'currency_code': 'CNY', 'shop_name': 'Apple专卖店', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_009' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_009', 'title': 'iPad Pro 12.9" 最新款 性价比之选', 'price': 5999.0, 'currency_code': 'CNY', 'shop_name': 'Apple专卖店', 'source_platform': 'JD', 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_010', 'title': '华为Mate 60 Pro', 'price': 4999.0, 'currency_code': 'CNY', 'shop_name': '华为官方', 'source_platform': 'Taobao', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_010' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_010', 'title': '华为Mate 60 Pro', 'price': 4999.0, 'currency_code': 'CNY', 'shop_name': '华为官方', 'source_platform': 'Taobao', 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_011', 'title': 'AirPods Pro 第二代', 'price': 1899.0, 'currency_code': 'CNY', 'shop_name': 'Apple', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_011' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_011', 'title': 'AirPods Pro 第二代', 'price': 1899.0, 'currency_code': 'CNY', 'shop_name': 'Apple', 'source_platform': 'JD', 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_012', 'title': 'Apple Watch Series 9', 'price': 2999.0, 'currency_code': 'CNY', 'shop_name': 'Apple', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_012' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_012', 'title': 'Apple Watch Series 9', 'price': 2999.0, 'currency_code': 'CNY', 'shop_name': 'Apple', 'source_platform': 'JD', 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_016', 'title': 'OPPO Find X7', 'price': 4999.0, 'currency_code': 'CNY', 'shop_name': '未知', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_016' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_016', 'title': 'OPPO Find X7', 'price': 4999.0, 'currency_code': 'CNY', 'shop_name': '未知', 'source_platform': 'JD', 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_017', 'title': 'Google Pixel 8', 'price': 6299.0, 'currency_code': 'CNY', 'shop_name': 'Google', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_017' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_017', 'title': 'Google Pixel 8', 'price': 6299.0, 'currency_code': 'CNY', 'shop_name': 'Google', 'source_platform': 'JD', 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_019', 'title': '高端商务笔记本', 'price': 9999999.0, 'currency_code': 'CNY', 'shop_name': 'Dell', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_019' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_019', 'title': '高端商务笔记本', 'price': 9999999.0, 'currency_code': 'CNY', 'shop_name': 'Dell', 'source_platform': 'JD', 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_020', 'title': 'JBL Flip 6', 'price': 599.0, 'currency_code': 'CNY', 'shop_name': 'JBL', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_020' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_020', 'title': 'JBL Flip 6', 'price': 599.0, 'currency_code': 'CNY', 'shop_name': 'JBL', 'source_platform': 'JD', 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_001', 'title': 'Apple iPhone 15 Pro Max', 'price': 8999.0, 'currency_code': 'CNY', 'shop_name': '官方店', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_001' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_001', 'title': 'Apple iPhone 15 Pro Max', 'price': 8999.0, 'currency_code': 'CNY', 'shop_name': '官方店', 'source_platform': 'JD', 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_021', 'title': 'Beats Studio Pro', 'price': 2999.0, 'currency_code': 'CNY', 'shop_name': 'Beats', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.7, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_021' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_021', 'title': 'Beats Studio Pro', 'price': 2999.0, 'currency_code': 'CNY', 'shop_name': 'Beats', 'source_platform': 'JD', 'sales_volume': 0, 'rating': 4.7, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_022', 'title': 'ASUS VivoBook', 'price': 4999.0, 'currency_code': 'CNY', 'shop_name': 'ASUS', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_022' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_022', 'title': 'ASUS VivoBook', 'price': 4999.0, 'currency_code': 'CNY', 'shop_name': 'ASUS', 'source_platform': 'JD', 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_023', 'title': 'Lenovo ThinkPad', 'price': 5999.0, 'currency_code': 'CNY', 'shop_name': 'Lenovo', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_023' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_023', 'title': 'Lenovo ThinkPad', 'price': 5999.0, 'currency_code': 'CNY', 'shop_name': 'Lenovo', 'source_platform': 'JD', 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_024', 'title': 'HP Pavilion', 'price': 5499.0, 'currency_code': 'CNY', 'shop_name': 'HP', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_024' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_024', 'title': 'HP Pavilion', 'price': 5499.0, 'currency_code': 'CNY', 'shop_name': 'HP', 'source_platform': 'JD', 'sales_volume': 0, 'rating': 0.0, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_025', 'title': '第25个电子产品', 'price': 8000.0, 'currency_code': 'CNY', 'shop_name': '店铺25', 'source_platform': 'JD', 'brand': '品牌25', 'category': None, 'sales_volume': 0, 'rating': 4.5, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_025' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_025', 'title': '第25个电子产品', 'price': 8000.0, 'currency_code': 'CNY', 'shop_name': '店铺25', 'source_platform': 'JD', 'brand': '品牌25', 'sales_volume': 0, 'rating': 4.5, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_026', 'title': '第26个电子产品', 'price': 8200.0, 'currency_code': 'CNY', 'shop_name': '店铺26', 'source_platform': 'JD', 'brand': '品牌26', 'category': None, 'sales_volume': 0, 'rating': 4.6, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_026' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_026', 'title': '第26个电子产品', 'price': 8200.0, 'currency_code': 'CNY', 'shop_name': '店铺26', 'source_platform': 'JD', 'brand': '品牌26', 'sales_volume': 0, 'rating': 4.6, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_027', 'title': '第27个电子产品', 'price': 8400.0, 'currency_code': 'CNY', 'shop_name': '店铺27', 'source_platform': 'JD', 'brand': '品牌27', 'category': None, 'sales_volume': 0, 'rating': 4.7, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_027' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_027', 'title': '第27个电子产品', 'price': 8400.0, 'currency_code': 'CNY', 'shop_name': '店铺27', 'source_platform': 'JD', 'brand': '品牌27', 'sales_volume': 0, 'rating': 4.7, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_028', 'title': '第28个电子产品', 'price': 8600.0, 'currency_code': 'CNY', 'shop_name': '店铺28', 'source_platform': 'JD', 'brand': '品牌28', 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_028' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_028', 'title': '第28个电子产品', 'price': 8600.0, 'currency_code': 'CNY', 'shop_name': '店铺28', 'source_platform': 'JD', 'brand': '品牌28', 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_029', 'title': '第29个电子产品', 'price': 8800.0, 'currency_code': 'CNY', 'shop_name': '店铺29', 'source_platform': 'JD', 'brand': '品牌29', 'category': None, 'sales_volume': 0, 'rating': 4.9, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_029' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, brand, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(brand)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_029', 'title': '第29个电子产品', 'price': 8800.0, 'currency_code': 'CNY', 'shop_name': '店铺29', 'source_platform': 'JD', 'brand': '品牌29', 'sales_volume': 0, 'rating': 4.9, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:33:48] [INFO] [src.db_service.db_manager] 批次1提交：成功0条，失败26条
+[2026-01-10 09:33:48] [INFO] [src.db_service.db_manager] 记录插入完成：成功0条，失败26条
+[2026-01-10 09:34:14] [INFO] [src.db_service.db_manager] 正在初始化数据库连接：aimerchanter_test?charset=utf8mb4
+[2026-01-10 09:34:14] [INFO] [src.db_service.db_manager] 数据库连接成功
+[2026-01-10 09:34:14] [WARNING] [src.db_service.db_manager] 单条记录插入失败：{'product_id': 'PROD_001', 'title': 'Apple iPhone 15 Pro Max', 'price': 8999.0, 'currency_code': 'CNY', 'shop_name': '官方店', 'source_platform': 'JD', 'brand': None, 'category': None, 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}，错误：(pymysql.err.IntegrityError) (1062, "Duplicate entry 'PROD_001' for key 'ec_product_info.PRIMARY'")
+[SQL: 
+                                        INSERT INTO ec_product_info (product_id, title, price, currency_code, shop_name, source_platform, sales_volume, rating, data_crawl_date, is_cleaned)
+                                        VALUES (%(product_id)s, %(title)s, %(price)s, %(currency_code)s, %(shop_name)s, %(source_platform)s, %(sales_volume)s, %(rating)s, %(data_crawl_date)s, %(is_cleaned)s)
+                                    ]
+[parameters: {'product_id': 'PROD_001', 'title': 'Apple iPhone 15 Pro Max', 'price': 8999.0, 'currency_code': 'CNY', 'shop_name': '官方店', 'source_platform': 'JD', 'sales_volume': 0, 'rating': 4.8, 'data_crawl_date': datetime.date(2026, 1, 10), 'is_cleaned': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-01-10 09:34:15] [INFO] [src.db_service.db_manager] 批次1提交：成功25条，失败1条
+[2026-01-10 09:34:15] [INFO] [src.db_service.db_manager] 记录插入完成：成功25条，失败1条

@@ -192,19 +192,28 @@ class DatabaseManager:
                     try:
                         # 构建INSERT语句
                         if batch:
-                            columns = list(batch[0].keys())
-                            placeholders = ', '.join([f':{col}' for col in columns])
-                            column_names = ', '.join(columns)
-                            
-                            sql = f"""
-                                INSERT INTO {table_name} ({column_names})
-                                VALUES ({placeholders})
-                            """
-                            
                             # 执行批量插入
                             for record in batch:
                                 try:
-                                    session.execute(text(sql), record)
+                                    # 过滤掉NULL值的字段（让数据库使用默认值）
+                                    non_null_record = {k: v for k, v in record.items() if v is not None}
+                                    
+                                    if not non_null_record:
+                                        # 如果所有字段都是NULL，跳过
+                                        logger.warning(f"记录所有字段都为NULL，跳过：{record}")
+                                        failed_count += 1
+                                        continue
+                                    
+                                    columns = list(non_null_record.keys())
+                                    placeholders = ', '.join([f':{col}' for col in columns])
+                                    column_names = ', '.join(columns)
+                                    
+                                    sql = f"""
+                                        INSERT INTO {table_name} ({column_names})
+                                        VALUES ({placeholders})
+                                    """
+                                    
+                                    session.execute(text(sql), non_null_record)
                                     success_count += 1
                                 except Exception as e:
                                     logger.warning(f"单条记录插入失败：{record}，错误：{e}")

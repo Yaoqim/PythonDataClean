@@ -10,6 +10,17 @@ import os
 import yaml
 from typing import Dict, Any
 import re
+from pathlib import Path
+
+# 加载 .env 文件中的环境变量
+try:
+    from dotenv import load_dotenv
+    # 在项目根目录查找 .env 文件
+    env_path = Path(__file__).parent.parent / '.env'
+    if env_path.exists():
+        load_dotenv(dotenv_path=str(env_path), override=False)
+except ImportError:
+    pass
 
 # 获取运行模式（默认开发）
 RUN_MODE = os.getenv("RUN_MODE", "dev").lower()
@@ -102,7 +113,7 @@ def get_config() -> Dict[str, Any]:
     global _config
     if _config is None:
         _config = load_config()
-        print(f"✓ 已加载 {RUN_MODE.upper()} 环境配置：{CONFIG_FILE}")
+        print(f"[OK] 已加载 {RUN_MODE.upper()} 环境配置：{CONFIG_FILE}")
     return _config
 
 

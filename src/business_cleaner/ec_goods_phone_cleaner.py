@@ -35,17 +35,18 @@ class ECGoodsPhoneCleaner:
     MAX_SALES = 99999999
     
     @staticmethod
-    def clean(records: List[Dict[str, Any]]) -> Dict[str, Any]:
+    def clean(records: List[Dict[str, Any]], enable_llm: bool = False) -> Dict[str, Any]:
         """
         清洗电商商品数据
         
         Args:
             records: 原始记录列表
+            enable_llm: 是否启用LLM辅助清洗（可选）
         
         Returns:
             清洗结果字典
         """
-        logger.info(f"开始清洗电商商品数据，记录数：{len(records)}")
+        logger.info(f"开始清洗电商商品数据，记录数：{len(records)}，LLM启用：{enable_llm}")
         
         cleaned_records = []
         errors = []
@@ -87,8 +88,10 @@ class ECGoodsPhoneCleaner:
             record: 原始记录
         
         Returns:
-            清洗后的记录
+            清洗后的记录（字段名与ec_product_info表一致）
         """
+        from datetime import datetime, date
+        
         cleaned = {}
         
         # 商品ID（去重依据，必填）
@@ -98,47 +101,91 @@ class ECGoodsPhoneCleaner:
             return None
         cleaned['product_id'] = product_id
         
-        # 商品名称
-        product_name = record.get('product_name', '').strip()
-        if product_name:
-            product_name = StringUtils.clean_text(product_name)
-            product_name = StringUtils.truncate_text(product_name, ECGoodsPhoneCleaner.MAX_PRODUCT_NAME_LEN)
-        cleaned['product_name'] = product_name
+        # 商品标题（映射到 title）
+        title = record.get('product_name', '') or record.get('title', '')
+        title = title.strip()
+        if title:
+            title = StringUtils.clean_text(title)
+            title = StringUtils.truncate_text(title, 200)  # 数据库title字段最大200字符
+        else:
+            # title 是必填字段
+            logger.warning(f"缺少title字段：{product_id}")
+            return None
+        cleaned['title'] = title
+        
+        # 价格（数值化，必填）
+        price_str = record.get('price', '')
+        price = ECGoodsPhoneCleaner._parse_price(price_str)
+        if price is None:
+            logger.warning(f"无效的价格：{price_str}")
+            return None  # price 是必填字段
+        # 范围验证
+        if not Validator.validate_range(price, ECGoodsPhoneCleaner.MIN_PRICE, ECGoodsPhoneCleaner.MAX_PRICE):
+            logger.warning(f"价格超出范围：{price}")
+            return None
+        cleaned['price'] = price
+        
+        # 货币代码
+        currency_code = record.get('currency_code', 'CNY').strip().upper()
+        if not currency_code or len(currency_code) != 3 or not currency_code.isalpha():
+            currency_code = 'CNY'
+        cleaned['currency_code'] = currency_code
+        
+        # 店铺名称
+        shop_name = record.get('shop_name', '').strip()
+        if shop_name:
+            shop_name = StringUtils.remove_special_chars(shop_name, keep_punctuation=True)
+            if len(shop_name) > 100:  # 数据库shop_name字段最大100字符
+                shop_name = shop_name[:100]
+        cleaned['shop_name'] = shop_name or '未知'
+        
+        # 来源平台（必填）
+        source_platform = record.get('source_platform', '').strip()
+        if not source_platform:
+            source_platform = record.get('platform', '').strip()
+        if not source_platform:
+            source_platform = '未知'
+        cleaned['source_platform'] = source_platform
+        
+        # 品牌
+        brand = record.get('brand', '').strip()
+        if brand:
+            brand = StringUtils.remove_special_chars(brand, keep_punctuation=False)
+        cleaned['brand'] = brand or None
         
         # 分类
         category = record.get('category', '').strip()
-        category = StringUtils.clean_text(category)
-        cleaned['category'] = category
+        if category:
+            category = StringUtils.clean_text(category)
+        cleaned['category'] = category or None
         
-        # 价格（数值化）
-        price_str = record.get('price', '')
-        price = ECGoodsPhoneCleaner._parse_price(price_str)
-        if price is not None:
-            # 范围验证
-            if not Validator.validate_range(price, ECGoodsPhoneCleaner.MIN_PRICE, ECGoodsPhoneCleaner.MAX_PRICE):
-                logger.warning(f"价格超出范围：{price}，设置为NULL")
-                price = None
-        cleaned['price'] = price
-        
-        # 销量
+        # 销量（映射到 sales_volume）
         sales_str = record.get('sales', '')
-        sales = ECGoodsPhoneCleaner._parse_sales(sales_str)
-        if sales is not None:
-            if sales < 0 or sales > ECGoodsPhoneCleaner.MAX_SALES:
-                sales = None
-        cleaned['sales'] = sales
+        sales_volume = ECGoodsPhoneCleaner._parse_sales(sales_str)
+        if sales_volume is not None and (sales_volume < 0 or sales_volume > ECGoodsPhoneCleaner.MAX_SALES):
+            sales_volume = None
+        cleaned['sales_volume'] = sales_volume or 0
         
         # 评分
         rating_str = record.get('rating', '')
         rating = ECGoodsPhoneCleaner._parse_rating(rating_str)
-        cleaned['rating'] = rating
+        cleaned['rating'] = rating or 0.0
         
-        # 描述
-        description = record.get('description', '').strip()
-        if description:
-            description = StringUtils.clean_text(description)
-            description = StringUtils.truncate_text(description, 1000)
-        cleaned['description'] = description
+        # 数据抓取日期（必填）
+        data_crawl_date = record.get('data_crawl_date')
+        if isinstance(data_crawl_date, str):
+            try:
+                data_crawl_date = datetime.strptime(data_crawl_date, '%Y-%m-%d').date()
+            except (ValueError, TypeError):
+                data_crawl_date = date.today()
+        elif isinstance(data_crawl_date, datetime):
+            data_crawl_date = data_crawl_date.date()
+        elif not isinstance(data_crawl_date, date):
+            data_crawl_date = date.today()
+        cleaned['data_crawl_date'] = data_crawl_date
+        
+        # 标记为已清洗
+        cleaned['is_cleaned'] = 1
         
         return cleaned
     

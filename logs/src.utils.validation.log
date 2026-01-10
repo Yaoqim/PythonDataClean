@@ -43,3 +43,13 @@
 [2026-01-09 14:09:16] [WARNING] [src.utils.validation] rating_score 超出下限：-1 < 1
 [2026-01-09 14:09:16] [WARNING] [src.utils.validation] rating_score 超出上限：10 > 5
 [2026-01-09 14:09:16] [WARNING] [src.utils.validation] rating_score 超出下限：-1 < 1
+[2026-01-10 09:07:06] [WARNING] [src.utils.validation] value 超出下限：-999.0 < 0.01
+[2026-01-10 09:15:52] [WARNING] [src.utils.validation] value 超出下限：-999.0 < 0.01
+[2026-01-10 09:16:22] [WARNING] [src.utils.validation] value 超出下限：-999.0 < 0.01
+[2026-01-10 09:18:06] [WARNING] [src.utils.validation] value 超出下限：-999.0 < 0.01
+[2026-01-10 09:25:04] [WARNING] [src.utils.validation] value 超出下限：-999.0 < 0.01
+[2026-01-10 09:26:44] [WARNING] [src.utils.validation] value 超出下限：-999.0 < 0.01
+[2026-01-10 09:28:54] [WARNING] [src.utils.validation] value 超出下限：-999.0 < 0.01
+[2026-01-10 09:29:35] [WARNING] [src.utils.validation] value 超出下限：-999.0 < 0.01
+[2026-01-10 09:33:47] [WARNING] [src.utils.validation] value 超出下限：-999.0 < 0.01
+[2026-01-10 09:34:14] [WARNING] [src.utils.validation] value 超出下限：-999.0 < 0.01

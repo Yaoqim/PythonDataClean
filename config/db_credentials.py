@@ -108,6 +108,19 @@ class DatabaseCredentials:
         else:
             raise ValueError(f"不支持的数据库类型：{db_type}")
     
+    def get_type(self, database_name: str = 'primary') -> str:
+        """
+        获取数据库类型
+        
+        Args:
+            database_name: 数据库名称，默认为'primary'
+        
+        Returns:
+            数据库类型（sqlite、mysql、postgresql）
+        """
+        creds = self.get_credentials(database_name)
+        return creds['type']
+    
     def validate(self) -> bool:
         """
         验证凭证配置是否完整

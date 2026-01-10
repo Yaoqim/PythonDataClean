@@ -84,12 +84,13 @@ class MetadataLoader:
             return metadata_path
         
         # 尝试另一种命名方式（不包含原扩展名）
-        path = Path(data_file_path)
-        base_name = path.stem  # 去掉扩展名
-        metadata_path_alt = path.parent / f"{base_name}{MetadataLoader.METADATA_SUFFIX}"
+        # 为OSS路径或本地路径停止使用Path并改成字符串处理
+        import os
+        path_without_ext = os.path.splitext(data_file_path)[0]
+        metadata_path_alt = f"{path_without_ext}{MetadataLoader.METADATA_SUFFIX}"
         
-        if metadata_path_alt.exists():
-            return str(metadata_path_alt)
+        if FileHandler.check_file_exists(metadata_path_alt):
+            return metadata_path_alt
         
         logger.warning(f"未找到元数据文件：{data_file_path}")
         return None

@@ -26,6 +26,7 @@ if project_root not in sys.path:
 
 from src.utils.logger import get_logger
 from src.orchestrator.orchestrator import CleaningOrchestrator
+from src.file_service.file_handler import FileHandler
 
 logger = get_logger(__name__)
 
@@ -52,7 +53,16 @@ def main():
     # 验证文件存在性
     valid_files = []
     for file_path in file_paths:
-        if not os.path.exists(file_path):
+        # 支持本地文件和OSS路径
+        file_exists = False
+        if file_path.startswith(('oss://', '/aliyun/')):
+            # OSS路径
+            file_exists = FileHandler.check_file_exists(file_path)
+        else:
+            # 本地路径
+            file_exists = os.path.exists(file_path)
+        
+        if not file_exists:
             logger.warning(f"文件不存在：{file_path}")
         else:
             valid_files.append(file_path)

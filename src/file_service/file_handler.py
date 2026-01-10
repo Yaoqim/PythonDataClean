@@ -9,6 +9,7 @@
 - 自动编码检测和转换（UTF-8）
 - 大文件分批读取
 - 文件验证（大小、完整性）
+- 支持从阿里云OSS获取文件
 """
 
 import json
@@ -19,6 +20,7 @@ from typing import List, Dict, Any, Optional, Union, Iterator
 from src.utils.logger import get_logger
 from src.utils.encoding_checker import EncodingChecker
 from src.utils.error_handler import ErrorHandler
+from src.file_service.aliyun_client import AliyunOSSClient
 
 logger = get_logger(__name__)
 
@@ -45,12 +47,36 @@ class FileHandler:
         """
         检查文件是否存在
         
+        支持本地文件和OSS文件
+        
         Args:
-            file_path: 文件路径
+            file_path: 文件路径（本地或OSS）
         
         Returns:
             True表示存在，False表示不存在
         """
+        # 处理OSS文件
+        if file_path.startswith('oss://') or file_path.startswith('/aliyun/'):
+            try:
+                oss_client = AliyunOSSClient()
+                
+                # 规范化OSS路径
+                if file_path.startswith('oss://'):
+                    # oss://bucket/path -> path (不加前缀/)
+                    oss_path = file_path.split('/', 3)[-1]
+                else:
+                    # /aliyun/path -> path
+                    oss_path = file_path.replace('/aliyun/', '')
+                
+                exists = oss_client.file_exists(oss_path)
+                if not exists:
+                    logger.warning(f"OSS文件不存在：{file_path}")
+                return exists
+            except Exception as e:
+                logger.error(f"检查OSS文件存在性失败：{file_path}，错误：{e}")
+                return False
+        
+        # 处理本地文件
         path = Path(file_path)
         exists = path.exists() and path.is_file()
         
@@ -82,14 +108,46 @@ class FileHandler:
         """
         获取文件格式
         
+        支持本地文件和OSS文件路径
+        
         Args:
-            file_path: 文件路径
+            file_path: 文件路径（本地或OSS）
         
         Returns:
             文件扩展名（如.json），如果不支持返回None
         """
+        # 处理OSS路径 (oss://bucket/path/file.json 或 /aliyun/path/file.json)
+        if file_path.startswith('oss://') or file_path.startswith('/aliyun/'):
+            return FileHandler._get_oss_file_format(file_path)
+        
+        # 处理本地路径
         path = Path(file_path)
         suffix = path.suffix.lower()
+        
+        if suffix in FileHandler.SUPPORTED_FORMATS:
+            return suffix
+        
+        logger.warning(f"不支持的文件格式：{suffix}")
+        return None
+    
+    @staticmethod
+    def _get_oss_file_format(oss_path: str) -> Optional[str]:
+        """
+        从OSS路径获取文件格式
+        
+        Args:
+            oss_path: OSS文件路径
+        
+        Returns:
+            文件扩展名
+        """
+        # 处理oss://bucket/path或/aliyun/path格式
+        if oss_path.startswith('oss://'):
+            path_part = oss_path.split('/', 3)[-1] if '/' in oss_path else oss_path
+        else:
+            path_part = oss_path
+        
+        suffix = Path(path_part).suffix.lower()
         
         if suffix in FileHandler.SUPPORTED_FORMATS:
             return suffix
@@ -121,14 +179,35 @@ class FileHandler:
         读取文件为文本
         
         自动检测编码并转换为UTF-8
+        支持本地和OSS文件
         
         Args:
-            file_path: 文件路径
+            file_path: 文件路径（本地或OSS）
         
         Returns:
             文件内容（UTF-8文本），如果读取失败返回None
         """
         try:
+            # 如果是OSS文件，先下载到本地
+            if file_path.startswith('oss://') or file_path.startswith('/aliyun/'):
+                logger.info(f"从OSS读取文件：{file_path}")
+                oss_client = AliyunOSSClient()
+                
+                # 规范化OSS路径
+                if file_path.startswith('oss://'):
+                    # oss://bucket/path -> path (不加前缀/)
+                    oss_path = file_path.split('/', 3)[-1]
+                else:
+                    # /aliyun/path -> path
+                    oss_path = file_path.replace('/aliyun/', '')
+                
+                local_path = oss_client.get_file_to_temp(oss_path)
+                if not local_path:
+                    logger.error(f"从OSS下载文件失败：{file_path}")
+                    return None
+                
+                file_path = local_path
+            
             # 读取原始字节
             data = FileHandler.read_file_bytes(file_path)
             if data is None:

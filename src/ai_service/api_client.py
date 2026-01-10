@@ -273,6 +273,17 @@ def get_ai_client() -> AIClient:
     return _ai_client
 
 
+# 别名函数，保持向后兼容
+def get_llm_client() -> AIClient:
+    """
+    获取LLM客户端（get_ai_client的别名）
+    
+    Returns:
+        AIClient实例
+    """
+    return get_ai_client()
+
+
 def analyze_text(text: str, analysis_type: str = "sentiment") -> Optional[Dict[str, Any]]:
     """
     便利函数：分析文本

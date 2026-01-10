@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.utils.logger import get_logger
 from config.db_credentials import DatabaseCredentials
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine, text, inspect
 
 logger = get_logger(__name__)
 
@@ -295,15 +295,29 @@ def init_database():
         
         logger.info(f"连接到数据库：{connection_string.split('@')[1] if '@' in connection_string else 'local'}")
         
-        # 执行建表SQL
+        # 分割SQL语句并逐条执行
+        # 使用分号分割，但要避免在字符串中的分号
+        sql_statements = []
+        current_statement = ""
+        
+        for line in CREATE_TABLES_SQL.split('\n'):
+            current_statement += line + "\n"
+            if line.strip().endswith(';'):
+                sql_statements.append(current_statement.strip())
+                current_statement = ""
+        
+        # 执行每条SQL语句
         with engine.connect() as connection:
-            connection.execute(text(CREATE_TABLES_SQL))
+            for sql_statement in sql_statements:
+                if sql_statement.strip():
+                    logger.debug(f"执行SQL语句...")
+                    connection.execute(text(sql_statement))
             connection.commit()
         
-        logger.info("✅ 所有表不成功！")
+        logger.info("[OK] 所有表创建成功！")
         
         # 验证表
-        inspector = sa.inspect(engine)
+        inspector = inspect(engine)
         existing_tables = inspector.get_table_names()
         
         print("\n" + "=" * 80)
@@ -318,7 +332,7 @@ def init_database():
         return True
         
     except Exception as e:
-        logger.error(f"❌ 数据库初始化失败：{e}")
+        logger.error(f"[ERROR] 数据库初始化失败：{e}")
         import traceback
         traceback.print_exc()
         return False
