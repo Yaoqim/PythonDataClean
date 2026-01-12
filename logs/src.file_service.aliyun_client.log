@@ -120,3 +120,27 @@
 [2026-01-10 09:34:13] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
 [2026-01-10 09:34:13] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/EC_GOODS_PHONE_20260109_0001.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\EC_GOODS_PHONE_20260109_0001.metadata.json
 [2026-01-10 09:34:14] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-12 09:56:22] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 09:56:22] [INFO] [src.file_service.aliyun_client] 上传文件到OSS：data/temp/EC_GOODS_PHONE_20260109_0001.json -> ai_network_data/EC_GOODS_PHONE_20260109_0001.json
+[2026-01-12 09:56:23] [INFO] [src.file_service.aliyun_client] 文件上传成功：ai_network_data/EC_GOODS_PHONE_20260109_0001.json
+[2026-01-12 09:56:23] [INFO] [src.file_service.aliyun_client] 上传文件到OSS：data/temp/EC_GOODS_PHONE_20260109_0001.metadata.json -> ai_network_data/EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-12 09:56:23] [INFO] [src.file_service.aliyun_client] 文件上传成功：ai_network_data/EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-12 09:56:27] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 09:56:28] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 09:56:29] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 09:56:29] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/EC_GOODS_PHONE_20260109_0001.json -> C:\Users\Yaoqm\AppData\Local\Temp\EC_GOODS_PHONE_20260109_0001.json
+[2026-01-12 09:56:30] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\EC_GOODS_PHONE_20260109_0001.json
+[2026-01-12 09:56:30] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 09:56:31] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 09:56:32] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 10:03:16] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 10:03:17] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 10:03:18] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 10:03:18] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/EC_GOODS_PHONE_20260109_0001.json -> C:\Users\Yaoqm\AppData\Local\Temp\EC_GOODS_PHONE_20260109_0001.json
+[2026-01-12 10:03:19] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\EC_GOODS_PHONE_20260109_0001.json
+[2026-01-12 10:03:19] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 10:03:20] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 10:03:21] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 10:03:22] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 10:03:22] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/EC_GOODS_PHONE_20260109_0001.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-12 10:03:23] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\EC_GOODS_PHONE_20260109_0001.metadata.json

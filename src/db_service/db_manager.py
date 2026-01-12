@@ -145,7 +145,7 @@ class DatabaseManager:
                     result = session.execute(text(sql))
                 
                 # 转换为字典列表
-                rows = [dict(row) for row in result]
+                rows = [dict(row._mapping) for row in result]
                 logger.debug(f"SQL查询完成，返回{len(rows)}条记录")
                 return rows
                 
@@ -196,7 +196,15 @@ class DatabaseManager:
                             for record in batch:
                                 try:
                                     # 过滤掉NULL值的字段（让数据库使用默认值）
-                                    non_null_record = {k: v for k, v in record.items() if v is not None}
+                                    # 并对字典/列表类型进行JSON序列化
+                                    import json
+                                    non_null_record = {}
+                                    for k, v in record.items():
+                                        if v is not None:
+                                            if isinstance(v, (dict, list)):
+                                                non_null_record[k] = json.dumps(v, ensure_ascii=False)
+                                            else:
+                                                non_null_record[k] = v
                                     
                                     if not non_null_record:
                                         # 如果所有字段都是NULL，跳过

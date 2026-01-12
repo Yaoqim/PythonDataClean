@@ -264,3 +264,44 @@
 [2026-01-09 14:09:16] [INFO] [src.cleaner.base_cleaner] CUSTOMER_DIALOG清洗完成：原始11条，清洗成功9条，成功率81.82%
 [2026-01-09 14:09:16] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：CUSTOMER_DIALOG
 [2026-01-09 14:09:16] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：CUSTOMER_DIALOG
+[2026-01-11 13:20:01] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-11 13:20:01] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始30条，清洗成功30条，成功率100.00%
+[2026-01-11 13:20:21] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-11 13:20:21] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始30条，清洗成功30条，成功率100.00%
+[2026-01-11 13:20:37] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-11 13:20:37] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始30条，清洗成功30条，成功率100.00%
+[2026-01-11 13:21:00] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-11 13:21:00] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始30条，清洗成功30条，成功率100.00%
+[2026-01-12 09:03:15] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-12 09:03:15] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始60条，清洗成功57条，成功率95.00%
+[2026-01-12 09:08:08] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-12 09:08:08] [WARNING] [src.cleaner.base_cleaner] 记录清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 09:08:08] [WARNING] [src.cleaner.base_cleaner] 记录清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 09:08:08] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始140条，清洗成功127条，成功率90.71%
+[2026-01-12 09:08:57] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-12 09:08:57] [WARNING] [src.cleaner.base_cleaner] 记录清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 09:08:57] [WARNING] [src.cleaner.base_cleaner] 记录清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 09:08:57] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始140条，清洗成功127条，成功率90.71%
+[2026-01-12 09:09:24] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-12 09:09:24] [WARNING] [src.cleaner.base_cleaner] 记录清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 09:09:24] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始97条，清洗成功90条，成功率92.78%
+[2026-01-12 09:09:41] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-12 09:09:42] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始97条，清洗成功91条，成功率93.81%
+[2026-01-12 09:23:02] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-12 09:23:02] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始97条，清洗成功91条，成功率93.81%
+[2026-01-12 09:48:52] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-12 09:48:53] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始3条，清洗成功1条，成功率33.33%
+[2026-01-12 09:49:08] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-12 09:49:08] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始3条，清洗成功1条，成功率33.33%
+[2026-01-12 09:49:20] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-12 09:49:20] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始3条，清洗成功1条，成功率33.33%
+[2026-01-12 09:49:31] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-12 09:49:31] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始1条，清洗成功1条，成功率100.00%
+[2026-01-12 09:49:45] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-12 09:49:45] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始1条，清洗成功1条，成功率100.00%
+[2026-01-12 09:49:46] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-12 09:49:46] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始3条，清洗成功2条，成功率66.67%
+[2026-01-12 09:49:46] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-12 09:49:47] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始3条，清洗成功2条，成功率66.67%
+[2026-01-12 10:03:23] [INFO] [src.cleaner.base_cleaner] 初始化清洗器：EC_GOODS_PHONE
+[2026-01-12 10:03:25] [INFO] [src.cleaner.base_cleaner] EC_GOODS_PHONE清洗完成：原始106条，清洗成功98条，成功率92.45%

@@ -11,3 +11,23 @@
 [2026-01-10 09:29:35] [INFO] [src.file_service.metadata_loader] 成功加载元数据：oss://letwx/ai_network_data/EC_GOODS_PHONE_20260109_0001.metadata.json
 [2026-01-10 09:33:47] [INFO] [src.file_service.metadata_loader] 成功加载元数据：oss://letwx/ai_network_data/EC_GOODS_PHONE_20260109_0001.metadata.json
 [2026-01-10 09:34:14] [INFO] [src.file_service.metadata_loader] 成功加载元数据：oss://letwx/ai_network_data/EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-11 13:20:01] [INFO] [src.file_service.metadata_loader] 成功加载元数据：data/temp/EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-11 13:20:21] [INFO] [src.file_service.metadata_loader] 成功加载元数据：data/temp/EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-11 13:20:37] [INFO] [src.file_service.metadata_loader] 成功加载元数据：data/temp/EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-11 13:21:00] [INFO] [src.file_service.metadata_loader] 成功加载元数据：data/temp/EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-12 09:03:15] [INFO] [src.file_service.metadata_loader] 成功加载元数据：data/temp/EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-12 09:08:08] [INFO] [src.file_service.metadata_loader] 成功加载元数据：data/temp/EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-12 09:08:57] [INFO] [src.file_service.metadata_loader] 成功加载元数据：data/temp/EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-12 09:09:24] [INFO] [src.file_service.metadata_loader] 成功加载元数据：data/temp/EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-12 09:09:41] [INFO] [src.file_service.metadata_loader] 成功加载元数据：data/temp/EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-12 09:23:02] [INFO] [src.file_service.metadata_loader] 成功加载元数据：data/temp/EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-12 09:48:52] [ERROR] [src.file_service.metadata_loader] 元数据缺失必需字段：{'file_size_mb', 'data_carrier_type', 'data_structure_type'}
+[2026-01-12 09:48:52] [ERROR] [src.file_service.metadata_loader] 元数据缺失必需字段：{'file_size_mb', 'data_carrier_type', 'data_structure_type'}
+[2026-01-12 09:49:07] [ERROR] [src.file_service.metadata_loader] 数据结构类型无效：structured，必须是{'半结构化', '结构化', '非结构化'}
+[2026-01-12 09:49:08] [ERROR] [src.file_service.metadata_loader] 数据结构类型无效：structured，必须是{'半结构化', '结构化', '非结构化'}
+[2026-01-12 09:49:19] [ERROR] [src.file_service.metadata_loader] 数据载体类型无效：file，必须是{'CSV', 'PDF', 'TXT', 'JSON', 'HTML', 'XML'}
+[2026-01-12 09:49:20] [ERROR] [src.file_service.metadata_loader] 数据载体类型无效：file，必须是{'CSV', 'PDF', 'TXT', 'JSON', 'HTML', 'XML'}
+[2026-01-12 09:49:31] [INFO] [src.file_service.metadata_loader] 成功加载元数据：data/temp/test_pass1.metadata.json
+[2026-01-12 09:49:45] [INFO] [src.file_service.metadata_loader] 成功加载元数据：data/temp/test_pass1.metadata.json
+[2026-01-12 09:49:46] [INFO] [src.file_service.metadata_loader] 成功加载元数据：data/temp/test_pass2.metadata.json
+[2026-01-12 10:03:23] [INFO] [src.file_service.metadata_loader] 成功加载元数据：oss://letwx/ai_network_data/EC_GOODS_PHONE_20260109_0001.metadata.json

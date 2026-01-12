@@ -91,8 +91,8 @@ def main():
                     'business_type': data.get('business_type_id'),
                     'original_count': summary.get('original_count', 0),
                     'cleaned_count': summary.get('cleaned_count', 0),
-                    'stored_count': result.get('storage_info', [{}])[0].get('inserted_count', 0) if result.get('storage_info') else 0,
-                    'table_name': result.get('storage_info', [{}])[0].get('table_name') if result.get('storage_info') else 'N/A',
+                    'stored_count': data.get('storage_info', [{}])[0].get('inserted_count', 0) if data.get('storage_info') else 0,
+                    'table_name': data.get('storage_info', [{}])[0].get('table_name') if data.get('storage_info') else 'N/A',
                     'errors': []
                 })
             else:

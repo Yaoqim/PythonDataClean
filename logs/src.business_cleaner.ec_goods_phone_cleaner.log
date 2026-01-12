@@ -51,3 +51,84 @@
 [2026-01-10 09:34:14] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：None
 [2026-01-10 09:34:14] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 价格超出范围：-999.0
 [2026-01-10 09:34:14] [INFO] [src.business_cleaner.ec_goods_phone_cleaner] 电商商品清洗完成：26/30，去重率：3.85%
+[2026-01-11 13:20:01] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：3.5万件
+[2026-01-11 13:20:01] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：12万
+[2026-01-11 13:20:21] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：3.5万件
+[2026-01-11 13:20:21] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：12万
+[2026-01-11 13:20:37] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：3.5万件
+[2026-01-11 13:20:37] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：12万
+[2026-01-11 13:21:00] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：3.5万件
+[2026-01-11 13:21:00] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：12万
+[2026-01-12 09:03:15] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：3.5万件
+[2026-01-12 09:03:15] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：12万
+[2026-01-12 09:03:15] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：1.2万
+[2026-01-12 09:03:15] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：5万
+[2026-01-12 09:03:15] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少product_id，跳过记录
+[2026-01-12 09:03:15] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 价格解析失败：Negotiable
+[2026-01-12 09:03:15] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：Negotiable
+[2026-01-12 09:03:15] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 价格解析失败：£45.00
+[2026-01-12 09:03:15] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：£45.00
+[2026-01-12 09:08:08] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少product_id，跳过记录
+[2026-01-12 09:08:08] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：Negotiable
+[2026-01-12 09:08:08] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：-100
+[2026-01-12 09:08:08] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：
+[2026-01-12 09:08:08] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：None
+[2026-01-12 09:08:08] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少product_id，跳过记录
+[2026-01-12 09:08:08] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：not a number
+[2026-01-12 09:08:08] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：One Hundred
+[2026-01-12 09:08:08] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：
+[2026-01-12 09:08:08] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：None
+[2026-01-12 09:08:08] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少product_id，跳过记录
+[2026-01-12 09:08:08] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：not a number
+[2026-01-12 09:08:08] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：One Hundred
+[2026-01-12 09:08:57] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少product_id，跳过记录
+[2026-01-12 09:08:57] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：Negotiable
+[2026-01-12 09:08:57] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：-100
+[2026-01-12 09:08:57] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：
+[2026-01-12 09:08:57] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：None
+[2026-01-12 09:08:57] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少product_id，跳过记录
+[2026-01-12 09:08:57] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：not a number
+[2026-01-12 09:08:57] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：One Hundred
+[2026-01-12 09:08:57] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：
+[2026-01-12 09:08:57] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：None
+[2026-01-12 09:08:57] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少product_id，跳过记录
+[2026-01-12 09:08:57] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：not a number
+[2026-01-12 09:08:57] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：One Hundred
+[2026-01-12 09:09:24] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少product_id，跳过记录
+[2026-01-12 09:09:24] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：Negotiable
+[2026-01-12 09:09:24] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：-100
+[2026-01-12 09:09:24] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：
+[2026-01-12 09:09:24] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：None
+[2026-01-12 09:09:24] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：not a number
+[2026-01-12 09:09:24] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：One Hundred
+[2026-01-12 09:09:41] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少product_id，跳过记录
+[2026-01-12 09:09:41] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：Negotiable
+[2026-01-12 09:09:42] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：-100
+[2026-01-12 09:09:42] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：
+[2026-01-12 09:09:42] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：None
+[2026-01-12 09:09:42] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：not a number
+[2026-01-12 09:09:42] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：One Hundred
+[2026-01-12 09:23:02] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少product_id，跳过记录
+[2026-01-12 09:23:02] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：Negotiable
+[2026-01-12 09:23:02] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：-100
+[2026-01-12 09:23:02] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：
+[2026-01-12 09:23:02] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：None
+[2026-01-12 09:23:02] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：not a number
+[2026-01-12 09:23:02] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 无效的价格：One Hundred
+[2026-01-12 09:48:52] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少关键字段(platform/title)且无法补充，跳过记录: PROD_TEST_001
+[2026-01-12 09:48:52] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少关键字段(platform/title)且无法补充，跳过记录: NEW_MISSING
+[2026-01-12 09:49:08] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少关键字段(platform/title)且无法补充，跳过记录: PROD_TEST_001
+[2026-01-12 09:49:08] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少关键字段(platform/title)且无法补充，跳过记录: NEW_MISSING
+[2026-01-12 09:49:20] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少关键字段(platform/title)且无法补充，跳过记录: PROD_TEST_001
+[2026-01-12 09:49:20] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少关键字段(platform/title)且无法补充，跳过记录: NEW_MISSING
+[2026-01-12 09:49:46] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少关键字段(platform/title)且无法补充，跳过记录: NEW_MISSING
+[2026-01-12 09:49:46] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少关键字段(platform/title)且无法补充，跳过记录: NEW_MISSING
+[2026-01-12 10:03:23] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少product_id，跳过记录
+[2026-01-12 10:03:23] [DEBUG] [src.business_cleaner.ec_goods_phone_cleaner] 销量解析失败：not a number
+[2026-01-12 10:03:23] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少关键字段(platform/title)且无法补充，跳过记录: PROD_098
+[2026-01-12 10:03:24] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少关键字段(platform/title)且无法补充，跳过记录: MISSING_ALL_001
+[2026-01-12 10:03:24] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少关键字段(platform/title)且无法补充，跳过记录: PROD_001
+[2026-01-12 10:03:24] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少关键字段(platform/title)且无法补充，跳过记录: PROD_002
+[2026-01-12 10:03:24] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少关键字段(platform/title)且无法补充，跳过记录: RECOVERABLE_PROD_001
+[2026-01-12 10:03:24] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少关键字段(platform/title)且无法补充，跳过记录: ABANDON_PROD_001
+[2026-01-12 10:03:25] [WARNING] [src.business_cleaner.ec_goods_phone_cleaner] 缺少关键字段(platform/title)且无法补充，跳过记录: PROD_001

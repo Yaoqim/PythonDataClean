@@ -1,12 +1,12 @@
 {
   "business_type_id": "EC_GOODS_PHONE",
   "data_structure_type": "结构化",
-  "file_size_mb": 0.01,
+  "file_size_mb": 0.0308,
   "data_carrier_type": "JSON",
-  "estimated_record_count": 30,
+  "estimated_record_count": 106,
   "crawl_date": "20260109",
-  "data_source": "京东商城",
-  "actual_record_count": 30,
+  "data_source": "多平台混合抓取",
+  "actual_record_count": 106,
   "crawl_tool": "generate_temp_data",
   "checksum": "mock_checksum_value"
 }

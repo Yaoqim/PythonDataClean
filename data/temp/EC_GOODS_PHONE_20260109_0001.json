@@ -14,7 +14,14 @@
     "comment_count": 5250,
     "is_official": 1,
     "listing_time": "2024-01-01 10:00:00",
-    "update_time": "2026-01-09T18:23:02.592096"
+    "update_time": "2026-01-09 18:23:02",
+    "spec_params": {
+      "cpu": "A17 Pro",
+      "ram": "8GB",
+      "storage": "256GB",
+      "screen": "6.7 inch"
+    },
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_002",
@@ -31,7 +38,13 @@
     "comment_count": 5300,
     "is_official": 1,
     "listing_time": "2024-01-01 10:00:00",
-    "update_time": "2026-01-09T18:23:02.592119"
+    "update_time": "2026-01-09 18:23:02",
+    "spec_params": {
+      "cpu": "A17 Pro",
+      "ram": "8GB",
+      "storage": "512GB"
+    },
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_003",
@@ -48,7 +61,13 @@
     "comment_count": 5350,
     "is_official": 1,
     "listing_time": "2024-01-01 10:00:00",
-    "update_time": "2026-01-09T18:23:02.592129"
+    "update_time": "2026-01-09 18:23:02",
+    "spec_params": {
+      "cpu": "A17 Pro",
+      "ram": "8GB",
+      "storage": "1TB"
+    },
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_004",
@@ -65,7 +84,12 @@
     "comment_count": 5400,
     "is_official": 1,
     "listing_time": "2024-01-01 10:00:00",
-    "update_time": "2026-01-09T18:23:02.592131"
+    "update_time": "2026-01-09 18:23:02",
+    "spec_params": {
+      "cpu": "A17 Pro",
+      "ram": "8GB"
+    },
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_005",
@@ -82,7 +106,11 @@
     "comment_count": 5450,
     "is_official": 1,
     "listing_time": "2024-01-01 10:00:00",
-    "update_time": "2026-01-09T18:23:02.592133"
+    "update_time": "2026-01-09 18:23:02",
+    "spec_params": {
+      "cpu": "A17 Pro"
+    },
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_006",
@@ -91,9 +119,18 @@
     "currency_code": "USD",
     "shop_name": "Amazon",
     "source_platform": "Amazon",
+    "brand": "Samsung",
+    "original_price": "1299.99",
     "rating": 4.5,
     "good_rate": 92.0,
-    "sales_volume": 8500
+    "sales_volume": 8500,
+    "comment_count": 1200,
+    "spec_params": {
+      "cpu": "Snapdragon 8 Gen 3",
+      "ram": "12GB",
+      "storage": "512GB"
+    },
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_007",
@@ -102,8 +139,18 @@
     "currency_code": "EUR",
     "shop_name": "Apple Store",
     "source_platform": "JD",
+    "brand": "Apple",
+    "original_price": "2499",
     "rating": 4.9,
-    "good_rate": 97.0
+    "good_rate": 97.0,
+    "sales_volume": 2000,
+    "comment_count": 500,
+    "spec_params": {
+      "cpu": "M3 Max",
+      "ram": "32GB",
+      "storage": "1TB"
+    },
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_008",
@@ -111,7 +158,17 @@
     "price": "3999",
     "currency_code": "CNY",
     "shop_name": "小米官方",
-    "source_platform": "Taobao"
+    "source_platform": "Taobao",
+    "brand": "Xiaomi",
+    "original_price": "4999",
+    "rating": 4.7,
+    "sales_volume": 50000,
+    "comment_count": 10000,
+    "spec_params": {
+      "cpu": "Snapdragon 8 Gen 3",
+      "ram": "16GB"
+    },
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_009",
@@ -119,7 +176,15 @@
     "price": "5999",
     "currency_code": "CNY",
     "shop_name": "Apple专卖店",
-    "source_platform": "JD"
+    "source_platform": "JD",
+    "brand": "Apple",
+    "original_price": "8999",
+    "sales_volume": 12000,
+    "spec_params": {
+      "cpu": "M2",
+      "storage": "256GB"
+    },
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_010",
@@ -127,7 +192,13 @@
     "price": "4999",
     "currency_code": "CNY",
     "shop_name": "华为官方",
-    "source_platform": "Taobao"
+    "source_platform": "Taobao",
+    "brand": "Huawei",
+    "sales_volume": 30000,
+    "spec_params": {
+      "cpu": "Kirin 9000S"
+    },
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_011",
@@ -136,7 +207,10 @@
     "currency_code": "CNY",
     "shop_name": "Apple",
     "source_platform": "JD",
-    "sales_volume": "3.5万件"
+    "brand": "Apple",
+    "sales_volume": "3.5万件",
+    "original_price": "2199",
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_012",
@@ -145,82 +219,104 @@
     "currency_code": "CNY",
     "shop_name": "Apple",
     "source_platform": "JD",
+    "brand": "Apple",
     "sales_volume": "12万+",
-    "good_rate": 98.5
+    "good_rate": 98.5,
+    "original_price": "3499",
+    "data_crawl_date": "2026-01-12"
   },
   {
-    "product_id": "",
+    "product_id": "PROD_013",
     "title": "OnePlus 12",
     "price": "4599",
     "currency_code": "CNY",
     "shop_name": "OnePlus",
-    "source_platform": "JD"
+    "source_platform": "JD",
+    "brand": "OnePlus",
+    "sales_volume": 10000,
+    "spec_params": {
+      "cpu": "Snapdragon 8 Gen 3",
+      "ram": "16GB",
+      "storage": "512GB"
+    },
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_014",
-    "title": "",
+    "title": "Redmi K70",
     "price": "3299",
     "currency_code": "CNY",
     "shop_name": "Xiaomi",
-    "source_platform": "JD"
+    "source_platform": "JD",
+    "brand": "Redmi",
+    "sales_volume": 20000,
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_015",
     "title": "vivo X100",
-    "price": null,
+    "price": "3999",
     "currency_code": "CNY",
     "shop_name": "vivo",
-    "source_platform": "JD"
+    "source_platform": "JD",
+    "brand": "vivo",
+    "sales_volume": 15000,
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_016",
     "title": "OPPO Find X7",
     "price": "4999",
     "currency_code": "CNY",
-    "shop_name": "",
-    "source_platform": "JD"
+    "shop_name": "OPPO",
+    "source_platform": "JD",
+    "brand": "OPPO",
+    "sales_volume": 12000,
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_017",
     "title": "Google Pixel 8",
     "price": "6299",
-    "currency_code": "",
+    "currency_code": "USD",
     "shop_name": "Google",
-    "source_platform": "JD"
+    "source_platform": "JD",
+    "brand": "Google",
+    "sales_volume": 5000,
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_018",
     "title": "Sony WH-1000XM5",
-    "price": "-999",
+    "price": "2499",
     "currency_code": "CNY",
     "shop_name": "Sony",
-    "source_platform": "JD"
+    "source_platform": "JD",
+    "brand": "Sony",
+    "sales_volume": 8000,
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_019",
     "title": "高端商务笔记本",
-    "price": "9999999",
+    "price": "8999",
     "currency_code": "CNY",
     "shop_name": "Dell",
-    "source_platform": "JD"
+    "source_platform": "JD",
+    "brand": "Dell",
+    "sales_volume": 3000,
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_020",
     "title": "JBL Flip 6",
     "price": "599",
-    "currency_code": "INVALID",
-    "shop_name": "JBL",
-    "source_platform": "JD"
-  },
-  {
-    "product_id": "PROD_001",
-    "title": "Apple iPhone 15 Pro Max",
-    "price": "8999",
     "currency_code": "CNY",
-    "shop_name": "官方店",
+    "shop_name": "JBL",
     "source_platform": "JD",
-    "rating": 4.8,
-    "update_time": "2026-01-08T18:23:02.592143"
+    "brand": "JBL",
+    "sales_volume": 10000,
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_021",
@@ -229,7 +325,10 @@
     "currency_code": "CNY",
     "shop_name": "Beats",
     "source_platform": "JD",
-    "rating": 4.7
+    "brand": "Beats",
+    "rating": 4.7,
+    "sales_volume": 4000,
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_022",
@@ -238,27 +337,40 @@
     "currency_code": "CNY",
     "shop_name": "ASUS",
     "source_platform": "JD",
-    "listing_time": "2024-01-01",
-    "update_time": "3天前"
+    "listing_time": "2024-01-01 12:00:00",
+    "update_time": "2026-01-09 10:00:00",
+    "brand": "ASUS",
+    "sales_volume": 6000,
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_023",
-    "title": "Lenovo ThinkPad",
-    "price": "5999",
+    "title": "Lenovo ThinkPad X1",
+    "price": "9999",
     "currency_code": "CNY",
     "shop_name": "Lenovo",
     "source_platform": "JD",
-    "good_rate": 120,
-    "rating": 9.5
+    "good_rate": 98.0,
+    "rating": 4.9,
+    "brand": "Lenovo",
+    "sales_volume": 2000,
+    "spec_params": {
+      "cpu": "i7-1355U",
+      "ram": "32GB"
+    },
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_024",
-    "title": "HP Pavilion",
+    "title": "HP Pavilion 15",
     "price": "5499",
     "currency_code": "CNY",
     "shop_name": "HP",
     "source_platform": "JD",
-    "spec_params": "{\"processor\": \"Intel i7\", \"ram\": \"16GB\", \"storage\": \"512GB SSD\"}"
+    "brand": "HP",
+    "sales_volume": 7000,
+    "spec_params": "{\"processor\": \"Intel i7\", \"ram\": \"16GB\", \"storage\": \"512GB SSD\"}",
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_025",
@@ -273,8 +385,9 @@
     "sales_volume": 7500,
     "comment_count": 3250,
     "is_official": 1,
-    "listing_time": "2025-12-15T18:23:02.592155",
-    "update_time": "2026-01-09T18:23:02.592157"
+    "listing_time": "2025-12-15 18:23:02",
+    "update_time": "2026-01-09 18:23:02",
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_026",
@@ -289,8 +402,9 @@
     "sales_volume": 7600,
     "comment_count": 3300,
     "is_official": 0,
-    "listing_time": "2025-12-14T18:23:02.592161",
-    "update_time": "2026-01-09T18:23:02.592163"
+    "listing_time": "2025-12-14 18:23:02",
+    "update_time": "2026-01-09 18:23:02",
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_027",
@@ -305,8 +419,9 @@
     "sales_volume": 7700,
     "comment_count": 3350,
     "is_official": 1,
-    "listing_time": "2025-12-13T18:23:02.592166",
-    "update_time": "2026-01-09T18:23:02.592167"
+    "listing_time": "2025-12-13 18:23:02",
+    "update_time": "2026-01-09 18:23:02",
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_028",
@@ -321,8 +436,9 @@
     "sales_volume": 7800,
     "comment_count": 3400,
     "is_official": 0,
-    "listing_time": "2025-12-12T18:23:02.592169",
-    "update_time": "2026-01-09T18:23:02.592171"
+    "listing_time": "2025-12-12 18:23:02",
+    "update_time": "2026-01-09 18:23:02",
+    "data_crawl_date": "2026-01-12"
   },
   {
     "product_id": "PROD_029",
@@ -337,7 +453,739 @@
     "sales_volume": 7900,
     "comment_count": 3450,
     "is_official": 1,
-    "listing_time": "2025-12-11T18:23:02.592173",
-    "update_time": "2026-01-09T18:23:02.592175"
+    "listing_time": "2025-12-11 18:23:02",
+    "update_time": "2026-01-09 18:23:02",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_030",
+    "title": "第30个电子产品 - 测试用",
+    "price": "9000",
+    "currency_code": "CNY",
+    "shop_name": "店铺30",
+    "source_platform": "JD",
+    "brand": "品牌30",
+    "rating": 5.0,
+    "good_rate": 100,
+    "sales_volume": 8000,
+    "comment_count": 3500,
+    "is_official": 1,
+    "listing_time": "2025-12-10 18:23:02",
+    "update_time": "2026-01-09 18:23:02",
+    "spec_params": {
+      "type": "test",
+      "value": "max"
+    },
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_031",
+    "title": "Nike Air Max 270 运动鞋",
+    "price": "¥899.00",
+    "currency_code": "CNY",
+    "shop_name": "Nike官方旗舰店",
+    "source_platform": "Tmall",
+    "brand": "Nike",
+    "category": "鞋类",
+    "sales_volume": "5000+",
+    "spec_params": {
+      "size": "42",
+      "color": "Black"
+    },
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_032",
+    "title": "【官方正品】Uniqlo 优衣库 男装 连帽卫衣",
+    "price": "199",
+    "currency_code": "CNY",
+    "shop_name": "优衣库官方旗舰店",
+    "source_platform": "Taobao",
+    "brand": "Uniqlo",
+    "category": "服装",
+    "sales_volume": "1.2万",
+    "is_official": 1,
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_033",
+    "title": "Dyson 戴森 V15 无线吸尘器 🌪️ 强力清洁",
+    "price": "4999",
+    "currency_code": "CNY",
+    "shop_name": "Dyson官方旗舰店",
+    "source_platform": "JD",
+    "brand": "Dyson",
+    "category": "家电",
+    "spec_params": "{\"power\": \"230AW\", \"weight\": \"3kg\"}",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_034",
+    "title": "L'Oreal 欧莱雅 复颜玻尿酸水光充盈导入面霜",
+    "price": "¥299.00",
+    "currency_code": "CNY",
+    "shop_name": "欧莱雅京东自营店",
+    "source_platform": "JD",
+    "brand": "L'Oreal",
+    "category": "美妆",
+    "sales_volume": "10w+",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_035",
+    "title": "可口可乐 零度 330ml*24罐 整箱装",
+    "price": "45.9",
+    "currency_code": "CNY",
+    "shop_name": "可口可乐旗舰店",
+    "source_platform": "Pinduoduo",
+    "brand": "Coca-Cola",
+    "category": "食品",
+    "sales_volume": "5万+",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_036",
+    "title": "<b>Big Sale</b> Awesome Smart Watch with Heart Rate Monitor",
+    "price": "59.99",
+    "currency_code": "USD",
+    "shop_name": "Global Gadgets",
+    "source_platform": "Amazon",
+    "rating": "4.2/5",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_037",
+    "title": "Cool Summer Hat 🧢 🤠 Best for Beach!",
+    "price": "15.5",
+    "currency_code": "USD",
+    "shop_name": "Fashion Store",
+    "source_platform": "eBay",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "",
+    "title": "Invalid Record - No ID",
+    "price": "100",
+    "currency_code": "CNY",
+    "source_platform": "JD",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_039",
+    "title": "Invalid Price Record",
+    "price": "Negotiable",
+    "currency_code": "CNY",
+    "source_platform": "Taobao",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_040",
+    "title": "This is a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long title that should be truncated by the cleaner to ensure it fits into the database column which usually has a limit of 200 characters or so.",
+    "price": "99",
+    "currency_code": "CNY",
+    "source_platform": "JD",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_041",
+    "title": "British Tea Pot Set",
+    "price": "£45.00",
+    "currency_code": "GBP",
+    "shop_name": "London Shop",
+    "source_platform": "Amazon.co.uk",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_042",
+    "title": "Japanese Sake Set",
+    "price": "¥5000",
+    "currency_code": "JPY",
+    "shop_name": "Tokyo Store",
+    "source_platform": "Amazon.jp",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_043",
+    "title": "Sony WH-1000XM4 Noise Cancelling Headphones",
+    "price": "1899",
+    "currency_code": "CNY",
+    "shop_name": "Sony Store",
+    "source_platform": "JD",
+    "update_time": "2小时前",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_044",
+    "title": "Mechanical Keyboard Blue Switch",
+    "price": "299",
+    "currency_code": "CNY",
+    "shop_name": "Keyboards Hub",
+    "source_platform": "Taobao",
+    "update_time": "昨天",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_046",
+    "title": "Adidas Ultraboost Light",
+    "price": "1299",
+    "currency_code": "CNY",
+    "shop_name": "Adidas官方旗舰店",
+    "source_platform": "Tmall",
+    "brand": "Adidas",
+    "sales_volume": "3000+",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_047",
+    "title": "Sony Alpha 7 IV (A7M4)",
+    "price": "16999",
+    "currency_code": "CNY",
+    "shop_name": "Sony京东自营店",
+    "source_platform": "JD",
+    "spec_params": {
+      "sensor": "Full Frame",
+      "megapixels": "33MP"
+    },
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_048",
+    "title": "Kindle Paperwhite 5",
+    "price": "$139.99",
+    "currency_code": "USD",
+    "shop_name": "Amazon US",
+    "source_platform": "Amazon",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_049",
+    "title": "Starbucks Espresso Roast Beans 250g",
+    "price": "108",
+    "currency_code": "CNY",
+    "shop_name": "星巴克旗舰店",
+    "source_platform": "Taobao",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_050",
+    "title": "Nintendo Switch OLED Model",
+    "price": "2099",
+    "currency_code": "CNY",
+    "shop_name": "任天堂官方店",
+    "source_platform": "JD",
+    "brand": "Nintendo",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_051",
+    "title": "Messy Spec Params Product",
+    "price": "50",
+    "currency_code": "CNY",
+    "source_platform": "JD",
+    "spec_params": "Invalid JSON String {key:value}",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_052",
+    "title": "Zero Price Item",
+    "price": "0",
+    "currency_code": "CNY",
+    "source_platform": "Taobao",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_053",
+    "title": "Negative Price Item",
+    "price": "-100",
+    "currency_code": "CNY",
+    "source_platform": "JD",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_054",
+    "title": "Perfect Rating Item",
+    "price": "100",
+    "currency_code": "CNY",
+    "source_platform": "JD",
+    "rating": "10/10",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_055",
+    "title": "Good Rate String Item",
+    "price": "100",
+    "currency_code": "CNY",
+    "source_platform": "Taobao",
+    "good_rate": "99%",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_056",
+    "title": "Special Shop Name Item",
+    "price": "100",
+    "currency_code": "CNY",
+    "shop_name": "Luxury & Fashion !!! @ 2026",
+    "source_platform": "JD",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_057",
+    "title": "Strange Time Format Item",
+    "price": "100",
+    "currency_code": "CNY",
+    "source_platform": "JD",
+    "listing_time": "Jan 1, 2024",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_059",
+    "title": "Amazon Echo Dot",
+    "price": "$49.99",
+    "currency_code": "USD",
+    "shop_name": "Amazon",
+    "source_platform": "Amazon",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_060",
+    "title": "Suning Appliance",
+    "price": "2999",
+    "currency_code": "CNY",
+    "shop_name": "Suning Shop",
+    "source_platform": "Suning",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_061",
+    "title": "SK-II 神仙水 230ml 护肤精华露",
+    "price": "1590",
+    "currency_code": "CNY",
+    "shop_name": "SK-II官方旗舰店",
+    "source_platform": "Tmall",
+    "brand": "SK-II",
+    "sales_volume": "10万+",
+    "category": "Cosmetics",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_062",
+    "title": "Estee Lauder 雅诗兰黛 小棕瓶眼霜 15ml",
+    "price": "560",
+    "currency_code": "CNY",
+    "shop_name": "雅诗兰黛官方旗舰店",
+    "source_platform": "JD",
+    "brand": "Estee Lauder",
+    "sales_volume": "5w+",
+    "category": "Cosmetics",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_063",
+    "title": "L'Oreal 欧莱雅 男士洗面奶 100ml",
+    "price": "39.9",
+    "currency_code": "CNY",
+    "shop_name": "欧莱雅旗舰店",
+    "source_platform": "Taobao",
+    "sales_volume": "100万+",
+    "category": "Cosmetics",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_064",
+    "title": "Lancome 兰蔻 清滢柔肤水 大粉水 400ml",
+    "price": "450",
+    "currency_code": "CNY",
+    "shop_name": "兰蔻官方旗舰店",
+    "source_platform": "JD",
+    "update_time": "3天前",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_065",
+    "title": "三只松鼠 每日坚果 750g 礼盒",
+    "price": "129",
+    "currency_code": "CNY",
+    "shop_name": "三只松鼠旗舰店",
+    "source_platform": "Tmall",
+    "sales_volume": "50w+",
+    "category": "Food",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_066",
+    "title": "伊利 金典纯牛奶 250ml*12盒/箱",
+    "price": "65.5",
+    "currency_code": "CNY",
+    "shop_name": "伊利官方店",
+    "source_platform": "JD",
+    "sales_volume": "200万+",
+    "category": "Food",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_067",
+    "title": "Starbucks 星巴克 派克市场烘焙咖啡豆 250g",
+    "price": "98",
+    "currency_code": "CNY",
+    "shop_name": "星巴克旗舰店",
+    "source_platform": "Taobao",
+    "update_time": "刚刚",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_068",
+    "title": "可口可乐 汽水 330ml*24罐/箱 整箱装",
+    "price": "48.9",
+    "currency_code": "CNY",
+    "shop_name": "可口可乐自营店",
+    "source_platform": "JD",
+    "sales_volume": "100万+",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_069",
+    "title": "Uniqlo 优衣库 男装 HEATTECH 圆领T恤",
+    "price": "99",
+    "currency_code": "CNY",
+    "shop_name": "优衣库官方旗舰店",
+    "source_platform": "Tmall",
+    "brand": "Uniqlo",
+    "category": "Clothing",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_070",
+    "title": "Nike Air Force 1 '07 男子运动鞋",
+    "price": "749",
+    "currency_code": "CNY",
+    "shop_name": "Nike官方店",
+    "source_platform": "JD",
+    "brand": "Nike",
+    "sales_volume": "20w+",
+    "category": "Clothing",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_071",
+    "title": "Lululemon Align 高腰紧身裤",
+    "price": "850",
+    "currency_code": "CNY",
+    "shop_name": "Lululemon旗舰店",
+    "source_platform": "Tmall",
+    "brand": "Lululemon",
+    "update_time": "10分钟前",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_072",
+    "title": "Canada Goose 加拿大鹅 男士羽绒服",
+    "price": "12500",
+    "currency_code": "CNY",
+    "shop_name": "Canada Goose旗舰店",
+    "source_platform": "JD",
+    "brand": "Canada Goose",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_073",
+    "title": "Dyson 戴森 V15 无绳吸尘器",
+    "price": "4999",
+    "currency_code": "CNY",
+    "shop_name": "Dyson官方店",
+    "source_platform": "JD",
+    "brand": "Dyson",
+    "category": "Household",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_074",
+    "title": "Xiaomi 小米 空气净化器 4 Pro",
+    "price": "1299",
+    "currency_code": "CNY",
+    "shop_name": "小米旗舰店",
+    "source_platform": "Taobao",
+    "brand": "Xiaomi",
+    "category": "Household",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_075",
+    "title": "Philips 飞利浦 电动牙刷 HX9911",
+    "price": "1099",
+    "currency_code": "CNY",
+    "shop_name": "飞利浦旗舰店",
+    "source_platform": "JD",
+    "brand": "Philips",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_076",
+    "title": "Tefal 特福 不粘锅 28cm",
+    "price": "299",
+    "currency_code": "CNY",
+    "shop_name": "Tefal Store",
+    "source_platform": "Amazon",
+    "update_time": "前天",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_077",
+    "title": "LEGO 乐高 10305 雄狮骑士的城堡",
+    "price": "3399",
+    "currency_code": "CNY",
+    "shop_name": "乐高官方店",
+    "source_platform": "JD",
+    "brand": "LEGO",
+    "category": "Toys",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_078",
+    "title": "Nintendo 任天堂 Switch 游戏 塞尔达传说 王国之泪",
+    "price": "320",
+    "currency_code": "CNY",
+    "shop_name": "任天堂店",
+    "source_platform": "Taobao",
+    "brand": "Nintendo",
+    "sales_volume": "10万+",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_079",
+    "title": "DJI 大疆 Mini 4 Pro 无人机",
+    "price": "4788",
+    "currency_code": "CNY",
+    "shop_name": "DJI旗舰店",
+    "source_platform": "JD",
+    "brand": "DJI",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_080",
+    "title": "Hermes 爱马仕 Birkin 30 手提包",
+    "price": "120000",
+    "currency_code": "CNY",
+    "shop_name": "Luxury Collector",
+    "source_platform": "Platform_X",
+    "update_time": "2025-12-25",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_081",
+    "title": "Empty Price Item",
+    "price": "",
+    "currency_code": "CNY",
+    "source_platform": "JD",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_082",
+    "title": "Null Price Item",
+    "price": null,
+    "currency_code": "CNY",
+    "source_platform": "JD",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_083",
+    "title": "Extremely Long Title AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "price": "100",
+    "currency_code": "CNY",
+    "source_platform": "JD",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_085",
+    "title": "Mixed Lang 混合语言 Test 日本語 おにぎり",
+    "price": "¥500",
+    "currency_code": "JPY",
+    "source_platform": "Amazon.jp",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_086",
+    "title": "Unicode Symbols ⚡🔥💎🚀",
+    "price": "888",
+    "currency_code": "CNY",
+    "shop_name": "Unicode Shop",
+    "source_platform": "Taobao",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_087",
+    "title": "Bad Sales Volume",
+    "price": "100",
+    "sales_volume": "Not a number",
+    "source_platform": "JD",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_088",
+    "title": "Negative Rating",
+    "price": "100",
+    "rating": "-1",
+    "source_platform": "JD",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_089",
+    "title": "Too High Rating",
+    "price": "100",
+    "rating": "100",
+    "source_platform": "JD",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_090",
+    "title": "Special Characters in Title <>\"'&%",
+    "price": "100",
+    "source_platform": "JD",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_091",
+    "title": "Item with Many Tags 【官方】【保真】【新品】【爆款】",
+    "price": "1999",
+    "source_platform": "Tmall",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_092",
+    "title": "Item with HTML <b>Bold Title</b>",
+    "price": "99",
+    "source_platform": "JD",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_093",
+    "title": "Item with Thai Currency",
+    "price": "฿500",
+    "currency_code": "THB",
+    "source_platform": "Shopee",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_094",
+    "title": "Item with Vietnamese Currency",
+    "price": "₫200000",
+    "currency_code": "VND",
+    "source_platform": "Lazada",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_095",
+    "title": "Item with Korean Currency",
+    "price": "₩50000",
+    "currency_code": "KRW",
+    "source_platform": "Coupang",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_096",
+    "title": "Item with Price in Words",
+    "price": "One Hundred",
+    "currency_code": "USD",
+    "source_platform": "Amazon",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_097",
+    "title": "Item with Missing Shop Name",
+    "price": "100",
+    "shop_name": null,
+    "source_platform": "JD",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_098",
+    "title": "Item with Missing Platform",
+    "price": "100",
+    "source_platform": null,
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_099",
+    "title": "Item with Huge Sales",
+    "price": "1",
+    "sales_volume": "9999999999",
+    "source_platform": "JD",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_100",
+    "title": "Final Test Item 100",
+    "price": "100",
+    "currency_code": "CNY",
+    "shop_name": "Test Shop",
+    "source_platform": "Test Platform",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "MISSING_ALL_001",
+    "title": "",
+    "source_platform": "",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PRICE_MISSING_NEW_001",
+    "title": "New Item with Missing Price",
+    "source_platform": "JD",
+    "price": null,
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_001",
+    "title": "",
+    "source_platform": "JD",
+    "price": "8000",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "PROD_002",
+    "title": "Apple iPhone 15 Pro Max",
+    "source_platform": "",
+    "price": "8200",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "product_id": "RECOVERABLE_PROD_001",
+    "title": "iPhone 15 Pro Max (Full)",
+    "price": "8999",
+    "source_platform": "JD",
+    "shop_name": "Apple Store",
+    "data_crawl_date": "2026-01-12",
+    "update_time": "2026-01-11 10:00:00"
+  },
+  {
+    "product_id": "RECOVERABLE_PROD_001",
+    "title": "",
+    "price": "8999",
+    "source_platform": "JD",
+    "data_crawl_date": "2026-01-12",
+    "update_time": "2026-01-12 11:00:00"
+  },
+  {
+    "product_id": "ABANDON_PROD_001",
+    "title": "",
+    "source_platform": "",
+    "price": "100",
+    "data_crawl_date": "2026-01-12",
+    "update_time": "2026-01-12 12:00:00"
+  },
+  {
+    "product_id": "LOW_CONF_PRICE_001",
+    "title": "New Item No Price",
+    "source_platform": "Taobao",
+    "price": null,
+    "data_crawl_date": "2026-01-12",
+    "update_time": "2026-01-12 13:00:00"
+  },
+  {
+    "product_id": "PROD_001",
+    "title": "Apple iPhone 15 Pro Max",
+    "source_platform": "",
+    "price": "8000",
+    "data_crawl_date": "2026-01-12",
+    "update_time": "2026-01-12 14:00:00"
   }
 ]

@@ -55,6 +55,31 @@ class BaseCleaner(ABC):
         """
         pass
     
+    def _evaluate_accuracy(
+        self,
+        reliability: int,
+        consistency: int,
+        validation: int,
+        desc: str = ""
+    ) -> Tuple[int, str]:
+        """
+        评估字段准确度
+        
+        评估公式: score = (reliability * 0.4) + (consistency * 0.3) + (validation * 0.3)
+        
+        Args:
+            reliability: 来源权威性 (0-100)
+            consistency: 逻辑一致性 (0-100)
+            validation: 外部验证匹配 (0-100)
+            desc: 补充描述
+            
+        Returns:
+            (最终得分, 评估详情字符串)
+        """
+        score = int((reliability * 0.4) + (consistency * 0.3) + (validation * 0.3))
+        info = f"来源:{reliability}({desc}), 一致性:{consistency}, 验证:{validation}, 总分:{score}"
+        return score, info
+
     def clean(
         self,
         records: List[Dict[str, Any]],

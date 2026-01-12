@@ -29,70 +29,79 @@ CREATE_TABLES_SQL = """
 -- ============================================================
 -- 1. 电商商品信息表
 -- ============================================================
-CREATE TABLE IF NOT EXISTS ec_product_info (
-  product_id VARCHAR(100) PRIMARY KEY COMMENT '商品唯一标识符',
+DROP TABLE IF EXISTS ec_product_info_tag;
+DROP TABLE IF EXISTS ec_product_info;
+CREATE TABLE ec_product_info (
+  -- 基础主键
+  `id` BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '自增主键',
   
-  -- 业务核心字段(5个)
-  title VARCHAR(200) NOT NULL COMMENT '商品标题',
-  price DECIMAL(12, 2) NOT NULL COMMENT '现价/售价(已转RMB)',
-  currency_code VARCHAR(3) NOT NULL DEFAULT 'CNY' COMMENT '原始货币代码',
-  shop_name VARCHAR(100) NOT NULL DEFAULT '未知' COMMENT '店铺名称',
-  source_platform VARCHAR(20) NOT NULL COMMENT '来源平台(jd/taobao/suning/pdd)',
+  -- 枢纽字段
+  `knowledge_id` BIGINT COMMENT '全局唯一知识ID (关联自knowledge_index表)',
+  `product_id` VARCHAR(100) NOT NULL COMMENT '商品原始唯一标识符',
+  `source_platform` VARCHAR(20) NOT NULL COMMENT '来源平台(jd/taobao/suning/pdd)',
   
-  -- 业务核心字段准确度评估(title)
-  title_anal INT CHECK(title_anal >= 0 AND title_anal <= 100) COMMENT '商品标题准确度评分(0-100)',
-  title_anal_info VARCHAR(500) COMMENT '标题准确度评估说明',
+  -- 业务核心字段(五个核心字段)
+  `title` VARCHAR(200) NOT NULL COMMENT '商品标题',
+  `price` DECIMAL(12, 2) NOT NULL COMMENT '现价/售价(已转RMB)',
+  `currency_code` VARCHAR(3) NOT NULL DEFAULT 'CNY' COMMENT '原始货币代码',
+  `shop_name` VARCHAR(100) NOT NULL DEFAULT '未知' COMMENT '店铺名称',
   
-  -- 业务核心字段准确度评估(price)
-  price_anal INT CHECK(price_anal >= 0 AND price_anal <= 100) COMMENT '价格准确度评分(0-100)',
-  price_anal_info VARCHAR(500) COMMENT '价格准确度评估说明',
+  -- 业务核心字段准确度评估（title）
+  `title_anal` INT CHECK(title_anal >= 0 AND title_anal <= 100) COMMENT '商品标题准确度评分(0-100)',
+  `title_anal_info` VARCHAR(500) COMMENT '商品标题准确度评估详细说明(含来源、一致性、验证详情)',
   
-  -- 业务核心字段准确度评估(currency_code)
-  currency_code_anal INT CHECK(currency_code_anal >= 0 AND currency_code_anal <= 100) COMMENT '货币代码准确度评分(0-100)',
-  currency_code_anal_info VARCHAR(500) COMMENT '货币代码准确度评估说明',
+  -- 业务核心字段准确度评估（price）
+  `price_anal` INT CHECK(price_anal >= 0 AND price_anal <= 100) COMMENT '价格准确度评分(0-100)',
+  `price_anal_info` VARCHAR(500) COMMENT '价格准确度评估详细说明(含来源、一致性、验证详情)',
   
-  -- 业务核心字段准确度评估(shop_name)
-  shop_name_anal INT CHECK(shop_name_anal >= 0 AND shop_name_anal <= 100) COMMENT '店铺名准确度评分(0-100)',
-  shop_name_anal_info VARCHAR(500) COMMENT '店铺名准确度评估说明',
+  -- 业务核心字段准确度评估（currency_code）
+  `currency_code_anal` INT CHECK(currency_code_anal >= 0 AND currency_code_anal <= 100) COMMENT '货币代码准确度评分(0-100)',
+  `currency_code_anal_info` VARCHAR(500) COMMENT '货币代码准确度评估详细说明(含来源、一致性、验证详情)',
   
-  -- 业务核心字段准确度评估(source_platform)
-  source_platform_anal INT CHECK(source_platform_anal >= 0 AND source_platform_anal <= 100) COMMENT '来源平台准确度评分(0-100)',
-  source_platform_anal_info VARCHAR(500) COMMENT '来源平台准确度评估说明',
+  -- 业务核心字段准确度评估（shop_name）
+  `shop_name_anal` INT CHECK(shop_name_anal >= 0 AND shop_name_anal <= 100) COMMENT '店铺名准确度评分(0-100)',
+  `shop_name_anal_info` VARCHAR(500) COMMENT '店铺名准确度评估详细说明(含来源、一致性、验证详情)',
+  
+  -- 业务核心字段准确度评估（source_platform）
+  `source_platform_anal` INT CHECK(source_platform_anal >= 0 AND source_platform_anal <= 100) COMMENT '来源平台准确度评分(0-100)',
+  `source_platform_anal_info` VARCHAR(500) COMMENT '来源平台准确度评估详细说明(含来源、一致性、验证详情)',
   
   -- 其他业务字段
-  original_price DECIMAL(12, 2) COMMENT '原价/市场指导价',
-  brand VARCHAR(100) COMMENT '品牌名称(标准化)',
-  spec_params JSON COMMENT '规格参数(JSON格式)',
-  sales_volume INT COMMENT '销量(整数)',
-  comment_count INT COMMENT '评论数',
-  rating DECIMAL(2, 1) COMMENT '平均评分(0-5)',
-  good_rate DECIMAL(5, 2) COMMENT '好评率(0-100%)',
-  shop_id VARCHAR(100) COMMENT '店铺唯一标识',
-  is_official TINYINT(1) DEFAULT 0 COMMENT '是否官方旗舰店(0/1)',
-  listing_time DATETIME COMMENT '商品上架时间',
-  update_time DATETIME COMMENT '商品更新时间',
+  `original_price` DECIMAL(12, 2) COMMENT '原价/市场指导价',
+  `brand` VARCHAR(100) COMMENT '品牌名称(标准化)',
+  `spec_params` JSON COMMENT '规格参数(JSON格式)',
+  `sales_volume` BIGINT COMMENT '销量(整数)',
+  `comment_count` BIGINT COMMENT '评论数',
+  `rating` DECIMAL(2, 1) COMMENT '平均评分(0-5)',
+  `good_rate` DECIMAL(5, 2) COMMENT '好评率(0-100%)',
+  `shop_id` VARCHAR(100) COMMENT '店铺唯一标识',
+  `is_official` TINYINT(1) DEFAULT 0 COMMENT '是否官方旗舰店(0/1)',
+  `listing_time` DATETIME COMMENT '商品上架时间',
+  `update_time` DATETIME COMMENT '商品更新时间',
   
   -- 数据清洗标记字段
-  is_cleaned TINYINT(1) DEFAULT 0 COMMENT '是否已清洗(0/1)',
-  abnormal_tag VARCHAR(100) DEFAULT 'normal' COMMENT '异常标记',
-  spec_completeness TINYINT(3) COMMENT '规格完整度评分(0-100%)',
-  data_source VARCHAR(50) COMMENT '数据来源追踪',
-  clean_time DATETIME COMMENT '清洗完成时间',
+  `is_cleaned` TINYINT(1) DEFAULT 0 COMMENT '是否已清洗(0/1)',
+  `abnormal_tag` VARCHAR(100) DEFAULT 'normal' COMMENT '异常标记',
+  `spec_completeness` TINYINT(3) COMMENT '规格完整度评分(0-100%)',
+  `data_source` VARCHAR(50) COMMENT '数据来源追踪',
+  `clean_time` DATETIME COMMENT '清洗完成时间',
   
   -- 价格转换信息
-  price_currency_info JSON COMMENT '完整价格转换信息',
-  is_price_converted TINYINT(1) DEFAULT 0 COMMENT '是否已进行汇率转换',
+  `price_currency_info` JSON COMMENT '完整价格转换信息',
+  `is_price_converted` TINYINT(1) DEFAULT 0 COMMENT '是否已进行汇率转换',
   
   -- 公共必填字段
-  data_crawl_date DATE NOT NULL COMMENT '数据抓取日期',
-  last_updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后更新时间',
-  is_valid TINYINT(1) DEFAULT 1 COMMENT '记录有效性标记',
-  quality_score DECIMAL(5, 2) COMMENT '数据质量评分',
-  data_status VARCHAR(20) DEFAULT 'normal' COMMENT '数据处理状态',
-  version INT DEFAULT 1 COMMENT '数据版本号',
-  tag_confidence TINYINT(3) COMMENT '标签置信度',
+  `data_crawl_date` DATE NOT NULL COMMENT '数据抓取日期',
+  `last_updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
+  `is_valid` TINYINT(1) DEFAULT 1 COMMENT '记录有效性标记',
+  `quality_score` DECIMAL(5, 2) COMMENT '数据质量评分',
+  `data_status` VARCHAR(20) DEFAULT 'normal' COMMENT '数据处理状态',
+  `version` INT DEFAULT 1 COMMENT '数据版本号',
+  `tag_confidence` TINYINT(3) COMMENT '标签置信度',
   
   -- 索引
+  UNIQUE KEY idx_platform_product (source_platform, product_id),
+  KEY idx_knowledge_id (knowledge_id),
   KEY idx_brand_platform_time (brand, source_platform, listing_time),
   KEY idx_product_id_time (product_id, update_time),
   KEY idx_shop_name (shop_name),
@@ -111,26 +120,38 @@ CREATE TABLE IF NOT EXISTS ec_product_info (
 -- 2. 电商商品标签表
 -- ============================================================
 CREATE TABLE IF NOT EXISTS ec_product_info_tag (
-  product_id VARCHAR(100) NOT NULL COMMENT '商品ID',
-  tag_value VARCHAR(100) NOT NULL COMMENT '标签值',
-  tag_confidence INT NOT NULL COMMENT '标签置信度(0-100)',
-  created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '标签创建时间',
-  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '标签更新时间',
+  -- 主键
+  `id` BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '自增主键',
   
-  PRIMARY KEY (product_id, tag_value),
-  FOREIGN KEY (product_id) REFERENCES ec_product_info(product_id) ON DELETE CASCADE ON UPDATE CASCADE,
-  KEY idx_tag_value (tag_value),
-  KEY idx_confidence (tag_confidence)
+  -- 关联字段
+  `product_record_id` BIGINT NOT NULL COMMENT '对应ec_product_info表的id',
+  `knowledge_id` BIGINT COMMENT '全局唯一知识ID',
+  `tag_value` VARCHAR(100) NOT NULL COMMENT '标签值',
+  
+  -- 标签置信度
+  `tag_confidence` INT NOT NULL COMMENT '标签置信度(0-100)',
+  
+  -- 元数据
+  `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '标签创建时间',
+  `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '标签更新时间',
+  
+  -- 索引和外键
+  FOREIGN KEY (`product_record_id`) REFERENCES `ec_product_info`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  KEY idx_knowledge_id (knowledge_id),
+  KEY idx_tag_value (`tag_value`),
+  KEY idx_confidence (`tag_confidence`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='电商商品标签表';
 
 -- ============================================================
 -- 3. 电商商品评论表(按年分片 2024)
 -- ============================================================
-CREATE TABLE IF NOT EXISTS ec_comment_2024 (
-    -- 主键
-    comment_id VARCHAR(100) PRIMARY KEY COMMENT '评论全局唯一ID',
+DROP TABLE IF EXISTS ec_comment_2024;
+CREATE TABLE ec_comment_2024 (
+    -- 基础主键
+    `id` BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '自增主键',
     
     -- 核心业务字段及其准确度评估
+    comment_id VARCHAR(100) NOT NULL COMMENT '评论全局唯一ID',
     product_id VARCHAR(50) NOT NULL COMMENT '关联商品ID',
     product_id_anal INT CHECK(product_id_anal >= 0 AND product_id_anal <= 100) COMMENT '商品ID准确度评分(0-100)',
     product_id_anal_info VARCHAR(500) COMMENT '商品ID准确度评估说明',
@@ -185,6 +206,7 @@ CREATE TABLE IF NOT EXISTS ec_comment_2024 (
     version INT DEFAULT 1 COMMENT '数据版本号',
     
     -- 索引
+    UNIQUE KEY idx_comment_id (comment_id),
     KEY idx_product_id (product_id),
     KEY idx_user_name (user_name),
     KEY idx_comment_level (comment_level),
@@ -201,10 +223,14 @@ CREATE TABLE IF NOT EXISTS ec_comment_2024 (
 -- ============================================================
 -- 4. 客户对话表
 -- ============================================================
-CREATE TABLE IF NOT EXISTS customer_conversation (
-    conversation_id VARCHAR(100) PRIMARY KEY COMMENT '对话唯一ID',
+DROP TABLE IF EXISTS customer_conversation_tag;
+DROP TABLE IF EXISTS customer_conversation;
+CREATE TABLE customer_conversation (
+    -- 基础主键
+    `id` BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '自增主键',
     
     -- 核心业务字段
+    conversation_id VARCHAR(100) NOT NULL COMMENT '对话唯一ID',
     customer_name VARCHAR(50) NOT NULL COMMENT '客户名称(脱敏)',
     customer_name_anal INT CHECK(customer_name_anal >= 0 AND customer_name_anal <= 100) COMMENT '客户名准确度评分(0-100)',
     customer_name_anal_info VARCHAR(500) COMMENT '客户名准确度评估说明',
@@ -253,6 +279,7 @@ CREATE TABLE IF NOT EXISTS customer_conversation (
     version INT DEFAULT 1 COMMENT '数据版本号',
     
     -- 索引
+    UNIQUE KEY idx_conversation_id (conversation_id),
     KEY idx_customer_name (customer_name),
     KEY idx_user_id (user_id),
     KEY idx_agent_name (agent_name),
@@ -270,15 +297,20 @@ CREATE TABLE IF NOT EXISTS customer_conversation (
 -- ============================================================
 -- 5. 客户对话标签表
 -- ============================================================
-CREATE TABLE IF NOT EXISTS customer_conversation_tag (
-    conversation_id VARCHAR(100) NOT NULL COMMENT '对话ID',
-    tag_value VARCHAR(100) NOT NULL COMMENT '标签值',
-    tag_confidence INT NOT NULL COMMENT '标签置信度(0-100)',
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '标签创建时间',
-    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '标签更新时间',
+CREATE TABLE customer_conversation_tag (
+    -- 主键
+    `id` BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '自增主键',
     
-    PRIMARY KEY (conversation_id, tag_value),
-    FOREIGN KEY (conversation_id) REFERENCES customer_conversation(conversation_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    -- 关联字段
+    `conversation_record_id` BIGINT NOT NULL COMMENT '对应customer_conversation表的id',
+    `conversation_id` VARCHAR(100) NOT NULL COMMENT '对话ID',
+    `tag_value` VARCHAR(100) NOT NULL COMMENT '标签值',
+    `tag_confidence` INT NOT NULL COMMENT '标签置信度(0-100)',
+    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '标签创建时间',
+    `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '标签更新时间',
+    
+    FOREIGN KEY (conversation_record_id) REFERENCES customer_conversation(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    KEY idx_conversation_id (conversation_id),
     KEY idx_tag_value (tag_value),
     KEY idx_confidence (tag_confidence)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='客户对话标签表';

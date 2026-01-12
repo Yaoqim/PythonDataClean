@@ -241,12 +241,13 @@ class CleaningOrchestrator:
                         'business_type_id': business_type_id,
                         'table_name': storage_info.get('table_name'),
                         'inserted_count': storage_info.get('inserted_count'),
+                        'failed_count': storage_info.get('failed_count'),
                         'database': storage_info.get('database'),
                         'key_fields': storage_info.get('key_fields'),
                         'time_range': storage_info.get('time_range'),
                         'insert_time': storage_info.get('insert_time')
                     }
-                ] if storage_info.get('success') else []
+                ]
             }
         }
     
