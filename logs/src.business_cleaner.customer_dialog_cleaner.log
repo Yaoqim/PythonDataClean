@@ -2,3 +2,280 @@
 [2026-01-09 10:48:24] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：1/1，去重率：0.00%
 [2026-01-09 10:54:00] [INFO] [src.business_cleaner.customer_dialog_cleaner] 开始清洗客户对话数据，记录数：1
 [2026-01-09 10:54:00] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：1/1，去重率：0.00%
+[2026-01-12 11:19:34] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'str' object has no attribute 'date'
+[2026-01-12 11:19:34] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'str' object has no attribute 'date'
+[2026-01-12 11:19:34] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'str' object has no attribute 'date'
+[2026-01-12 11:19:34] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'str' object has no attribute 'date'
+[2026-01-12 11:19:34] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'str' object has no attribute 'date'
+[2026-01-12 11:19:34] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'str' object has no attribute 'date'
+[2026-01-12 11:19:34] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'str' object has no attribute 'date'
+[2026-01-12 11:19:34] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'str' object has no attribute 'date'
+[2026-01-12 11:19:34] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'str' object has no attribute 'date'
+[2026-01-12 11:19:34] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 0 条消息记录，源会话数：9
+[2026-01-12 11:19:58] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 11:20:33] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 11:22:09] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 11:22:32] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 11:22:57] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 11:23:24] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 11:23:29] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 11:55:02] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 12:01:02] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 14:15:04] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 14:25:24] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 17:06:30] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：cannot access local variable 'merchant_name' where it is not associated with a value
+[2026-01-12 17:06:30] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：cannot access local variable 'merchant_name' where it is not associated with a value
+[2026-01-12 17:06:30] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：cannot access local variable 'merchant_name' where it is not associated with a value
+[2026-01-12 17:06:30] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：cannot access local variable 'merchant_name' where it is not associated with a value
+[2026-01-12 17:06:30] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：cannot access local variable 'merchant_name' where it is not associated with a value
+[2026-01-12 17:06:30] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：cannot access local variable 'merchant_name' where it is not associated with a value
+[2026-01-12 17:06:30] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：cannot access local variable 'merchant_name' where it is not associated with a value
+[2026-01-12 17:06:30] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：cannot access local variable 'merchant_name' where it is not associated with a value
+[2026-01-12 17:06:30] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：cannot access local variable 'merchant_name' where it is not associated with a value
+[2026-01-12 17:06:30] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 0 条消息记录，源会话数：9
+[2026-01-12 17:17:38] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0001 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0001 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0003 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0003 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0003 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0003 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0003 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0003 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0003 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0003 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0003 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0004 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0004 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0004 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0004 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0004 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0004 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0004 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0004 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0004 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0005 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0005 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0005 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0005 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0005 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0005 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0005 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0005 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0005 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0007 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0007 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0007 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0007 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0007 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0007 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0007 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0007 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0009 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0009 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0009 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0009 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0009 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0009 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0009 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0009 消息为空或格式错误
+[2026-01-12 17:17:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0009 消息为空或格式错误
+[2026-01-12 17:17:41] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 0 条消息记录，源会话数：97
+[2026-01-12 17:18:30] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_5918 查询到客户信息: {'user_id': 'USER_5918', 'customer_name': '蜜**熊'}
+[2026-01-12 17:18:30] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0001 的 user_id 与数据库匹配，客户名: 蜜**熊
+[2026-01-12 17:18:30] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_9494 查询到客户信息: {'user_id': 'USER_9494', 'customer_name': '**'}
+[2026-01-12 17:18:30] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:18:30] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_8680 查询到客户信息: {'user_id': 'USER_8680', 'customer_name': '1*********6'}
+[2026-01-12 17:18:30] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0003 的 user_id 与数据库匹配，客户名: 1*********6
+[2026-01-12 17:18:31] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_9494 查询到客户信息: {'user_id': 'USER_9494', 'customer_name': '**'}
+[2026-01-12 17:18:31] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0004 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:18:31] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_1345 查询到客户信息: {'user_id': 'USER_1345', 'customer_name': '萌***福'}
+[2026-01-12 17:18:31] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0005 的 user_id 与数据库匹配，客户名: 萌***福
+[2026-01-12 17:18:31] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_4634 查询到客户信息: {'user_id': 'USER_4634', 'customer_name': 'A***e'}
+[2026-01-12 17:18:31] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 的 user_id 与数据库匹配，客户名: A***e
+[2026-01-12 17:18:32] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_5041 查询到客户信息: {'user_id': 'USER_5041', 'customer_name': '依**你'}
+[2026-01-12 17:18:32] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0007 的 user_id 与数据库匹配，客户名: 依**你
+[2026-01-12 17:18:32] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_9494 查询到客户信息: {'user_id': 'USER_9494', 'customer_name': '**'}
+[2026-01-12 17:18:32] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:18:32] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_4932 查询到客户信息: {'user_id': 'USER_4932', 'customer_name': '遇***********5'}
+[2026-01-12 17:18:32] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0009 的 user_id 与数据库匹配，客户名: 遇***********5
+[2026-01-12 17:18:32] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 17:18:36] [INFO] [src.business_cleaner.customer_dialog_cleaner] 检测到扁平数据结构，正在重构会话...
+[2026-01-12 17:18:36] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_5918 查询到客户信息: {'user_id': 'USER_5918', 'customer_name': '蜜**熊'}
+[2026-01-12 17:18:36] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0001 的 user_id 与数据库匹配，客户名: 蜜**熊
+[2026-01-12 17:18:36] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_9494 查询到客户信息: {'user_id': 'USER_9494', 'customer_name': '**'}
+[2026-01-12 17:18:36] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:18:37] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_8680 查询到客户信息: {'user_id': 'USER_8680', 'customer_name': '1*********6'}
+[2026-01-12 17:18:37] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0003 的 user_id 与数据库匹配，客户名: 1*********6
+[2026-01-12 17:18:37] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_9494 查询到客户信息: {'user_id': 'USER_9494', 'customer_name': '**'}
+[2026-01-12 17:18:37] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0004 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:18:37] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_1345 查询到客户信息: {'user_id': 'USER_1345', 'customer_name': '萌***福'}
+[2026-01-12 17:18:37] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0005 的 user_id 与数据库匹配，客户名: 萌***福
+[2026-01-12 17:18:38] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_4634 查询到客户信息: {'user_id': 'USER_4634', 'customer_name': 'A***e'}
+[2026-01-12 17:18:38] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 的 user_id 与数据库匹配，客户名: A***e
+[2026-01-12 17:18:38] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_5041 查询到客户信息: {'user_id': 'USER_5041', 'customer_name': '依**你'}
+[2026-01-12 17:18:38] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0007 的 user_id 与数据库匹配，客户名: 依**你
+[2026-01-12 17:18:38] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_9494 查询到客户信息: {'user_id': 'USER_9494', 'customer_name': '**'}
+[2026-01-12 17:18:38] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:18:39] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_4932 查询到客户信息: {'user_id': 'USER_4932', 'customer_name': '遇***********5'}
+[2026-01-12 17:18:39] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0009 的 user_id 与数据库匹配，客户名: 遇***********5
+[2026-01-12 17:18:39] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 17:25:10] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_5918 查询到客户信息: {'user_id': 'USER_5918', 'customer_name': '蜜**熊'}
+[2026-01-12 17:25:10] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0001 的 user_id 与数据库匹配，客户名: 蜜**熊
+[2026-01-12 17:25:10] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_9494 查询到客户信息: {'user_id': 'USER_9494', 'customer_name': '**'}
+[2026-01-12 17:25:10] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:25:10] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_8680 查询到客户信息: {'user_id': 'USER_8680', 'customer_name': '1*********6'}
+[2026-01-12 17:25:10] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0003 的 user_id 与数据库匹配，客户名: 1*********6
+[2026-01-12 17:25:11] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_9494 查询到客户信息: {'user_id': 'USER_9494', 'customer_name': '**'}
+[2026-01-12 17:25:11] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0004 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:25:11] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_1345 查询到客户信息: {'user_id': 'USER_1345', 'customer_name': '萌***福'}
+[2026-01-12 17:25:11] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0005 的 user_id 与数据库匹配，客户名: 萌***福
+[2026-01-12 17:25:11] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_4634 查询到客户信息: {'user_id': 'USER_4634', 'customer_name': 'A***e'}
+[2026-01-12 17:25:11] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 的 user_id 与数据库匹配，客户名: A***e
+[2026-01-12 17:25:12] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_5041 查询到客户信息: {'user_id': 'USER_5041', 'customer_name': '依**你'}
+[2026-01-12 17:25:12] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0007 的 user_id 与数据库匹配，客户名: 依**你
+[2026-01-12 17:25:12] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_9494 查询到客户信息: {'user_id': 'USER_9494', 'customer_name': '**'}
+[2026-01-12 17:25:12] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:25:12] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_4932 查询到客户信息: {'user_id': 'USER_4932', 'customer_name': '遇***********5'}
+[2026-01-12 17:25:12] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0009 的 user_id 与数据库匹配，客户名: 遇***********5
+[2026-01-12 17:25:12] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 17:25:19] [INFO] [src.business_cleaner.customer_dialog_cleaner] 检测到扁平数据结构，正在重构会话...
+[2026-01-12 17:25:20] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_5918 查询到客户信息: {'user_id': 'USER_5918', 'customer_name': '蜜**熊'}
+[2026-01-12 17:25:20] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0001 的 user_id 与数据库匹配，客户名: 蜜**熊
+[2026-01-12 17:25:20] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_9494 查询到客户信息: {'user_id': 'USER_9494', 'customer_name': '**'}
+[2026-01-12 17:25:20] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:25:20] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_8680 查询到客户信息: {'user_id': 'USER_8680', 'customer_name': '1*********6'}
+[2026-01-12 17:25:20] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0003 的 user_id 与数据库匹配，客户名: 1*********6
+[2026-01-12 17:25:21] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_9494 查询到客户信息: {'user_id': 'USER_9494', 'customer_name': '**'}
+[2026-01-12 17:25:21] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0004 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:25:21] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_1345 查询到客户信息: {'user_id': 'USER_1345', 'customer_name': '萌***福'}
+[2026-01-12 17:25:21] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0005 的 user_id 与数据库匹配，客户名: 萌***福
+[2026-01-12 17:25:21] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_4634 查询到客户信息: {'user_id': 'USER_4634', 'customer_name': 'A***e'}
+[2026-01-12 17:25:21] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 的 user_id 与数据库匹配，客户名: A***e
+[2026-01-12 17:25:22] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_5041 查询到客户信息: {'user_id': 'USER_5041', 'customer_name': '依**你'}
+[2026-01-12 17:25:22] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0007 的 user_id 与数据库匹配，客户名: 依**你
+[2026-01-12 17:25:22] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_9494 查询到客户信息: {'user_id': 'USER_9494', 'customer_name': '**'}
+[2026-01-12 17:25:22] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:25:22] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过 user_id USER_4932 查询到客户信息: {'user_id': 'USER_4932', 'customer_name': '遇***********5'}
+[2026-01-12 17:25:22] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0009 的 user_id 与数据库匹配，客户名: 遇***********5
+[2026-01-12 17:25:22] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 17:35:56] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 17:36:03] [INFO] [src.business_cleaner.customer_dialog_cleaner] 检测到扁平数据结构，正在重构会话...
+[2026-01-12 17:36:03] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:03] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:04] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:04] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:04] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:05] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:05] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:05] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:06] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:06] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 0 条消息记录，源会话数：9
+[2026-01-12 17:36:30] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '蜜**熊' 关联到历史 user_id: b45d17d711ca12e1
+[2026-01-12 17:36:30] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0001 的 user_id 与数据库匹配，客户名: 蜜**熊
+[2026-01-12 17:36:30] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '**' 关联到历史 user_id: 514faf5a71b4f0f6
+[2026-01-12 17:36:30] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:36:30] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '1*********6' 关联到历史 user_id: 005e67bd2fd6e84e
+[2026-01-12 17:36:30] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0003 的 user_id 与数据库匹配，客户名: 1*********6
+[2026-01-12 17:36:31] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '**' 关联到历史 user_id: 514faf5a71b4f0f6
+[2026-01-12 17:36:31] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0004 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:36:31] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '萌***福' 关联到历史 user_id: 89d0e4a284e868b9
+[2026-01-12 17:36:31] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0005 的 user_id 与数据库匹配，客户名: 萌***福
+[2026-01-12 17:36:32] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 'A***e' 关联到历史 user_id: e5a7c8e5419bb3f3
+[2026-01-12 17:36:32] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 的 user_id 与数据库匹配，客户名: A***e
+[2026-01-12 17:36:32] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '依**你' 关联到历史 user_id: 7dd410c660499e21
+[2026-01-12 17:36:32] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0007 的 user_id 与数据库匹配，客户名: 依**你
+[2026-01-12 17:36:32] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '**' 关联到历史 user_id: 514faf5a71b4f0f6
+[2026-01-12 17:36:32] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:36:33] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '遇***********5' 关联到历史 user_id: 7a3242637aa0aa70
+[2026-01-12 17:36:33] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0009 的 user_id 与数据库匹配，客户名: 遇***********5
+[2026-01-12 17:36:33] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 17:36:40] [INFO] [src.business_cleaner.customer_dialog_cleaner] 检测到扁平数据结构，正在重构会话...
+[2026-01-12 17:36:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:41] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:42] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:42] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:43] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:43] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:43] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:44] [WARNING] [src.business_cleaner.customer_dialog_cleaner] 会话清洗失败：'NoneType' object has no attribute 'strip'
+[2026-01-12 17:36:44] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 0 条消息记录，源会话数：9
+[2026-01-12 17:37:09] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '蜜**熊' 关联到历史 user_id: b45d17d711ca12e1
+[2026-01-12 17:37:09] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0001 的 user_id 与数据库匹配，客户名: 蜜**熊
+[2026-01-12 17:37:10] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '**' 关联到历史 user_id: 514faf5a71b4f0f6
+[2026-01-12 17:37:10] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0002 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:37:10] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '1*********6' 关联到历史 user_id: 005e67bd2fd6e84e
+[2026-01-12 17:37:10] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0003 的 user_id 与数据库匹配，客户名: 1*********6
+[2026-01-12 17:37:11] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '**' 关联到历史 user_id: 514faf5a71b4f0f6
+[2026-01-12 17:37:11] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0004 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:37:11] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '萌***福' 关联到历史 user_id: 89d0e4a284e868b9
+[2026-01-12 17:37:11] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0005 的 user_id 与数据库匹配，客户名: 萌***福
+[2026-01-12 17:37:11] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 'A***e' 关联到历史 user_id: e5a7c8e5419bb3f3
+[2026-01-12 17:37:11] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0006 的 user_id 与数据库匹配，客户名: A***e
+[2026-01-12 17:37:12] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '依**你' 关联到历史 user_id: 7dd410c660499e21
+[2026-01-12 17:37:12] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0007 的 user_id 与数据库匹配，客户名: 依**你
+[2026-01-12 17:37:12] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '**' 关联到历史 user_id: 514faf5a71b4f0f6
+[2026-01-12 17:37:12] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0008 的 user_id 与数据库匹配，客户名: **
+[2026-01-12 17:37:12] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 通过客户名称 '遇***********5' 关联到历史 user_id: 7a3242637aa0aa70
+[2026-01-12 17:37:12] [DEBUG] [src.business_cleaner.customer_dialog_cleaner] 会话 PDD_SIM_20260107_0009 的 user_id 与数据库匹配，客户名: 遇***********5
+[2026-01-12 17:37:12] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 17:37:20] [INFO] [src.business_cleaner.customer_dialog_cleaner] 检测到扁平数据结构，正在重构会话...
+[2026-01-12 17:37:23] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 27 条消息记录，源会话数：9
+[2026-01-12 17:49:43] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 17:49:51] [INFO] [src.business_cleaner.customer_dialog_cleaner] 检测到扁平数据结构，正在重构会话...
+[2026-01-12 17:49:53] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 27 条消息记录，源会话数：9
+[2026-01-12 17:57:22] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 97 条消息记录，源会话数：9
+[2026-01-12 17:57:31] [INFO] [src.business_cleaner.customer_dialog_cleaner] 检测到扁平数据结构，正在重构会话...
+[2026-01-12 17:57:33] [INFO] [src.business_cleaner.customer_dialog_cleaner] 客户对话清洗完成：产生 27 条消息记录，源会话数：9

@@ -144,3 +144,173 @@
 [2026-01-12 10:03:22] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
 [2026-01-12 10:03:22] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/EC_GOODS_PHONE_20260109_0001.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\EC_GOODS_PHONE_20260109_0001.metadata.json
 [2026-01-12 10:03:23] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\EC_GOODS_PHONE_20260109_0001.metadata.json
+[2026-01-12 17:14:42] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:14:42] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：CUSTOMER_DIALOG_SIM_20260112_0001.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:14:43] [ERROR] [src.file_service.aliyun_client] 文件下载失败：CUSTOMER_DIALOG_SIM_20260112_0001.json，错误：{'status': 404, 'x-oss-request-id': '6964BB831A228235339FF370', 'details': {'Code': 'NoSuchKey', 'Message': 'The specified key does not exist.', 'RequestId': '6964BB831A228235339FF370', 'HostId': 'letwx.oss-cn-shanghai.aliyuncs.com', 'Key': 'CUSTOMER_DIALOG_SIM_20260112_0001.json', 'EC': '0026-00000001', 'RecommendDoc': 'https://api.aliyun.com/troubleshoot?q=0026-00000001'}}
+[2026-01-12 17:14:44] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:14:44] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：CUSTOMER_DIALOG_TEST.xlsx -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:14:45] [ERROR] [src.file_service.aliyun_client] 文件下载失败：CUSTOMER_DIALOG_TEST.xlsx，错误：{'status': 404, 'x-oss-request-id': '6964BB844C586D3433F1A94E', 'details': {'Code': 'NoSuchKey', 'Message': 'The specified key does not exist.', 'RequestId': '6964BB844C586D3433F1A94E', 'HostId': 'letwx.oss-cn-shanghai.aliyuncs.com', 'Key': 'CUSTOMER_DIALOG_TEST.xlsx', 'EC': '0026-00000001', 'RecommendDoc': 'https://api.aliyun.com/troubleshoot?q=0026-00000001'}}
+[2026-01-12 17:15:30] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:15:31] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:16:13] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:16:14] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:23:30] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:23:31] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:23:48] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:23:49] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:24:04] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:24:14] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:24:22] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:25:03] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:25:04] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:25:05] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:25:06] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:25:07] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:25:07] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:25:08] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:25:08] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:25:08] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:25:09] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:25:15] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:25:16] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:25:17] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:25:17] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_TEST.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:25:18] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:25:18] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:25:18] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_TEST.xlsx -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:25:19] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:35:39] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:35:40] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:35:41] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:35:42] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:35:43] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:35:43] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:35:46] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:35:47] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:35:48] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:35:49] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:35:50] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:35:50] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:35:51] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:35:52] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:35:52] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:35:53] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:35:58] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:35:59] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:36:00] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:36:00] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_TEST.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:36:01] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:36:02] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:36:02] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_TEST.xlsx -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:36:03] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:36:23] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:36:24] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:36:25] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:36:26] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:36:27] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:36:27] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:36:28] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:36:28] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:36:28] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:36:29] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:36:36] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:36:37] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:36:38] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:36:38] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_TEST.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:36:39] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:36:39] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:36:39] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_TEST.xlsx -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:36:40] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:37:03] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:37:04] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:37:05] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:37:06] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:37:07] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:37:07] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:37:08] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:37:08] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:37:08] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:37:09] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:37:15] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:37:16] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:37:17] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:37:17] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_TEST.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:37:18] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:37:18] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:37:18] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_TEST.xlsx -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:37:19] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:49:35] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:49:36] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:49:37] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:49:38] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:49:38] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:49:38] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:49:39] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:49:40] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:49:40] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:49:41] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:49:46] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:49:47] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:49:48] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:49:48] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_TEST.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:49:49] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:49:50] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:49:50] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_TEST.xlsx -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:49:51] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:56:05] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:06] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:07] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:08] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:09] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:09] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:56:10] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:56:10] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:11] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:14] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:15] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:16] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:17] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:18] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:18] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:56:19] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:56:20] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:20] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:21] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:21] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_TEST.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:56:22] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:56:51] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:52] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:53] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:54] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:55] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:55] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:56:56] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:56:56] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:58] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:59] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:56:59] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_TEST.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:57:00] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:57:13] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:57:14] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:57:15] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:57:16] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:57:17] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:57:17] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:57:18] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:57:19] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:57:19] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:57:20] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:57:24] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:57:25] [INFO] [src.file_service.aliyun_client] 文件删除成功：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:57:25] [INFO] [src.file_service.aliyun_client] 文件删除成功：ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.metadata.json
+[2026-01-12 17:57:25] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:57:27] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:57:28] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:57:28] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_TEST.metadata.json -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:57:29] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.metadata.json
+[2026-01-12 17:57:29] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:57:29] [INFO] [src.file_service.aliyun_client] 从OSS下载文件：ai_network_data/CUSTOMER_DIALOG_TEST.xlsx -> C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:57:30] [INFO] [src.file_service.aliyun_client] 文件下载成功：C:\Users\Yaoqm\AppData\Local\Temp\CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:57:34] [INFO] [src.file_service.aliyun_client] 阿里云OSS客户端初始化成功，Bucket: letwx
+[2026-01-12 17:57:35] [INFO] [src.file_service.aliyun_client] 文件删除成功：ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:57:35] [INFO] [src.file_service.aliyun_client] 文件删除成功：ai_network_data/CUSTOMER_DIALOG_TEST.metadata.json

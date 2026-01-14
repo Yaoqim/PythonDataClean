@@ -30,6 +30,24 @@ class ECCommentCleaner:
     4. 可选的情感分析
     """
     
+    # 表头映射
+    HEADER_MAPPING = {
+        '评论ID': 'comment_id',
+        'comment_id': 'comment_id',
+        '商品ID': 'product_id',
+        'product_id': 'product_id',
+        '用户ID': 'user_id',
+        'user_id': 'user_id',
+        '内容': 'content',
+        'content': 'content',
+        '评分': 'rating',
+        'rating': 'rating',
+        '时间': 'create_time',
+        'create_time': 'create_time',
+        '有用数': 'helpful_count',
+        'helpful_count': 'helpful_count'
+    }
+    
     MAX_COMMENT_LEN = 1000
     
     @staticmethod

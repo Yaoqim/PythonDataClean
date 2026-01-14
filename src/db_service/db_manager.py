@@ -144,10 +144,14 @@ class DatabaseManager:
                 else:
                     result = session.execute(text(sql))
                 
-                # 转换为字典列表
-                rows = [dict(row._mapping) for row in result]
-                logger.debug(f"SQL查询完成，返回{len(rows)}条记录")
-                return rows
+                # 只有当结果集有数据返回时才进行转换
+                if result.returns_rows:
+                    rows = [dict(row._mapping) for row in result]
+                    logger.debug(f"SQL查询完成，返回{len(rows)}条记录")
+                    return rows
+                else:
+                    # 对于 INSERT/UPDATE/DELETE 等，返回受影响的行数或空列表
+                    return []
                 
         except Exception as e:
             logger.error(f"SQL执行失败：{sql}，错误：{e}")

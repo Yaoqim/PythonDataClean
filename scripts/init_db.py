@@ -27,6 +27,20 @@ logger = get_logger(__name__)
 
 CREATE_TABLES_SQL = """
 -- ============================================================
+-- 0. 已处理文件记录表 (用于防重校验)
+-- ============================================================
+CREATE TABLE IF NOT EXISTS processed_files (
+  `id` BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '自增主键',
+  `file_hash` VARCHAR(64) NOT NULL UNIQUE COMMENT '文件MD5哈希值，用于防重校验',
+  `file_path` VARCHAR(500) NOT NULL COMMENT '原始文件路径 (OSS路径或本地路径)',
+  `business_type` VARCHAR(50) COMMENT '业务类型标识 (如 CUSTOMER_DIALOG)',
+  `process_time` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '处理完成时间',
+  `status` VARCHAR(20) DEFAULT 'success' COMMENT '处理状态 (success/failed/processing)',
+  `row_count` INT DEFAULT 0 COMMENT '该文件成功处理的数据行数',
+  KEY idx_file_hash (file_hash)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='已处理文件记录表(防重与溯源基础)';
+
+-- ============================================================
 -- 1. 电商商品信息表
 -- ============================================================
 DROP TABLE IF EXISTS ec_product_info_tag;
@@ -85,6 +99,7 @@ CREATE TABLE ec_product_info (
   `spec_completeness` TINYINT(3) COMMENT '规格完整度评分(0-100%)',
   `data_source` VARCHAR(50) COMMENT '数据来源追踪',
   `clean_time` DATETIME COMMENT '清洗完成时间',
+  `source_file` VARCHAR(500) COMMENT '原始数据来源文件路径 (用于数据溯源)',
   
   -- 价格转换信息
   `price_currency_info` JSON COMMENT '完整价格转换信息',
@@ -182,6 +197,7 @@ CREATE TABLE ec_comment_2024 (
     
     comment_id_anal INT CHECK(comment_id_anal >= 0 AND comment_id_anal <= 100) COMMENT '评论ID准确度评分(0-100)',
     comment_id_anal_info VARCHAR(500) COMMENT '评论ID准确度评估说明',
+    `source_file` VARCHAR(500) COMMENT '原始数据来源文件路径 (用于数据溯源)',
     
     -- 补充字段
     is_verified INT DEFAULT 0 CHECK(is_verified IN (0, 1)) COMMENT '是否认证购买(0=否,1=是)',
@@ -226,73 +242,74 @@ CREATE TABLE ec_comment_2024 (
 DROP TABLE IF EXISTS customer_conversation_tag;
 DROP TABLE IF EXISTS customer_conversation;
 CREATE TABLE customer_conversation (
-    -- 基础主键
+    -- 主键与枢纽字段
     `id` BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '自增主键',
+    `knowledge_id` BIGINT UNIQUE COMMENT '全局唯一知识ID',
+    `conversation_id` VARCHAR(100) NOT NULL COMMENT '对话全局唯一ID',
     
-    -- 核心业务字段
-    conversation_id VARCHAR(100) NOT NULL COMMENT '对话唯一ID',
-    customer_name VARCHAR(50) NOT NULL COMMENT '客户名称(脱敏)',
-    customer_name_anal INT CHECK(customer_name_anal >= 0 AND customer_name_anal <= 100) COMMENT '客户名准确度评分(0-100)',
-    customer_name_anal_info VARCHAR(500) COMMENT '客户名准确度评估说明',
+    -- 核心业务字段及其准确度评估
+    `user_id` VARCHAR(100) NOT NULL COMMENT '客户唯一标识（脱敏）',
     
-    agent_name VARCHAR(30) COMMENT '客服名称',
-    agent_name_anal INT CHECK(agent_name_anal >= 0 AND agent_name_anal <= 100) COMMENT '客服名准确度评分(0-100)',
-    agent_name_anal_info VARCHAR(500) COMMENT '客服名准确度评估说明',
+    `merchant_name` VARCHAR(100) NOT NULL COMMENT '商家名称',
+    `merchant_name_anal` INT DEFAULT 100 COMMENT '商家名称准确度评分',
+    `merchant_name_anal_info` VARCHAR(500) COMMENT '商家名称评估说明',
     
-    message_type VARCHAR(50) NOT NULL COMMENT '消息类型(客户消息/客服回复/系统消息/转移通知/其他)',
-    message_type_anal INT CHECK(message_type_anal >= 0 AND message_type_anal <= 100) COMMENT '消息类型准确度评分(0-100)',
-    message_type_anal_info VARCHAR(500) COMMENT '消息类型准确度评估说明',
+    `customer_name` VARCHAR(50) NOT NULL COMMENT '客户名称或昵称',
+    `customer_name_anal` INT CHECK(customer_name_anal >= 0 AND customer_name_anal <= 100) COMMENT '客户名称准确度评分(0-100)',
+    `customer_name_anal_info` VARCHAR(500) COMMENT '客户名称准确度评估说明',
     
-    message_content LONGTEXT NOT NULL COMMENT '消息内容(清洁后≤5000字)',
-    message_content_anal INT CHECK(message_content_anal >= 0 AND message_content_anal <= 100) COMMENT '消息内容准确度评分(0-100)',
-    message_content_anal_info VARCHAR(500) COMMENT '消息内容准确度评估说明',
+    `agent_name` VARCHAR(50) NOT NULL COMMENT '客服代表名称',
+    `agent_name_anal` INT CHECK(agent_name_anal >= 0 AND agent_name_anal <= 100) COMMENT '客服名称准确度评分(0-100)',
+    `agent_name_anal_info` VARCHAR(500) COMMENT '客服名称准确度评估说明',
+    `order_id` VARCHAR(100) COMMENT '关联订单号 (用于身份识别辅助)',
+    `source_file` VARCHAR(500) COMMENT '原始数据来源文件路径 (用于数据溯源)',
     
-    message_time DATETIME NOT NULL COMMENT '消息时间(YYYY-MM-DD HH:MM:SS)',
-    message_time_anal INT CHECK(message_time_anal >= 0 AND message_time_anal <= 100) COMMENT '消息时间准确度评分(0-100)',
-    message_time_anal_info VARCHAR(500) COMMENT '消息时间准确度评估说明',
+    `product_name` VARCHAR(200) COMMENT '涉及商品名称',
     
-    platform VARCHAR(50) NOT NULL COMMENT '平台(微信/淘宝/企业QQ/钉钉/客服热线/邮件/其他)',
-    platform_anal INT CHECK(platform_anal >= 0 AND platform_anal <= 100) COMMENT '平台准确度评分(0-100)',
-    platform_anal_info VARCHAR(500) COMMENT '平台准确度评估说明',
+    `message_type` VARCHAR(50) NOT NULL COMMENT '消息类型(客户消息/客服回复/系统消息/转移通知/其他)',
+    `message_type_anal` INT CHECK(message_type_anal >= 0 AND message_type_anal <= 100) COMMENT '消息类型准确度评分(0-100)',
+    `message_type_anal_info` VARCHAR(500) COMMENT '消息类型准确度评估说明',
     
-    -- 非核心业务字段
-    user_id VARCHAR(100) COMMENT '用户ID(脱敏)',
-    conversation_topic VARCHAR(100) COMMENT '对话主题(关联标签表)',
-    sentiment VARCHAR(50) COMMENT '情感倾向(正面/中立/负面)',
-    conversation_status VARCHAR(50) COMMENT '对话状态(进行中/已结束/已转移/等待中)',
-    resolution_time INT COMMENT '解决时长(分钟)',
-    satisfaction INT CHECK(satisfaction >= 1 AND satisfaction <= 5) COMMENT '满意度(1-5)',
+    `message_content` LONGTEXT NOT NULL COMMENT '单条消息内容，清洁后≤5000字',
+    `message_content_anal` INT CHECK(message_content_anal >= 0 AND message_content_anal <= 100) COMMENT '消息内容准确度评分(0-100)',
+    `message_content_anal_info` VARCHAR(500) COMMENT '消息内容准确度评估说明',
     
-    -- 时间字段
-    data_crawl_date DATE NOT NULL COMMENT '数据抓取日期',
-    cleaned_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '清洗完成时间',
-    imported_at TIMESTAMP COMMENT '数据导入时间',
-    last_updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
+    `message_time` DATETIME NOT NULL COMMENT '消息发送时间(YYYY-MM-DD HH:MM:SS)',
+    `message_time_anal` INT CHECK(message_time_anal >= 0 AND message_time_anal <= 100) COMMENT '消息时间准确度评分(0-100)',
+    `message_time_anal_info` VARCHAR(500) COMMENT '消息时间准确度评估说明',
     
-    -- 有效性字段
-    is_valid BOOLEAN DEFAULT TRUE COMMENT '数据是否有效',
-    quality_score INT CHECK(quality_score >= 0 AND quality_score <= 100) COMMENT '数据质量评分(0-100)',
-    data_status ENUM('valid', 'pending_review', 'invalid') DEFAULT 'valid' COMMENT '数据处理状态',
-    validity_reason VARCHAR(500) COMMENT '无效原因说明',
+    `platform` VARCHAR(50) NOT NULL COMMENT '对话平台(微信/淘宝/拼多多/企业QQ/钉钉/客服热线/邮件/其他)',
+    `platform_anal` INT CHECK(platform_anal >= 0 AND platform_anal <= 100) COMMENT '平台准确度评分(0-100)',
+    `platform_anal_info` VARCHAR(500) COMMENT '平台准确度评估说明',
     
-    -- 版本控制
-    version INT DEFAULT 1 COMMENT '数据版本号',
+    -- 非核心字段
+    `conversation_topic` VARCHAR(100) COMMENT '对话主题',
+    `sentiment` VARCHAR(50) COMMENT '消息情感倾向(正面/中立/负面)',
+    `conversation_status` VARCHAR(50) COMMENT '对话状态(进行中/已结束/已转移/等待中)',
+    `resolution_time` INT COMMENT '解决时长(分钟)',
+    `satisfaction` INT COMMENT '满意度(1-5)',
+    
+    -- 时间与状态 (公共字段)
+    `data_crawl_date` DATE NOT NULL COMMENT '数据抓取日期',
+    `data_update_time` TIMESTAMP NULL COMMENT '原始数据更新时间',
+    `cleaned_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '清洗处理时间',
+    `imported_at` TIMESTAMP NULL COMMENT '数据导入时间',
+    `last_updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
+    `is_valid` BOOLEAN DEFAULT TRUE COMMENT '数据是否有效',
+    `validity_reason` VARCHAR(500) COMMENT '无效原因说明',
+    `quality_score` INT CHECK(quality_score >= 0 AND quality_score <= 100) COMMENT '数据质量综合评分',
+    `data_status` ENUM('valid', 'pending_review', 'invalid') DEFAULT 'valid' COMMENT '数据处理状态',
+    `version` INT DEFAULT 1 COMMENT '数据版本号',
     
     -- 索引
-    UNIQUE KEY idx_conversation_id (conversation_id),
-    KEY idx_customer_name (customer_name),
-    KEY idx_user_id (user_id),
-    KEY idx_agent_name (agent_name),
-    KEY idx_platform (platform),
-    KEY idx_message_type (message_type),
-    KEY idx_conversation_topic (conversation_topic),
-    KEY idx_sentiment (sentiment),
-    KEY idx_conversation_status (conversation_status),
-    KEY idx_message_time (message_time),
+    KEY idx_knowledge_id (knowledge_id),
+    KEY idx_conv_id (conversation_id),
+    KEY idx_merchant (merchant_name),
+    KEY idx_customer (customer_name),
     KEY idx_crawl_date (data_crawl_date),
-    KEY idx_quality_score (quality_score),
-    KEY idx_data_status (data_status)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='客户对话表';
+    KEY idx_status (data_status),
+    KEY idx_quality (quality_score)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='客户对话消息记录表';
 
 -- ============================================================
 -- 5. 客户对话标签表

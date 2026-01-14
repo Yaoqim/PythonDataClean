@@ -66,11 +66,11 @@ class MetadataLoader:
         """
         查找数据文件对应的元数据文件
         
-        元数据文件命名规则：{data_file}.metadata.json
+        元数据文件命名规则：{文件名}.metadata.json (不含扩展名)
         
         例：
         - 数据文件：EC_GOODS_PHONE_20240108_0001.json
-        - 元数据文件：EC_GOODS_PHONE_20240108_0001.json.metadata.json
+        - 元数据文件：EC_GOODS_PHONE_20240108_0001.metadata.json
         
         Args:
             data_file_path: 数据文件路径
@@ -78,19 +78,17 @@ class MetadataLoader:
         Returns:
             元数据文件路径，如果找不到返回None
         """
-        metadata_path = f"{data_file_path}{MetadataLoader.METADATA_SUFFIX}"
+        import os
+        path_without_ext = os.path.splitext(data_file_path)[0]
+        metadata_path = f"{path_without_ext}{MetadataLoader.METADATA_SUFFIX}"
         
         if FileHandler.check_file_exists(metadata_path):
             return metadata_path
         
-        # 尝试另一种命名方式（不包含原扩展名）
-        # 为OSS路径或本地路径停止使用Path并改成字符串处理
-        import os
-        path_without_ext = os.path.splitext(data_file_path)[0]
-        metadata_path_alt = f"{path_without_ext}{MetadataLoader.METADATA_SUFFIX}"
-        
-        if FileHandler.check_file_exists(metadata_path_alt):
-            return metadata_path_alt
+        # 兼容性尝试：{data_file}.metadata.json (含原扩展名)
+        metadata_path_legacy = f"{data_file_path}{MetadataLoader.METADATA_SUFFIX}"
+        if FileHandler.check_file_exists(metadata_path_legacy):
+            return metadata_path_legacy
         
         logger.warning(f"未找到元数据文件：{data_file_path}")
         return None
@@ -181,7 +179,7 @@ class MetadataLoader:
         
         # 检查数据载体类型
         data_carrier_type = metadata.get('data_carrier_type', '')
-        valid_carriers = {'JSON', 'CSV', 'TXT', 'XML', 'HTML', 'PDF'}
+        valid_carriers = {'JSON', 'CSV', 'TXT', 'XML', 'HTML', 'PDF', 'EXCEL'}
         if data_carrier_type not in valid_carriers:
             logger.error(f"数据载体类型无效：{data_carrier_type}，必须是{valid_carriers}")
             return False

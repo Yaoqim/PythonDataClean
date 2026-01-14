@@ -1639,3 +1639,524 @@ CREATE TABLE IF NOT EXISTS customer_conversation_tag (
 [2026-01-12 10:03:28] [INFO] [__main__]    清洗数：98
 [2026-01-12 10:03:28] [INFO] [__main__]    存储表：ec_product_info
 [2026-01-12 10:03:28] [INFO] [__main__] ================================================================================
+[2026-01-12 11:18:00] [INFO] [__main__] 连接到数据库：47.93.99.161:3309/aimerchanter_test?charset=utf8mb4
+[2026-01-12 11:18:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:18:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:18:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:18:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:18:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:18:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:18:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:18:02] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:18:02] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:18:02] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:18:02] [INFO] [__main__] [OK] 所有表创建成功！
+[2026-01-12 11:22:30] [INFO] [__main__] 连接到数据库：47.93.99.161:3309/aimerchanter_test?charset=utf8mb4
+[2026-01-12 11:22:31] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:31] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:31] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:31] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:31] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:31] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:31] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:32] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:32] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:32] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:32] [INFO] [__main__] [OK] 所有表创建成功！
+[2026-01-12 11:22:33] [ERROR] [__main__] 导入数据失败: (sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter 'resolution_time'
+[SQL: 
+        INSERT INTO customer_conversation (
+            knowledge_id, conversation_id, user_id, merchant_name, merchant_name_anal, merchant_name_anal_info,
+            customer_name, customer_name_anal, customer_name_anal_info,
+            agent_name, agent_name_anal, agent_name_anal_info,
+            product_name, message_type, message_type_anal, message_type_anal_info,
+            message_content, message_content_anal, message_content_anal_info,
+            message_time, message_time_anal, message_time_anal_info,
+            platform, platform_anal, platform_anal_info,
+            sentiment, conversation_status, resolution_time, satisfaction,
+            data_crawl_date, data_update_time, cleaned_at, is_valid, validity_reason,
+            quality_score, data_status, version
+        ) VALUES (
+            %(knowledge_id)s, %(conversation_id)s, %(user_id)s, %(merchant_name)s, %(merchant_name_anal)s, %(merchant_name_anal_info)s,
+            %(customer_name)s, %(customer_name_anal)s, %(customer_name_anal_info)s,
+            %(agent_name)s, %(agent_name_anal)s, %(agent_name_anal_info)s,
+            %(product_name)s, %(message_type)s, %(message_type_anal)s, %(message_type_anal_info)s,
+            %(message_content)s, %(message_content_anal)s, %(message_content_anal_info)s,
+            %(message_time)s, %(message_time_anal)s, %(message_time_anal_info)s,
+            %(platform)s, %(platform_anal)s, %(platform_anal_info)s,
+            %(sentiment)s, %(conversation_status)s, %(resolution_time)s, %(satisfaction)s,
+            %(data_crawl_date)s, %(data_update_time)s, %(cleaned_at)s, %(is_valid)s, %(validity_reason)s,
+            %(quality_score)s, %(data_status)s, %(version)s
+        ) ON DUPLICATE KEY UPDATE
+            conversation_id = VALUES(conversation_id),
+            user_id = VALUES(user_id),
+            merchant_name = VALUES(merchant_name),
+            quality_score = VALUES(quality_score),
+            data_status = VALUES(data_status),
+            last_updated_at = CURRENT_TIMESTAMP
+        ]
+[parameters: [{'knowledge_id': 14000001000, 'conversation_id': 'PDD_SIM_20260107_0001', 'user_id': 'USER_5918', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '蜜**熊 ... (910 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.791829', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000001001, 'conversation_id': 'PDD_SIM_20260107_0001', 'user_id': 'USER_5918', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '蜜**熊 ... (988 characters truncated) ... 22:32.791888', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'resolution_time': None, 'satisfaction': None, 'conversation_status': '已结束'}, {'knowledge_id': 14000002000, 'conversation_id': 'PDD_SIM_20260107_0002', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (959 characters truncated) ... ality_score': 71, 'cleaned_at': '2026-01-12T11:22:32.791961', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000002001, 'conversation_id': 'PDD_SIM_20260107_0002', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (899 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.791990', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000002002, 'conversation_id': 'PDD_SIM_20260107_0002', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (910 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.792016', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000002003, 'conversation_id': 'PDD_SIM_20260107_0002', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (893 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792041', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000002004, 'conversation_id': 'PDD_SIM_20260107_0002', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (926 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.792068', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000002005, 'conversation_id': 'PDD_SIM_20260107_0002', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (912 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.792094', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000002006, 'conversation_id': 'PDD_SIM_20260107_0002', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (899 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792117', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000002007, 'conversation_id': 'PDD_SIM_20260107_0002', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (898 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792141', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000002008, 'conversation_id': 'PDD_SIM_20260107_0002', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (910 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.792166', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000002009, 'conversation_id': 'PDD_SIM_20260107_0002', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (901 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792192', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000002010, 'conversation_id': 'PDD_SIM_20260107_0002', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (962 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.792221', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000002011, 'conversation_id': 'PDD_SIM_20260107_0002', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (912 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.792245', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000002012, 'conversation_id': 'PDD_SIM_20260107_0002', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (891 characters truncated) ... ality_score': 91, 'cleaned_at': '2026-01-12T11:22:32.792268', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000002013, 'conversation_id': 'PDD_SIM_20260107_0002', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (941 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.792295', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000002014, 'conversation_id': 'PDD_SIM_20260107_0002', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (966 characters truncated) ... 22:32.792321', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'resolution_time': None, 'satisfaction': None, 'conversation_status': '已结束'}, {'knowledge_id': 14000003000, 'conversation_id': 'PDD_SIM_20260107_0003', 'user_id': 'USER_8680', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '1*** ... (962 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792383', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000003001, 'conversation_id': 'PDD_SIM_20260107_0003', 'user_id': 'USER_8680', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '1*** ... (945 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.792414', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000003002, 'conversation_id': 'PDD_SIM_20260107_0003', 'user_id': 'USER_8680', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '1*** ... (936 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.792441', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000003003, 'conversation_id': 'PDD_SIM_20260107_0003', 'user_id': 'USER_8680', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '1*** ... (962 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792467', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000003004, 'conversation_id': 'PDD_SIM_20260107_0003', 'user_id': 'USER_8680', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '1*** ... (913 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792492', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000003005, 'conversation_id': 'PDD_SIM_20260107_0003', 'user_id': 'USER_8680', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '1*** ... (980 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.792523', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000003006, 'conversation_id': 'PDD_SIM_20260107_0003', 'user_id': 'USER_8680', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '1*** ... (928 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.792548', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000003007, 'conversation_id': 'PDD_SIM_20260107_0003', 'user_id': 'USER_8680', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '1*** ... (902 characters truncated) ... ality_score': 91, 'cleaned_at': '2026-01-12T11:22:32.792571', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000003008, 'conversation_id': 'PDD_SIM_20260107_0003', 'user_id': 'USER_8680', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '1*** ... (999 characters truncated) ... 22:32.792597', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'resolution_time': None, 'satisfaction': None, 'conversation_status': '已结束'}, {'knowledge_id': 14000004000, 'conversation_id': 'PDD_SIM_20260107_0004', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (931 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792655', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000004001, 'conversation_id': 'PDD_SIM_20260107_0004', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (1066 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.792692', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000004002, 'conversation_id': 'PDD_SIM_20260107_0004', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (996 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792720', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000004003, 'conversation_id': 'PDD_SIM_20260107_0004', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (986 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792747', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000004004, 'conversation_id': 'PDD_SIM_20260107_0004', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (901 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792770', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000004005, 'conversation_id': 'PDD_SIM_20260107_0004', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (899 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792793', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000004006, 'conversation_id': 'PDD_SIM_20260107_0004', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (910 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792817', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000004007, 'conversation_id': 'PDD_SIM_20260107_0004', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (931 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792843', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000004008, 'conversation_id': 'PDD_SIM_20260107_0004', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (971 characters truncated) ... 22:32.792868', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'resolution_time': None, 'satisfaction': None, 'conversation_status': '已结束'}, {'knowledge_id': 14000005000, 'conversation_id': 'PDD_SIM_20260107_0005', 'user_id': 'USER_1345', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '萌*** ... (954 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792928', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000005001, 'conversation_id': 'PDD_SIM_20260107_0005', 'user_id': 'USER_1345', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '萌*** ... (896 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.792952', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000005002, 'conversation_id': 'PDD_SIM_20260107_0005', 'user_id': 'USER_1345', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '萌*** ... (937 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.792978', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000005003, 'conversation_id': 'PDD_SIM_20260107_0005', 'user_id': 'USER_1345', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '萌*** ... (901 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793001', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000005004, 'conversation_id': 'PDD_SIM_20260107_0005', 'user_id': 'USER_1345', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '萌*** ... (923 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.793027', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000005005, 'conversation_id': 'PDD_SIM_20260107_0005', 'user_id': 'USER_1345', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '萌*** ... (897 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793051', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000005006, 'conversation_id': 'PDD_SIM_20260107_0005', 'user_id': 'USER_1345', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '萌*** ... (921 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.793076', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000005007, 'conversation_id': 'PDD_SIM_20260107_0005', 'user_id': 'USER_1345', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '萌*** ... (904 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793099', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000005008, 'conversation_id': 'PDD_SIM_20260107_0005', 'user_id': 'USER_1345', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '萌*** ... (977 characters truncated) ... 22:32.793126', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'resolution_time': None, 'satisfaction': None, 'conversation_status': '已结束'}, {'knowledge_id': 14000006000, 'conversation_id': 'PDD_SIM_20260107_0006', 'user_id': 'USER_4634', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': 'A*** ... (956 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793183', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000006001, 'conversation_id': 'PDD_SIM_20260107_0006', 'user_id': 'USER_4634', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': 'A*** ... (912 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793208', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000006002, 'conversation_id': 'PDD_SIM_20260107_0006', 'user_id': 'USER_4634', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': 'A*** ... (922 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.793233', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000006003, 'conversation_id': 'PDD_SIM_20260107_0006', 'user_id': 'USER_4634', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': 'A*** ... (925 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.793259', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000006004, 'conversation_id': 'PDD_SIM_20260107_0006', 'user_id': 'USER_4634', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': 'A*** ... (997 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793287', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000006005, 'conversation_id': 'PDD_SIM_20260107_0006', 'user_id': 'USER_4634', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': 'A*** ... (997 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793316', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000006006, 'conversation_id': 'PDD_SIM_20260107_0006', 'user_id': 'USER_4634', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': 'A*** ... (944 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.793342', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000006007, 'conversation_id': 'PDD_SIM_20260107_0006', 'user_id': 'USER_4634', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': 'A*** ... (920 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.793369', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000006008, 'conversation_id': 'PDD_SIM_20260107_0006', 'user_id': 'USER_4634', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': 'A*** ... (909 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793393', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000006009, 'conversation_id': 'PDD_SIM_20260107_0006', 'user_id': 'USER_4634', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': 'A*** ... (928 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.793421', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000006010, 'conversation_id': 'PDD_SIM_20260107_0006', 'user_id': 'USER_4634', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': 'A*** ... (905 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793444', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000006011, 'conversation_id': 'PDD_SIM_20260107_0006', 'user_id': 'USER_4634', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': 'A*** ... (926 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.793470', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000006012, 'conversation_id': 'PDD_SIM_20260107_0006', 'user_id': 'USER_4634', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': 'A*** ... (902 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793493', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000006013, 'conversation_id': 'PDD_SIM_20260107_0006', 'user_id': 'USER_4634', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': 'A*** ... (1007 characters truncated) ... 22:32.793520', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'resolution_time': None, 'satisfaction': None, 'conversation_status': '已结束'}, {'knowledge_id': 14000007000, 'conversation_id': 'PDD_SIM_20260107_0007', 'user_id': 'USER_5041', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '依**你 ... (1102 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793583', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000007001, 'conversation_id': 'PDD_SIM_20260107_0007', 'user_id': 'USER_5041', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '依**你 ... (938 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.793611', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000007002, 'conversation_id': 'PDD_SIM_20260107_0007', 'user_id': 'USER_5041', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '依**你 ... (929 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.793636', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000007003, 'conversation_id': 'PDD_SIM_20260107_0007', 'user_id': 'USER_5041', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '依**你 ... (955 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793661', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000007004, 'conversation_id': 'PDD_SIM_20260107_0007', 'user_id': 'USER_5041', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '依**你 ... (900 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793684', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000007005, 'conversation_id': 'PDD_SIM_20260107_0007', 'user_id': 'USER_5041', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '依**你 ... (924 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.793711', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000007006, 'conversation_id': 'PDD_SIM_20260107_0007', 'user_id': 'USER_5041', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '依**你 ... (898 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793733', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000007007, 'conversation_id': 'PDD_SIM_20260107_0007', 'user_id': 'USER_5041', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '依**你 ... (976 characters truncated) ... 22:32.793759', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'resolution_time': None, 'satisfaction': None, 'conversation_status': '已结束'}, {'knowledge_id': 14000008000, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (953 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793815', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008001, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (936 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.793843', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008002, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (927 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.793868', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008003, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (953 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793893', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008004, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (899 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793916', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008005, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (926 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.793942', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008006, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (971 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.793973', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008007, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (900 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.793995', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008008, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (916 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.794020', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008009, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (898 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.794043', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008010, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (893 characters truncated) ... ality_score': 91, 'cleaned_at': '2026-01-12T11:22:32.794065', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008011, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (912 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.794090', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008012, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (943 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.794117', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008013, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (901 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.794142', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008014, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (893 characters truncated) ... ality_score': 91, 'cleaned_at': '2026-01-12T11:22:32.794164', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008015, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (918 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.794188', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008016, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (911 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.794211', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008017, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (936 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.794239', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008018, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (923 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.794265', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008019, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (924 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.794289', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008020, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (1000 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.794318', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000008021, 'conversation_id': 'PDD_SIM_20260107_0008', 'user_id': 'USER_9494', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '**', ... (973 characters truncated) ... 22:32.794344', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'resolution_time': None, 'satisfaction': None, 'conversation_status': '已结束'}, {'knowledge_id': 14000009000, 'conversation_id': 'PDD_SIM_20260107_0009', 'user_id': 'USER_4932', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '遇*** ... (1002 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.794403', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000009001, 'conversation_id': 'PDD_SIM_20260107_0009', 'user_id': 'USER_4932', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '遇*** ... (901 characters truncated) ... ality_score': 91, 'cleaned_at': '2026-01-12T11:22:32.794427', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000009002, 'conversation_id': 'PDD_SIM_20260107_0009', 'user_id': 'USER_4932', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '遇*** ... (940 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.794454', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000009003, 'conversation_id': 'PDD_SIM_20260107_0009', 'user_id': 'USER_4932', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '遇*** ... (904 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.794478', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000009004, 'conversation_id': 'PDD_SIM_20260107_0009', 'user_id': 'USER_4932', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '遇*** ... (941 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.794504', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000009005, 'conversation_id': 'PDD_SIM_20260107_0009', 'user_id': 'USER_4932', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '遇*** ... (1002 characters truncated) ... ality_score': 93, 'cleaned_at': '2026-01-12T11:22:32.794532', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000009006, 'conversation_id': 'PDD_SIM_20260107_0009', 'user_id': 'USER_4932', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '遇*** ... (935 characters truncated) ... ality_score': 94, 'cleaned_at': '2026-01-12T11:22:32.794558', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000009007, 'conversation_id': 'PDD_SIM_20260107_0009', 'user_id': 'USER_4932', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '遇*** ... (901 characters truncated) ... ality_score': 91, 'cleaned_at': '2026-01-12T11:22:32.794582', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'conversation_status': '进行中'}, {'knowledge_id': 14000009008, 'conversation_id': 'PDD_SIM_20260107_0009', 'user_id': 'USER_4932', 'merchant_name': '仕马汽车保养旗舰店', 'customer_name': '遇*** ... (1024 characters truncated) ... 22:32.794610', 'data_crawl_date': '2026-01-12', 'data_update_time': None, 'resolution_time': None, 'satisfaction': None, 'conversation_status': '已结束'}]]
+(Background on this error at: https://sqlalche.me/e/20/cd3x)
+[2026-01-12 11:22:55] [INFO] [__main__] 连接到数据库：47.93.99.161:3309/aimerchanter_test?charset=utf8mb4
+[2026-01-12 11:22:56] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:56] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:56] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:56] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:56] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:56] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:56] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:56] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:57] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:57] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:22:57] [INFO] [__main__] [OK] 所有表创建成功！
+[2026-01-12 11:22:58] [INFO] [__main__] 成功导入 97 条记录到 customer_conversation 表
+[2026-01-12 11:23:22] [INFO] [__main__] 连接到数据库：47.93.99.161:3309/aimerchanter_test?charset=utf8mb4
+[2026-01-12 11:23:22] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:22] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:22] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:23] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:23] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:23] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:23] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:23] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:23] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:23] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:23] [INFO] [__main__] [OK] 所有表创建成功！
+[2026-01-12 11:23:25] [INFO] [__main__] 成功导入 97 条记录到 customer_conversation 表
+[2026-01-12 11:23:28] [INFO] [__main__] 连接到数据库：47.93.99.161:3309/aimerchanter_test?charset=utf8mb4
+[2026-01-12 11:23:28] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:28] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:28] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:28] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:28] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:29] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:29] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:29] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:29] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:29] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:23:29] [INFO] [__main__] [OK] 所有表创建成功！
+[2026-01-12 11:23:30] [INFO] [__main__] 成功导入 97 条记录到 customer_conversation 表
+[2026-01-12 11:55:00] [INFO] [__main__] 连接到数据库：47.93.99.161:3309/aimerchanter_test?charset=utf8mb4
+[2026-01-12 11:55:00] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:55:00] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:55:00] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:55:00] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:55:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:55:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:55:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:55:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:55:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:55:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 11:55:01] [INFO] [__main__] [OK] 所有表创建成功！
+[2026-01-12 11:55:03] [INFO] [__main__] 成功导入 97 条记录到 customer_conversation 表
+[2026-01-12 12:01:00] [INFO] [__main__] 连接到数据库：47.93.99.161:3309/aimerchanter_test?charset=utf8mb4
+[2026-01-12 12:01:00] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 12:01:00] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 12:01:00] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 12:01:00] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 12:01:00] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 12:01:00] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 12:01:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 12:01:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 12:01:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 12:01:01] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 12:01:01] [INFO] [__main__] [OK] 所有表创建成功！
+[2026-01-12 12:01:03] [INFO] [__main__] 成功导入 97 条记录到 customer_conversation 表
+[2026-01-12 14:15:01] [INFO] [__main__] 连接到数据库：47.93.99.161:3309/aimerchanter_test?charset=utf8mb4
+[2026-01-12 14:15:02] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 14:15:02] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 14:15:02] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 14:15:02] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 14:15:02] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 14:15:02] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 14:15:03] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 14:15:03] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 14:15:03] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 14:15:03] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 14:15:03] [INFO] [__main__] [OK] 所有表创建成功！
+[2026-01-12 14:15:05] [INFO] [__main__] 成功导入 97 条记录到 customer_conversation 表
+[2026-01-12 17:05:53] [INFO] [__main__] 连接到数据库：47.93.99.161:3309/aimerchanter_test?charset=utf8mb4
+[2026-01-12 17:05:54] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 17:05:54] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 17:05:54] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 17:05:54] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 17:05:54] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 17:05:54] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 17:05:54] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 17:05:54] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 17:05:54] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 17:05:54] [DEBUG] [__main__] 执行SQL语句...
+[2026-01-12 17:05:55] [INFO] [__main__] [OK] 所有表创建成功！
+[2026-01-12 17:23:30] [INFO] [__main__] ================================================================================
+[2026-01-12 17:23:30] [INFO] [__main__] MCP 数据清洗服务启动
+[2026-01-12 17:23:30] [INFO] [__main__] ================================================================================
+[2026-01-12 17:23:30] [INFO] [__main__] 待处理文件数：2
+[2026-01-12 17:23:31] [WARNING] [__main__] 文件不存在：oss://bucket/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:23:32] [WARNING] [__main__] 文件不存在：oss://bucket/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:23:32] [ERROR] [__main__] 没有找到任何有效的文件
+[2026-01-12 17:23:48] [INFO] [__main__] ================================================================================
+[2026-01-12 17:23:48] [INFO] [__main__] MCP 数据清洗服务启动
+[2026-01-12 17:23:48] [INFO] [__main__] ================================================================================
+[2026-01-12 17:23:48] [INFO] [__main__] 待处理文件数：2
+[2026-01-12 17:23:49] [WARNING] [__main__] 文件不存在：oss://letwx/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:23:50] [WARNING] [__main__] 文件不存在：oss://letwx/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:23:50] [ERROR] [__main__] 没有找到任何有效的文件
+[2026-01-12 17:25:03] [INFO] [__main__] ================================================================================
+[2026-01-12 17:25:03] [INFO] [__main__] MCP 数据清洗服务启动
+[2026-01-12 17:25:03] [INFO] [__main__] ================================================================================
+[2026-01-12 17:25:03] [INFO] [__main__] 待处理文件数：2
+[2026-01-12 17:25:04] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:25:05] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:25:05] [INFO] [__main__] 开始处理数据...
+[2026-01-12 17:25:05] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:25:15] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:25:25] [INFO] [__main__] ================================================================================
+[2026-01-12 17:25:25] [INFO] [__main__] 处理完成 - 最终统计
+[2026-01-12 17:25:25] [INFO] [__main__] ================================================================================
+[2026-01-12 17:25:25] [INFO] [__main__] 文件总数：2
+[2026-01-12 17:25:25] [INFO] [__main__]   成功：2
+[2026-01-12 17:25:25] [INFO] [__main__]   部分成功：0
+[2026-01-12 17:25:25] [INFO] [__main__]   失败：0
+[2026-01-12 17:25:25] [INFO] [__main__] 
+[2026-01-12 17:25:25] [INFO] [__main__] 数据统计：
+[2026-01-12 17:25:25] [INFO] [__main__]   原始记录数：18
+[2026-01-12 17:25:25] [INFO] [__main__]   清洗后记录数：194
+[2026-01-12 17:25:25] [INFO] [__main__]   存储成功记录数：194
+[2026-01-12 17:25:25] [INFO] [__main__] ================================================================================
+[2026-01-12 17:25:25] [INFO] [__main__] 
+[2026-01-12 17:25:25] [INFO] [__main__] 详细结果：
+[2026-01-12 17:25:25] [INFO] [__main__] 
+1. 文件处理结果
+[2026-01-12 17:25:25] [INFO] [__main__]    状态：success
+[2026-01-12 17:25:25] [INFO] [__main__]    业务类型：CUSTOMER_DIALOG
+[2026-01-12 17:25:25] [INFO] [__main__]    原始数：9
+[2026-01-12 17:25:25] [INFO] [__main__]    清洗数：97
+[2026-01-12 17:25:25] [INFO] [__main__]    存储表：customer_conversation
+[2026-01-12 17:25:25] [INFO] [__main__] 
+2. 文件处理结果
+[2026-01-12 17:25:25] [INFO] [__main__]    状态：success
+[2026-01-12 17:25:25] [INFO] [__main__]    业务类型：CUSTOMER_DIALOG
+[2026-01-12 17:25:25] [INFO] [__main__]    原始数：9
+[2026-01-12 17:25:25] [INFO] [__main__]    清洗数：97
+[2026-01-12 17:25:25] [INFO] [__main__]    存储表：customer_conversation
+[2026-01-12 17:25:25] [INFO] [__main__] ================================================================================
+[2026-01-12 17:35:39] [INFO] [__main__] ================================================================================
+[2026-01-12 17:35:39] [INFO] [__main__] MCP 数据清洗服务启动
+[2026-01-12 17:35:39] [INFO] [__main__] ================================================================================
+[2026-01-12 17:35:39] [INFO] [__main__] 待处理文件数：2
+[2026-01-12 17:35:40] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:35:41] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:35:41] [INFO] [__main__] 开始处理数据...
+[2026-01-12 17:35:41] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:35:46] [INFO] [__main__] ================================================================================
+[2026-01-12 17:35:46] [INFO] [__main__] MCP 数据清洗服务启动
+[2026-01-12 17:35:46] [INFO] [__main__] ================================================================================
+[2026-01-12 17:35:46] [INFO] [__main__] 待处理文件数：2
+[2026-01-12 17:35:47] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:35:48] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:35:48] [INFO] [__main__] 开始处理数据...
+[2026-01-12 17:35:48] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:35:58] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:36:06] [INFO] [__main__] ================================================================================
+[2026-01-12 17:36:06] [INFO] [__main__] 处理完成 - 最终统计
+[2026-01-12 17:36:06] [INFO] [__main__] ================================================================================
+[2026-01-12 17:36:06] [INFO] [__main__] 文件总数：2
+[2026-01-12 17:36:06] [INFO] [__main__]   成功：2
+[2026-01-12 17:36:06] [INFO] [__main__]   部分成功：0
+[2026-01-12 17:36:06] [INFO] [__main__]   失败：0
+[2026-01-12 17:36:06] [INFO] [__main__] 
+[2026-01-12 17:36:06] [INFO] [__main__] 数据统计：
+[2026-01-12 17:36:06] [INFO] [__main__]   原始记录数：18
+[2026-01-12 17:36:06] [INFO] [__main__]   清洗后记录数：97
+[2026-01-12 17:36:06] [INFO] [__main__]   存储成功记录数：97
+[2026-01-12 17:36:06] [INFO] [__main__] ================================================================================
+[2026-01-12 17:36:06] [INFO] [__main__] 
+[2026-01-12 17:36:06] [INFO] [__main__] 详细结果：
+[2026-01-12 17:36:06] [INFO] [__main__] 
+1. 文件处理结果
+[2026-01-12 17:36:06] [INFO] [__main__]    状态：success
+[2026-01-12 17:36:06] [INFO] [__main__]    业务类型：CUSTOMER_DIALOG
+[2026-01-12 17:36:06] [INFO] [__main__]    原始数：9
+[2026-01-12 17:36:06] [INFO] [__main__]    清洗数：97
+[2026-01-12 17:36:06] [INFO] [__main__]    存储表：customer_conversation
+[2026-01-12 17:36:06] [INFO] [__main__] 
+2. 文件处理结果
+[2026-01-12 17:36:06] [INFO] [__main__]    状态：success
+[2026-01-12 17:36:06] [INFO] [__main__]    业务类型：CUSTOMER_DIALOG
+[2026-01-12 17:36:06] [INFO] [__main__]    原始数：9
+[2026-01-12 17:36:06] [INFO] [__main__]    清洗数：0
+[2026-01-12 17:36:06] [INFO] [__main__]    存储表：customer_conversation
+[2026-01-12 17:36:06] [INFO] [__main__] ================================================================================
+[2026-01-12 17:36:23] [INFO] [__main__] ================================================================================
+[2026-01-12 17:36:23] [INFO] [__main__] MCP 数据清洗服务启动
+[2026-01-12 17:36:23] [INFO] [__main__] ================================================================================
+[2026-01-12 17:36:23] [INFO] [__main__] 待处理文件数：2
+[2026-01-12 17:36:24] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:36:25] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:36:25] [INFO] [__main__] 开始处理数据...
+[2026-01-12 17:36:25] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:36:36] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:36:44] [INFO] [__main__] ================================================================================
+[2026-01-12 17:36:44] [INFO] [__main__] 处理完成 - 最终统计
+[2026-01-12 17:36:44] [INFO] [__main__] ================================================================================
+[2026-01-12 17:36:44] [INFO] [__main__] 文件总数：2
+[2026-01-12 17:36:44] [INFO] [__main__]   成功：2
+[2026-01-12 17:36:44] [INFO] [__main__]   部分成功：0
+[2026-01-12 17:36:44] [INFO] [__main__]   失败：0
+[2026-01-12 17:36:44] [INFO] [__main__] 
+[2026-01-12 17:36:44] [INFO] [__main__] 数据统计：
+[2026-01-12 17:36:44] [INFO] [__main__]   原始记录数：18
+[2026-01-12 17:36:44] [INFO] [__main__]   清洗后记录数：97
+[2026-01-12 17:36:44] [INFO] [__main__]   存储成功记录数：97
+[2026-01-12 17:36:44] [INFO] [__main__] ================================================================================
+[2026-01-12 17:36:44] [INFO] [__main__] 
+[2026-01-12 17:36:44] [INFO] [__main__] 详细结果：
+[2026-01-12 17:36:44] [INFO] [__main__] 
+1. 文件处理结果
+[2026-01-12 17:36:44] [INFO] [__main__]    状态：success
+[2026-01-12 17:36:44] [INFO] [__main__]    业务类型：CUSTOMER_DIALOG
+[2026-01-12 17:36:44] [INFO] [__main__]    原始数：9
+[2026-01-12 17:36:44] [INFO] [__main__]    清洗数：97
+[2026-01-12 17:36:44] [INFO] [__main__]    存储表：customer_conversation
+[2026-01-12 17:36:44] [INFO] [__main__] 
+2. 文件处理结果
+[2026-01-12 17:36:44] [INFO] [__main__]    状态：success
+[2026-01-12 17:36:44] [INFO] [__main__]    业务类型：CUSTOMER_DIALOG
+[2026-01-12 17:36:44] [INFO] [__main__]    原始数：9
+[2026-01-12 17:36:44] [INFO] [__main__]    清洗数：0
+[2026-01-12 17:36:44] [INFO] [__main__]    存储表：customer_conversation
+[2026-01-12 17:36:44] [INFO] [__main__] ================================================================================
+[2026-01-12 17:37:03] [INFO] [__main__] ================================================================================
+[2026-01-12 17:37:03] [INFO] [__main__] MCP 数据清洗服务启动
+[2026-01-12 17:37:03] [INFO] [__main__] ================================================================================
+[2026-01-12 17:37:03] [INFO] [__main__] 待处理文件数：2
+[2026-01-12 17:37:04] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:37:05] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:37:05] [INFO] [__main__] 开始处理数据...
+[2026-01-12 17:37:05] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:37:15] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:37:24] [INFO] [__main__] ================================================================================
+[2026-01-12 17:37:24] [INFO] [__main__] 处理完成 - 最终统计
+[2026-01-12 17:37:24] [INFO] [__main__] ================================================================================
+[2026-01-12 17:37:24] [INFO] [__main__] 文件总数：2
+[2026-01-12 17:37:24] [INFO] [__main__]   成功：2
+[2026-01-12 17:37:24] [INFO] [__main__]   部分成功：0
+[2026-01-12 17:37:24] [INFO] [__main__]   失败：0
+[2026-01-12 17:37:24] [INFO] [__main__] 
+[2026-01-12 17:37:24] [INFO] [__main__] 数据统计：
+[2026-01-12 17:37:24] [INFO] [__main__]   原始记录数：18
+[2026-01-12 17:37:24] [INFO] [__main__]   清洗后记录数：124
+[2026-01-12 17:37:24] [INFO] [__main__]   存储成功记录数：124
+[2026-01-12 17:37:24] [INFO] [__main__] ================================================================================
+[2026-01-12 17:37:24] [INFO] [__main__] 
+[2026-01-12 17:37:24] [INFO] [__main__] 详细结果：
+[2026-01-12 17:37:24] [INFO] [__main__] 
+1. 文件处理结果
+[2026-01-12 17:37:24] [INFO] [__main__]    状态：success
+[2026-01-12 17:37:24] [INFO] [__main__]    业务类型：CUSTOMER_DIALOG
+[2026-01-12 17:37:24] [INFO] [__main__]    原始数：9
+[2026-01-12 17:37:24] [INFO] [__main__]    清洗数：97
+[2026-01-12 17:37:24] [INFO] [__main__]    存储表：customer_conversation
+[2026-01-12 17:37:24] [INFO] [__main__] 
+2. 文件处理结果
+[2026-01-12 17:37:24] [INFO] [__main__]    状态：success
+[2026-01-12 17:37:24] [INFO] [__main__]    业务类型：CUSTOMER_DIALOG
+[2026-01-12 17:37:24] [INFO] [__main__]    原始数：9
+[2026-01-12 17:37:24] [INFO] [__main__]    清洗数：27
+[2026-01-12 17:37:24] [INFO] [__main__]    存储表：customer_conversation
+[2026-01-12 17:37:24] [INFO] [__main__] ================================================================================
+[2026-01-12 17:49:35] [INFO] [__main__] ================================================================================
+[2026-01-12 17:49:35] [INFO] [__main__] MCP 数据清洗服务启动
+[2026-01-12 17:49:35] [INFO] [__main__] ================================================================================
+[2026-01-12 17:49:35] [INFO] [__main__] 待处理文件数：2
+[2026-01-12 17:49:36] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:49:37] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:49:37] [INFO] [__main__] 开始处理数据...
+[2026-01-12 17:49:37] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:49:46] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:49:54] [INFO] [__main__] ================================================================================
+[2026-01-12 17:49:54] [INFO] [__main__] 处理完成 - 最终统计
+[2026-01-12 17:49:54] [INFO] [__main__] ================================================================================
+[2026-01-12 17:49:54] [INFO] [__main__] 文件总数：2
+[2026-01-12 17:49:54] [INFO] [__main__]   成功：2
+[2026-01-12 17:49:54] [INFO] [__main__]   部分成功：0
+[2026-01-12 17:49:54] [INFO] [__main__]   失败：0
+[2026-01-12 17:49:54] [INFO] [__main__] 
+[2026-01-12 17:49:54] [INFO] [__main__] 数据统计：
+[2026-01-12 17:49:54] [INFO] [__main__]   原始记录数：18
+[2026-01-12 17:49:54] [INFO] [__main__]   清洗后记录数：124
+[2026-01-12 17:49:54] [INFO] [__main__]   存储成功记录数：124
+[2026-01-12 17:49:54] [INFO] [__main__] ================================================================================
+[2026-01-12 17:49:54] [INFO] [__main__] 
+[2026-01-12 17:49:54] [INFO] [__main__] 详细结果：
+[2026-01-12 17:49:54] [INFO] [__main__] 
+1. 文件处理结果
+[2026-01-12 17:49:54] [INFO] [__main__]    状态：success
+[2026-01-12 17:49:54] [INFO] [__main__]    业务类型：CUSTOMER_DIALOG
+[2026-01-12 17:49:54] [INFO] [__main__]    原始数：9
+[2026-01-12 17:49:54] [INFO] [__main__]    清洗数：97
+[2026-01-12 17:49:54] [INFO] [__main__]    存储表：customer_conversation
+[2026-01-12 17:49:54] [INFO] [__main__] 
+2. 文件处理结果
+[2026-01-12 17:49:54] [INFO] [__main__]    状态：success
+[2026-01-12 17:49:54] [INFO] [__main__]    业务类型：CUSTOMER_DIALOG
+[2026-01-12 17:49:54] [INFO] [__main__]    原始数：9
+[2026-01-12 17:49:54] [INFO] [__main__]    清洗数：27
+[2026-01-12 17:49:54] [INFO] [__main__]    存储表：customer_conversation
+[2026-01-12 17:49:54] [INFO] [__main__] ================================================================================
+[2026-01-12 17:56:05] [INFO] [__main__] ================================================================================
+[2026-01-12 17:56:05] [INFO] [__main__] MCP 数据清洗服务启动
+[2026-01-12 17:56:05] [INFO] [__main__] ================================================================================
+[2026-01-12 17:56:05] [INFO] [__main__] 待处理文件数：2
+[2026-01-12 17:56:06] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:56:07] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:56:07] [INFO] [__main__] 开始处理数据...
+[2026-01-12 17:56:07] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:56:10] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:56:14] [INFO] [__main__] ================================================================================
+[2026-01-12 17:56:14] [INFO] [__main__] MCP 数据清洗服务启动
+[2026-01-12 17:56:14] [INFO] [__main__] ================================================================================
+[2026-01-12 17:56:14] [INFO] [__main__] 待处理文件数：2
+[2026-01-12 17:56:15] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:56:16] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:56:16] [INFO] [__main__] 开始处理数据...
+[2026-01-12 17:56:16] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:56:20] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:56:22] [INFO] [__main__] ================================================================================
+[2026-01-12 17:56:22] [INFO] [__main__] 处理完成 - 最终统计
+[2026-01-12 17:56:22] [INFO] [__main__] ================================================================================
+[2026-01-12 17:56:22] [INFO] [__main__] 文件总数：2
+[2026-01-12 17:56:22] [INFO] [__main__]   成功：0
+[2026-01-12 17:56:22] [INFO] [__main__]   部分成功：0
+[2026-01-12 17:56:22] [INFO] [__main__]   失败：2
+[2026-01-12 17:56:22] [INFO] [__main__] 
+[2026-01-12 17:56:22] [INFO] [__main__] 数据统计：
+[2026-01-12 17:56:22] [INFO] [__main__]   原始记录数：0
+[2026-01-12 17:56:22] [INFO] [__main__]   清洗后记录数：0
+[2026-01-12 17:56:22] [INFO] [__main__]   存储成功记录数：0
+[2026-01-12 17:56:22] [INFO] [__main__] ================================================================================
+[2026-01-12 17:56:22] [INFO] [__main__] 
+[2026-01-12 17:56:22] [INFO] [__main__] 详细结果：
+[2026-01-12 17:56:22] [INFO] [__main__] 
+1. 文件处理结果
+[2026-01-12 17:56:22] [INFO] [__main__]    状态：failed
+[2026-01-12 17:56:22] [INFO] [__main__]    业务类型：N/A
+[2026-01-12 17:56:22] [INFO] [__main__]    原始数：0
+[2026-01-12 17:56:22] [INFO] [__main__]    清洗数：0
+[2026-01-12 17:56:22] [INFO] [__main__]    存储表：N/A
+[2026-01-12 17:56:22] [WARNING] [__main__]    错误信息：
+[2026-01-12 17:56:22] [WARNING] [__main__]      - 'DatabaseManager' object has no attribute 'query_records'
+[2026-01-12 17:56:22] [INFO] [__main__] 
+2. 文件处理结果
+[2026-01-12 17:56:22] [INFO] [__main__]    状态：failed
+[2026-01-12 17:56:22] [INFO] [__main__]    业务类型：N/A
+[2026-01-12 17:56:22] [INFO] [__main__]    原始数：0
+[2026-01-12 17:56:22] [INFO] [__main__]    清洗数：0
+[2026-01-12 17:56:22] [INFO] [__main__]    存储表：N/A
+[2026-01-12 17:56:22] [WARNING] [__main__]    错误信息：
+[2026-01-12 17:56:22] [WARNING] [__main__]      - 'DatabaseManager' object has no attribute 'query_records'
+[2026-01-12 17:56:22] [INFO] [__main__] ================================================================================
+[2026-01-12 17:56:51] [INFO] [__main__] ================================================================================
+[2026-01-12 17:56:51] [INFO] [__main__] MCP 数据清洗服务启动
+[2026-01-12 17:56:51] [INFO] [__main__] ================================================================================
+[2026-01-12 17:56:51] [INFO] [__main__] 待处理文件数：2
+[2026-01-12 17:56:52] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:56:53] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:56:53] [INFO] [__main__] 开始处理数据...
+[2026-01-12 17:56:53] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:56:56] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:57:00] [INFO] [__main__] ================================================================================
+[2026-01-12 17:57:00] [INFO] [__main__] 处理完成 - 最终统计
+[2026-01-12 17:57:00] [INFO] [__main__] ================================================================================
+[2026-01-12 17:57:00] [INFO] [__main__] 文件总数：2
+[2026-01-12 17:57:00] [INFO] [__main__]   成功：0
+[2026-01-12 17:57:00] [INFO] [__main__]   部分成功：0
+[2026-01-12 17:57:00] [INFO] [__main__]   失败：2
+[2026-01-12 17:57:00] [INFO] [__main__] 
+[2026-01-12 17:57:00] [INFO] [__main__] 数据统计：
+[2026-01-12 17:57:00] [INFO] [__main__]   原始记录数：0
+[2026-01-12 17:57:00] [INFO] [__main__]   清洗后记录数：0
+[2026-01-12 17:57:00] [INFO] [__main__]   存储成功记录数：0
+[2026-01-12 17:57:00] [INFO] [__main__] ================================================================================
+[2026-01-12 17:57:00] [INFO] [__main__] 
+[2026-01-12 17:57:00] [INFO] [__main__] 详细结果：
+[2026-01-12 17:57:00] [INFO] [__main__] 
+1. 文件处理结果
+[2026-01-12 17:57:00] [INFO] [__main__]    状态：failed
+[2026-01-12 17:57:00] [INFO] [__main__]    业务类型：N/A
+[2026-01-12 17:57:00] [INFO] [__main__]    原始数：0
+[2026-01-12 17:57:00] [INFO] [__main__]    清洗数：0
+[2026-01-12 17:57:00] [INFO] [__main__]    存储表：N/A
+[2026-01-12 17:57:00] [WARNING] [__main__]    错误信息：
+[2026-01-12 17:57:00] [WARNING] [__main__]      - SQL执行失败：This result object does not return rows. It has been closed automatically.
+[2026-01-12 17:57:00] [INFO] [__main__] 
+2. 文件处理结果
+[2026-01-12 17:57:00] [INFO] [__main__]    状态：failed
+[2026-01-12 17:57:00] [INFO] [__main__]    业务类型：N/A
+[2026-01-12 17:57:00] [INFO] [__main__]    原始数：0
+[2026-01-12 17:57:00] [INFO] [__main__]    清洗数：0
+[2026-01-12 17:57:00] [INFO] [__main__]    存储表：N/A
+[2026-01-12 17:57:00] [WARNING] [__main__]    错误信息：
+[2026-01-12 17:57:00] [WARNING] [__main__]      - SQL执行失败：This result object does not return rows. It has been closed automatically.
+[2026-01-12 17:57:00] [INFO] [__main__] ================================================================================
+[2026-01-12 17:57:13] [INFO] [__main__] ================================================================================
+[2026-01-12 17:57:13] [INFO] [__main__] MCP 数据清洗服务启动
+[2026-01-12 17:57:13] [INFO] [__main__] ================================================================================
+[2026-01-12 17:57:13] [INFO] [__main__] 待处理文件数：2
+[2026-01-12 17:57:14] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:57:15] [INFO] [__main__] 文件有效：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:57:15] [INFO] [__main__] 开始处理数据...
+[2026-01-12 17:57:15] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:57:25] [INFO] [__main__] 处理文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:57:35] [INFO] [__main__] ================================================================================
+[2026-01-12 17:57:35] [INFO] [__main__] 处理完成 - 最终统计
+[2026-01-12 17:57:35] [INFO] [__main__] ================================================================================
+[2026-01-12 17:57:35] [INFO] [__main__] 文件总数：2
+[2026-01-12 17:57:35] [INFO] [__main__]   成功：2
+[2026-01-12 17:57:35] [INFO] [__main__]   部分成功：0
+[2026-01-12 17:57:35] [INFO] [__main__]   失败：0
+[2026-01-12 17:57:35] [INFO] [__main__] 
+[2026-01-12 17:57:35] [INFO] [__main__] 数据统计：
+[2026-01-12 17:57:35] [INFO] [__main__]   原始记录数：18
+[2026-01-12 17:57:35] [INFO] [__main__]   清洗后记录数：124
+[2026-01-12 17:57:35] [INFO] [__main__]   存储成功记录数：124
+[2026-01-12 17:57:35] [INFO] [__main__] ================================================================================
+[2026-01-12 17:57:35] [INFO] [__main__] 
+[2026-01-12 17:57:35] [INFO] [__main__] 详细结果：
+[2026-01-12 17:57:35] [INFO] [__main__] 
+1. 文件处理结果
+[2026-01-12 17:57:35] [INFO] [__main__]    状态：success
+[2026-01-12 17:57:35] [INFO] [__main__]    业务类型：CUSTOMER_DIALOG
+[2026-01-12 17:57:35] [INFO] [__main__]    原始数：9
+[2026-01-12 17:57:35] [INFO] [__main__]    清洗数：97
+[2026-01-12 17:57:35] [INFO] [__main__]    存储表：customer_conversation
+[2026-01-12 17:57:35] [INFO] [__main__] 
+2. 文件处理结果
+[2026-01-12 17:57:35] [INFO] [__main__]    状态：success
+[2026-01-12 17:57:35] [INFO] [__main__]    业务类型：CUSTOMER_DIALOG
+[2026-01-12 17:57:35] [INFO] [__main__]    原始数：9
+[2026-01-12 17:57:35] [INFO] [__main__]    清洗数：27
+[2026-01-12 17:57:35] [INFO] [__main__]    存储表：customer_conversation
+[2026-01-12 17:57:35] [INFO] [__main__] ================================================================================
+[2026-01-12 18:03:14] [INFO] [__main__] 正在更新 processed_files 表...
+[2026-01-12 18:03:15] [INFO] [__main__] 正在为 ec_product_info 增加 source_file 字段...
+[2026-01-12 18:03:15] [INFO] [__main__] 正在为 ec_comment_2024 增加 source_file 字段...
+[2026-01-12 18:03:16] [INFO] [__main__] 正在为 customer_conversation 增加字段...
+[2026-01-12 18:03:16] [INFO] [__main__] 数据库迁移完成！
+[2026-01-12 18:04:20] [INFO] [__main__] 正在更新 processed_files 表...
+[2026-01-12 18:04:20] [INFO] [__main__] 正在为 ec_product_info 增加 source_file 字段...
+[2026-01-12 18:04:20] [WARNING] [__main__] ec_product_info source_file 可能已存在: SQL执行失败：(pymysql.err.OperationalError) (1060, "Duplicate column name 'source_file'")
+[SQL: ALTER TABLE ec_product_info ADD COLUMN `source_file` VARCHAR(500) COMMENT '原始数据来源文件路径 (用于数据溯源)' AFTER `clean_time`;]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-12 18:04:20] [INFO] [__main__] 正在为 ec_comment_2024 增加 source_file 字段...
+[2026-01-12 18:04:20] [WARNING] [__main__] ec_comment_2024 source_file 可能已存在: SQL执行失败：(pymysql.err.OperationalError) (1060, "Duplicate column name 'source_file'")
+[SQL: ALTER TABLE ec_comment_2024 ADD COLUMN `source_file` VARCHAR(500) COMMENT '原始数据来源文件路径 (用于数据溯源)' AFTER `comment_id_anal_info`;]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-12 18:04:20] [INFO] [__main__] 正在为 customer_conversation 增加字段...
+[2026-01-12 18:04:20] [WARNING] [__main__] customer_conversation order_id 可能已存在: SQL执行失败：(pymysql.err.OperationalError) (1060, "Duplicate column name 'order_id'")
+[SQL: ALTER TABLE customer_conversation ADD COLUMN `order_id` VARCHAR(100) COMMENT '关联订单号 (用于身份识别辅助)' AFTER `agent_name_anal_info`;]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-12 18:04:20] [WARNING] [__main__] customer_conversation source_file 可能已存在: SQL执行失败：(pymysql.err.OperationalError) (1060, "Duplicate column name 'source_file'")
+[SQL: ALTER TABLE customer_conversation ADD COLUMN `source_file` VARCHAR(500) COMMENT '原始数据来源文件路径 (用于数据溯源)' AFTER `order_id`;]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-01-12 18:04:20] [INFO] [__main__] 数据库迁移完成！

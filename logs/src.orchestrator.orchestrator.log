@@ -338,3 +338,262 @@ RuntimeError: 数据库连接失败：No module named 'pymysql'
 [2026-01-12 10:03:25] [INFO] [src.orchestrator.orchestrator] 第4步：入库...
 [2026-01-12 10:03:28] [INFO] [src.orchestrator.orchestrator] 第5步：生成响应...
 [2026-01-12 10:03:28] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112100317
+[2026-01-12 17:06:29] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：e:\workSpace\idea\PythonDataClean\data\temp\CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:06:29] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:06:29] [INFO] [src.orchestrator.orchestrator] 文件格式: .json, 大小: 0.02MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:06:29] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 18 个字段映射
+[2026-01-12 17:06:30] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:06:30] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:06:30] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112170629
+[2026-01-12 17:14:42] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://bucket/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:14:42] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:14:42] [INFO] [src.orchestrator.orchestrator] 文件格式: .json, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:14:42] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 18 个字段映射
+[2026-01-12 17:14:42] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:14:43] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://bucket/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:14:43] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:14:43] [INFO] [src.orchestrator.orchestrator] 文件格式: .xlsx, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:14:43] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 18 个字段映射
+[2026-01-12 17:14:43] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:16:56] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://bucket/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:16:56] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:16:56] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://bucket/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:16:56] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:17:34] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://bucket/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:17:34] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:17:34] [INFO] [src.orchestrator.orchestrator] 文件格式: .json, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:17:34] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 18 个字段映射
+[2026-01-12 17:17:35] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:17:40] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:17:40] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112171734
+[2026-01-12 17:17:40] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://bucket/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:17:40] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:17:40] [INFO] [src.orchestrator.orchestrator] 文件格式: .xlsx, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:17:40] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 18 个字段映射
+[2026-01-12 17:17:40] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:17:41] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:17:41] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112171740
+[2026-01-12 17:18:29] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://bucket/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:18:29] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:18:29] [INFO] [src.orchestrator.orchestrator] 文件格式: .json, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:18:29] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 18 个字段映射
+[2026-01-12 17:18:29] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:18:35] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:18:35] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112171829
+[2026-01-12 17:18:35] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://bucket/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:18:35] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:18:35] [INFO] [src.orchestrator.orchestrator] 文件格式: .xlsx, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:18:35] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 18 个字段映射
+[2026-01-12 17:18:35] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:18:42] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:18:42] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112171835
+[2026-01-12 17:25:05] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:25:05] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:25:08] [INFO] [src.orchestrator.orchestrator] 文件格式: .json, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:25:08] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 18 个字段映射
+[2026-01-12 17:25:08] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:25:15] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:25:15] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112172505
+[2026-01-12 17:25:15] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:25:15] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:25:18] [INFO] [src.orchestrator.orchestrator] 文件格式: .xlsx, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:25:18] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 18 个字段映射
+[2026-01-12 17:25:18] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:25:25] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:25:25] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112172515
+[2026-01-12 17:35:41] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:35:41] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:35:48] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:35:48] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:35:51] [INFO] [src.orchestrator.orchestrator] 文件格式: .json, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:35:51] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 16 个字段映射
+[2026-01-12 17:35:52] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:35:58] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:35:58] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112173548
+[2026-01-12 17:35:58] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:35:58] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:36:01] [INFO] [src.orchestrator.orchestrator] 文件格式: .xlsx, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:36:01] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 16 个字段映射
+[2026-01-12 17:36:01] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:36:06] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:36:06] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112173558
+[2026-01-12 17:36:25] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:36:25] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:36:28] [INFO] [src.orchestrator.orchestrator] 文件格式: .json, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:36:28] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 16 个字段映射
+[2026-01-12 17:36:28] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:36:36] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:36:36] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112173625
+[2026-01-12 17:36:36] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:36:36] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:36:39] [INFO] [src.orchestrator.orchestrator] 文件格式: .xlsx, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:36:39] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 16 个字段映射
+[2026-01-12 17:36:39] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:36:44] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:36:44] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112173636
+[2026-01-12 17:37:05] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:37:05] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:37:08] [INFO] [src.orchestrator.orchestrator] 文件格式: .json, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:37:08] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 16 个字段映射
+[2026-01-12 17:37:08] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:37:15] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:37:15] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112173705
+[2026-01-12 17:37:15] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:37:15] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:37:18] [INFO] [src.orchestrator.orchestrator] 文件格式: .xlsx, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:37:18] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 16 个字段映射
+[2026-01-12 17:37:18] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:37:24] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:37:24] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112173715
+[2026-01-12 17:49:37] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:49:37] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:49:40] [INFO] [src.orchestrator.orchestrator] 文件格式: .json, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:49:40] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 16 个字段映射
+[2026-01-12 17:49:40] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:49:46] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:49:46] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112174937
+[2026-01-12 17:49:46] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:49:46] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:49:49] [INFO] [src.orchestrator.orchestrator] 文件格式: .xlsx, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:49:49] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 16 个字段映射
+[2026-01-12 17:49:49] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:49:54] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:49:54] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112174946
+[2026-01-12 17:56:07] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:56:07] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:56:10] [INFO] [src.orchestrator.orchestrator] 文件格式: .json, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:56:10] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 16 个字段映射
+[2026-01-12 17:56:10] [ERROR] [src.orchestrator.orchestrator] 清洗流程异常：'DatabaseManager' object has no attribute 'query_records'
+Traceback (most recent call last):
+  File "E:\workSpace\idea\PythonDataClean\src\orchestrator\orchestrator.py", line 162, in process_cleaning_task
+    if db_manager.query_records(check_sql, {'path': data_file_path, 'hash': file_hash}):
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DatabaseManager' object has no attribute 'query_records'. Did you mean: 'insert_records'?
+[2026-01-12 17:56:10] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:56:10] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:56:16] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:56:16] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:56:19] [INFO] [src.orchestrator.orchestrator] 文件格式: .json, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:56:19] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 16 个字段映射
+[2026-01-12 17:56:20] [ERROR] [src.orchestrator.orchestrator] 清洗流程异常：'DatabaseManager' object has no attribute 'query_records'
+Traceback (most recent call last):
+  File "E:\workSpace\idea\PythonDataClean\src\orchestrator\orchestrator.py", line 162, in process_cleaning_task
+    if db_manager.query_records(check_sql, {'path': data_file_path, 'hash': file_hash}):
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DatabaseManager' object has no attribute 'query_records'. Did you mean: 'insert_records'?
+[2026-01-12 17:56:20] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:56:20] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:56:22] [INFO] [src.orchestrator.orchestrator] 文件格式: .xlsx, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:56:22] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 16 个字段映射
+[2026-01-12 17:56:22] [ERROR] [src.orchestrator.orchestrator] 清洗流程异常：'DatabaseManager' object has no attribute 'query_records'
+Traceback (most recent call last):
+  File "E:\workSpace\idea\PythonDataClean\src\orchestrator\orchestrator.py", line 162, in process_cleaning_task
+    if db_manager.query_records(check_sql, {'path': data_file_path, 'hash': file_hash}):
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DatabaseManager' object has no attribute 'query_records'. Did you mean: 'insert_records'?
+[2026-01-12 17:56:53] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:56:53] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:56:56] [INFO] [src.orchestrator.orchestrator] 文件格式: .json, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:56:56] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 16 个字段映射
+[2026-01-12 17:56:56] [ERROR] [src.orchestrator.orchestrator] 清洗流程异常：SQL执行失败：This result object does not return rows. It has been closed automatically.
+Traceback (most recent call last):
+  File "E:\workSpace\idea\PythonDataClean\src\db_service\db_manager.py", line 148, in execute_sql
+    rows = [dict(row._mapping) for row in result]
+                                          ^^^^^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\engine\result.py", line 1256, in __iter__
+    return self._iter_impl()
+           ~~~~~~~~~~~~~~~^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\engine\result.py", line 835, in _iter_impl
+    return self._iterator_getter(self)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ~~~~~~~~~^^^^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\engine\result.py", line 504, in _iterator_getter
+    make_row = self._row_getter
+               ^^^^^^^^^^^^^^^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ~~~~~~~~~^^^^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\engine\result.py", line 471, in _row_getter
+    key_to_index = metadata._key_to_index
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\engine\cursor.py", line 1468, in _key_to_index
+    self._we_dont_return_rows()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\engine\cursor.py", line 1448, in _we_dont_return_rows
+    raise exc.ResourceClosedError(
+    ...<2 lines>...
+    ) from err
+sqlalchemy.exc.ResourceClosedError: This result object does not return rows. It has been closed automatically.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workSpace\idea\PythonDataClean\src\orchestrator\orchestrator.py", line 168, in process_cleaning_task
+    db_manager.execute_sql(insert_processed_sql, {'path': data_file_path, 'hash': file_hash, 'type': business_type_id})
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\workSpace\idea\PythonDataClean\src\db_service\db_manager.py", line 154, in execute_sql
+    raise RuntimeError(f"SQL执行失败：{e}")
+RuntimeError: SQL执行失败：This result object does not return rows. It has been closed automatically.
+[2026-01-12 17:56:56] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:56:56] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:57:00] [INFO] [src.orchestrator.orchestrator] 文件格式: .xlsx, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:57:00] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 16 个字段映射
+[2026-01-12 17:57:00] [ERROR] [src.orchestrator.orchestrator] 清洗流程异常：SQL执行失败：This result object does not return rows. It has been closed automatically.
+Traceback (most recent call last):
+  File "E:\workSpace\idea\PythonDataClean\src\db_service\db_manager.py", line 148, in execute_sql
+    rows = [dict(row._mapping) for row in result]
+                                          ^^^^^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\engine\result.py", line 1256, in __iter__
+    return self._iter_impl()
+           ~~~~~~~~~~~~~~~^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\engine\result.py", line 835, in _iter_impl
+    return self._iterator_getter(self)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ~~~~~~~~~^^^^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\engine\result.py", line 504, in _iterator_getter
+    make_row = self._row_getter
+               ^^^^^^^^^^^^^^^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1338, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ~~~~~~~~~^^^^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\engine\result.py", line 471, in _row_getter
+    key_to_index = metadata._key_to_index
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\engine\cursor.py", line 1468, in _key_to_index
+    self._we_dont_return_rows()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\ProgramFiles(86)\Python\Lib\site-packages\sqlalchemy\engine\cursor.py", line 1448, in _we_dont_return_rows
+    raise exc.ResourceClosedError(
+    ...<2 lines>...
+    ) from err
+sqlalchemy.exc.ResourceClosedError: This result object does not return rows. It has been closed automatically.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\workSpace\idea\PythonDataClean\src\orchestrator\orchestrator.py", line 168, in process_cleaning_task
+    db_manager.execute_sql(insert_processed_sql, {'path': data_file_path, 'hash': file_hash, 'type': business_type_id})
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\workSpace\idea\PythonDataClean\src\db_service\db_manager.py", line 154, in execute_sql
+    raise RuntimeError(f"SQL执行失败：{e}")
+RuntimeError: SQL执行失败：This result object does not return rows. It has been closed automatically.
+[2026-01-12 17:57:15] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:57:15] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:57:18] [INFO] [src.orchestrator.orchestrator] 文件格式: .json, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:57:18] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 16 个字段映射
+[2026-01-12 17:57:19] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:57:24] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:57:25] [INFO] [src.orchestrator.orchestrator] 已清理OSS原始文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_SIM_20260112_0001.json
+[2026-01-12 17:57:25] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112175715
+[2026-01-12 17:57:25] [INFO] [src.orchestrator.orchestrator] 开始清洗流程：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:57:25] [INFO] [src.orchestrator.orchestrator] 第1步：获取文件信息与元数据...
+[2026-01-12 17:57:29] [INFO] [src.orchestrator.orchestrator] 文件格式: .xlsx, 大小: 0.00MB, 业务类型: CUSTOMER_DIALOG
+[2026-01-12 17:57:29] [INFO] [src.orchestrator.orchestrator] 应用字段映射规则，包含 16 个字段映射
+[2026-01-12 17:57:29] [INFO] [src.orchestrator.orchestrator] 执行常规清洗模式...
+[2026-01-12 17:57:33] [INFO] [src.orchestrator.orchestrator] 生成响应...
+[2026-01-12 17:57:35] [INFO] [src.orchestrator.orchestrator] 已清理OSS原始文件：oss://letwx/ai_network_data/CUSTOMER_DIALOG_TEST.xlsx
+[2026-01-12 17:57:35] [INFO] [src.orchestrator.orchestrator] 清洗流程完成：task_id=20260112175725

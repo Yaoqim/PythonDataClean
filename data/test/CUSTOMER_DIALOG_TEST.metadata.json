@@ -1,0 +1,10 @@
+{
+  "business_type_id": "CUSTOMER_DIALOG",
+  "data_structure_type": "结构化",
+  "file_size_mb": 0.013,
+  "data_carrier_type": "EXCEL",
+  "estimated_record_count": 55,
+  "crawl_date": "20260112",
+  "data_source": "模拟数据",
+  "description": "用于测试客户对话清洗流程的Excel文件"
+}

@@ -41,6 +41,24 @@ class ECGoodsPhoneCleaner(BaseCleaner):
     # 核心字段列表
     CORE_FIELDS = ['title', 'price', 'currency_code', 'shop_name', 'source_platform']
     
+    # 表头映射：支持多种原始表头转换为标准字段名
+    HEADER_MAPPING = {
+        '商品ID': 'product_id',
+        '商品id': 'product_id',
+        'product_id': 'product_id',
+        '商品名称': 'title',
+        '标题': 'title',
+        'title': 'title',
+        '价格': 'price',
+        'price': 'price',
+        '店铺': 'shop_name',
+        'shop_name': 'shop_name',
+        '平台': 'source_platform',
+        'source_platform': 'source_platform',
+        'currency_code': 'currency_code',
+        '币种': 'currency_code'
+    }
+    
     MAX_PRODUCT_NAME_LEN = 200
     MIN_PRICE = 0.01
     MAX_PRICE = 10000000

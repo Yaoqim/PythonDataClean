@@ -20,7 +20,6 @@ from typing import List, Dict, Any, Optional, Union, Iterator
 from src.utils.logger import get_logger
 from src.utils.encoding_checker import EncodingChecker
 from src.utils.error_handler import ErrorHandler
-from src.file_service.aliyun_client import AliyunOSSClient
 
 logger = get_logger(__name__)
 
@@ -37,10 +36,10 @@ class FileHandler:
     """
     
     # 支持的文件格式
-    SUPPORTED_FORMATS = {'.json', '.csv', '.txt', '.jsonl'}
+    SUPPORTED_FORMATS = {'.json', '.csv', '.txt', '.jsonl', '.xlsx', '.xls'}
     
     # 最大单次加载大小（MB）
-    MAX_CHUNK_SIZE_MB = 100
+    MAX_CHUNK_SIZE_MB = 50  # 降低阈值，建议大文件分批处理
     
     @staticmethod
     def check_file_exists(file_path: str) -> bool:
@@ -58,6 +57,7 @@ class FileHandler:
         # 处理OSS文件
         if file_path.startswith('oss://') or file_path.startswith('/aliyun/'):
             try:
+                from src.file_service.aliyun_client import AliyunOSSClient
                 oss_client = AliyunOSSClient()
                 
                 # 规范化OSS路径
@@ -89,19 +89,35 @@ class FileHandler:
     def get_file_size_mb(file_path: str) -> float:
         """
         获取文件大小（MB）
-        
-        Args:
-            file_path: 文件路径
-        
-        Returns:
-            文件大小（MB），如果文件不存在返回0
         """
         try:
+            # 处理OSS路径
+            if file_path.startswith(('oss://', '/aliyun/')):
+                # 这里简单处理：如果元数据中有大小则由编排器处理，此处返回0以防报错
+                return 0.0
+                
             size_bytes = Path(file_path).stat().st_size
             return size_bytes / (1024 * 1024)
         except Exception as e:
             logger.error(f"获取文件大小失败：{file_path}，错误：{e}")
             return 0.0
+
+    @staticmethod
+    def get_file_hash(file_path: str) -> str:
+        """计算本地文件的MD5指纹"""
+        import hashlib
+        if not os.path.exists(file_path):
+            return ""
+        
+        hash_md5 = hashlib.md5()
+        try:
+            with open(file_path, "rb") as f:
+                for chunk in iter(lambda: f.read(4096), b""):
+                    hash_md5.update(chunk)
+            return hash_md5.hexdigest()
+        except Exception as e:
+            logger.error(f"计算文件Hash失败：{file_path}，错误：{e}")
+            return ""
     
     @staticmethod
     def get_file_format(file_path: str) -> Optional[str]:
@@ -188,8 +204,10 @@ class FileHandler:
             文件内容（UTF-8文本），如果读取失败返回None
         """
         try:
+            is_temp = False
             # 如果是OSS文件，先下载到本地
             if file_path.startswith('oss://') or file_path.startswith('/aliyun/'):
+                from src.file_service.aliyun_client import AliyunOSSClient
                 logger.info(f"从OSS读取文件：{file_path}")
                 oss_client = AliyunOSSClient()
                 
@@ -207,6 +225,7 @@ class FileHandler:
                     return None
                 
                 file_path = local_path
+                is_temp = True
             
             # 读取原始字节
             data = FileHandler.read_file_bytes(file_path)
@@ -215,9 +234,13 @@ class FileHandler:
             
             # 自动检测编码并转换
             text, detected_encoding = EncodingChecker.convert_to_utf8(data)
-            
             logger.debug(f"文件编码检测：{file_path}，检测编码：{detected_encoding}")
             
+            # 如果是临时文件，读取后立即删除
+            if is_temp and os.path.exists(file_path):
+                os.remove(file_path)
+                logger.debug(f"已删除OSS临时文件：{file_path}")
+                
             return text
             
         except Exception as e:
@@ -225,40 +248,34 @@ class FileHandler:
             return None
 
 
-def load_json_file(file_path: str, chunk_lines: Optional[int] = None) -> Union[List[Dict], Iterator[Dict], None]:
+def load_json_file(file_path: str, chunk_lines: Optional[int] = None) -> Union[List[Dict], Iterator[List[Dict]], None]:
     """
-    加载JSON文件
-    
-    支持：
-    - 标准JSON数组：[{...}, {...}]
-    - JSONL格式：每行一个JSON对象
-    
-    Args:
-        file_path: 文件路径
-        chunk_lines: 如果指定，返回分块迭代器（每次读取chunk_lines行）
-    
-    Returns:
-        JSON对象列表或迭代器，如果加载失败返回None
-    
-    示例：
-        # 一次加载全部
-        records = load_json_file("data.json")
-        
-        # 分块加载大文件
-        for chunk in load_json_file("large_data.jsonl", chunk_lines=1000):
-            process_records(chunk)
+    加载JSON文件，支持本地和OSS路径
     """
+    is_temp = False
+    local_path = file_path
     try:
-        if not FileHandler.check_file_exists(file_path):
-            return None
+        from src.file_service.aliyun_client import AliyunOSSClient
+        import os
         
-        text = FileHandler.read_file_text(file_path)
+        if file_path.startswith(('oss://', '/aliyun/')):
+            oss_client = AliyunOSSClient()
+            if file_path.startswith('oss://'):
+                oss_path = file_path.split('/', 3)[-1]
+            else:
+                oss_path = file_path.replace('/aliyun/', '')
+            
+            local_path = oss_client.get_file_to_temp(oss_path)
+            if not local_path:
+                return None
+            is_temp = True
+            
+        if chunk_lines:
+            return _json_chunk_iterator(local_path, chunk_lines, is_temp)
+        
+        text = FileHandler.read_file_text(local_path)
         if text is None:
             return None
-        
-        # 如果指定了分块，返回迭代器
-        if chunk_lines:
-            return _json_chunk_iterator(file_path, chunk_lines)
         
         # 尝试解析为标准JSON数组
         try:
@@ -288,6 +305,10 @@ def load_json_file(file_path: str, chunk_lines: Optional[int] = None) -> Union[L
     except Exception as e:
         logger.error(f"加载JSON文件失败：{file_path}，错误：{e}")
         return None
+    finally:
+        if not chunk_lines and is_temp and os.path.exists(local_path):
+            os.remove(local_path)
+            logger.debug(f"已删除JSON临时文件：{local_path}")
 
 
 def load_csv_file(
@@ -295,134 +316,163 @@ def load_csv_file(
     delimiter: str = ',',
     encoding: Optional[str] = None,
     chunk_lines: Optional[int] = None
-) -> Union[List[Dict], Iterator[Dict], None]:
+) -> Union[List[Dict], Iterator[List[Dict]], None]:
     """
-    加载CSV文件
-    
-    Args:
-        file_path: 文件路径
-        delimiter: 分隔符（默认逗号）
-        encoding: 编码（如果为None会自动检测）
-        chunk_lines: 如果指定，返回分块迭代器
-    
-    Returns:
-        记录列表（每行转为字典）或迭代器，如果加载失败返回None
-    
-    示例：
-        # 一次加载全部
-        records = load_csv_file("data.csv")
-        
-        # 分块加载大文件
-        for chunk in load_csv_file("large_data.csv", chunk_lines=5000):
-            process_records(chunk)
+    加载CSV文件，支持本地和OSS路径
     """
+    is_temp = False
+    local_path = file_path
     try:
-        if not FileHandler.check_file_exists(file_path):
-            return None
+        from src.file_service.aliyun_client import AliyunOSSClient
+        import os
         
-        text = FileHandler.read_file_text(file_path)
-        if text is None:
-            return None
-        
-        # 如果指定了分块，返回迭代器
+        if file_path.startswith(('oss://', '/aliyun/')):
+            oss_client = AliyunOSSClient()
+            if file_path.startswith('oss://'):
+                oss_path = file_path.split('/', 3)[-1]
+            else:
+                oss_path = file_path.replace('/aliyun/', '')
+            
+            local_path = oss_client.get_file_to_temp(oss_path)
+            if not local_path: return None
+            is_temp = True
+            
         if chunk_lines:
-            return _csv_chunk_iterator(file_path, delimiter, encoding, chunk_lines)
+            return _csv_chunk_iterator(local_path, delimiter, encoding, chunk_lines, is_temp)
         
-        # 一次性加载
+        text = FileHandler.read_file_text(local_path)
+        if text is None: return None
+        
         records = []
-        reader = csv.DictReader(text.strip().split('\n'), delimiter=delimiter)
-        
-        for row_num, row in enumerate(reader, 1):
-            # 过滤空行
+        import csv
+        import io
+        reader = csv.DictReader(io.StringIO(text.strip()), delimiter=delimiter)
+        for row in reader:
             if any(row.values()):
                 records.append(dict(row))
         
         logger.info(f"成功加载CSV文件：{file_path}，记录数：{len(records)}")
-        return records if records else None
+        return records
+    finally:
+        if not chunk_lines and is_temp and os.path.exists(local_path):
+            os.remove(local_path)
+            logger.debug(f"已删除CSV临时文件：{local_path}")
+
+def _csv_chunk_iterator(file_path: str, delimiter: str, encoding: Optional[str], chunk_lines: int, is_temp: bool = False) -> Iterator[List[Dict]]:
+    """CSV文件分块迭代器"""
+    try:
+        import pandas as pd
+        # 使用 pandas 优化大 CSV 读取
+        reader = pd.read_csv(file_path, delimiter=delimiter, encoding=encoding or 'utf-8', chunksize=chunk_lines)
+        for df in reader:
+            df = df.where(df.notnull(), None)
+            yield df.to_dict('records')
+    except Exception as e:
+        logger.error(f"CSV分块迭代失败，错误：{e}")
+    finally:
+        if is_temp and os.path.exists(file_path):
+            import os
+            os.remove(file_path)
+            logger.debug(f"已删除CSV分块临时文件：{file_path}")
+
+
+def load_excel_file(file_path: str, chunk_size: Optional[int] = None) -> Union[List[Dict], Iterator[List[Dict]], None]:
+    """
+    加载Excel文件 (.xlsx, .xls)
+    
+    支持本地路径和OSS路径
+    """
+    is_temp = False
+    local_path = file_path
+    try:
+        from src.file_service.aliyun_client import AliyunOSSClient
+        import pandas as pd
+        import os
+        
+        # 处理OSS文件
+        if file_path.startswith(('oss://', '/aliyun/')):
+            logger.info(f"从OSS下载Excel文件：{file_path}")
+            oss_client = AliyunOSSClient()
+            if file_path.startswith('oss://'):
+                oss_path = file_path.split('/', 3)[-1]
+            else:
+                oss_path = file_path.replace('/aliyun/', '')
+            
+            local_path = oss_client.get_file_to_temp(oss_path)
+            if not local_path:
+                return None
+            is_temp = True
+            
+        if chunk_size:
+            # 使用 pandas 的 chunksize 参数
+            reader = pd.read_excel(local_path, chunksize=chunk_size)
+            return _excel_chunk_iterator(reader, local_path if is_temp else None)
+        
+        # 一次性加载
+        df = pd.read_excel(local_path)
+        # 将 NaN 转换为 None 方便后续处理
+        df = df.where(pd.notnull(df), None)
+        records = df.to_dict('records')
+        
+        logger.info(f"成功加载Excel文件：{file_path}，记录数：{len(records)}")
+        return records
         
     except Exception as e:
-        logger.error(f"加载CSV文件失败：{file_path}，错误：{e}")
+        logger.error(f"加载Excel文件失败：{file_path}，错误：{e}")
         return None
+    finally:
+        # 如果不是分块模式且是临时文件，在此删除
+        if not chunk_size and is_temp and os.path.exists(local_path):
+            os.remove(local_path)
+            logger.debug(f"已删除Excel临时文件：{local_path}")
 
 
-def _json_chunk_iterator(file_path: str, chunk_lines: int) -> Iterator[List[Dict]]:
+def _excel_chunk_iterator(reader: Iterator, temp_path: Optional[str] = None) -> Iterator[List[Dict]]:
+    """Excel文件分块迭代器"""
+    try:
+        for df in reader:
+            df = df.where(df.notnull(), None)
+            yield df.to_dict('records')
+    except Exception as e:
+        logger.error(f"Excel分块迭代失败，错误：{e}")
+    finally:
+        # 迭代结束或异常时，清理临时文件
+        if temp_path and os.path.exists(temp_path):
+            import os
+            os.remove(temp_path)
+            logger.debug(f"已删除Excel分块临时文件：{temp_path}")
+
+
+def _json_chunk_iterator(file_path: str, chunk_lines: int, is_temp: bool = False) -> Iterator[List[Dict]]:
     """
-    JSONL文件分块迭代器
-    
-    Args:
-        file_path: 文件路径
-        chunk_lines: 每个块的行数
-    
-    Yields:
-        每个块包含的记录列表
+    JSONL文件分块迭代器 - 优化大文件读取
     """
     try:
-        text = FileHandler.read_file_text(file_path)
-        if text is None:
-            return
-        
-        chunk = []
-        for line in text.strip().split('\n'):
-            if not line.strip():
-                continue
-            
-            try:
-                record = json.loads(line)
-                chunk.append(record)
+        import os
+        with open(file_path, 'r', encoding='utf-8') as f:
+            chunk = []
+            for line in f:
+                if not line.strip():
+                    continue
                 
-                if len(chunk) >= chunk_lines:
-                    yield chunk
-                    chunk = []
-            except json.JSONDecodeError as e:
-                logger.warning(f"JSON行解析失败：{e}")
-                continue
-        
-        # 返回剩余的行
-        if chunk:
-            yield chunk
+                try:
+                    record = json.loads(line)
+                    chunk.append(record)
+                    
+                    if len(chunk) >= chunk_lines:
+                        yield chunk
+                        chunk = []
+                except Exception as e:
+                    logger.warning(f"JSON行解析失败：{e}")
+                    continue
             
-    except Exception as e:
-        logger.error(f"JSONL分块迭代失败：{file_path}，错误：{e}")
-
-
-def _csv_chunk_iterator(
-    file_path: str,
-    delimiter: str,
-    encoding: Optional[str],
-    chunk_lines: int
-) -> Iterator[List[Dict]]:
-    """
-    CSV文件分块迭代器
-    
-    Args:
-        file_path: 文件路径
-        delimiter: 分隔符
-        encoding: 编码
-        chunk_lines: 每个块的行数
-    
-    Yields:
-        每个块包含的记录字典列表
-    """
-    try:
-        text = FileHandler.read_file_text(file_path)
-        if text is None:
-            return
-        
-        lines = text.strip().split('\n')
-        reader = csv.DictReader(lines, delimiter=delimiter)
-        
-        chunk = []
-        for row in reader:
-            if any(row.values()):
-                chunk.append(dict(row))
-            
-            if len(chunk) >= chunk_lines:
+            # 返回剩余的行
+            if chunk:
                 yield chunk
-                chunk = []
-        
-        # 返回剩余的行
-        if chunk:
-            yield chunk
-            
-    except Exception as e:
-        logger.error(f"CSV分块迭代失败：{file_path}，错误：{e}")
+    finally:
+        if is_temp and os.path.exists(file_path):
+            import os
+            os.remove(file_path)
+            logger.debug(f"已删除JSON分块临时文件：{file_path}")
+
+

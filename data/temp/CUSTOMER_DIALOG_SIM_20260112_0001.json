@@ -1,0 +1,624 @@
+[
+  {
+    "conversation_id": "PDD_SIM_20260107_0001",
+    "merchant_name": "仕马汽车保养旗舰店",
+    "product_name": null,
+    "platform": "拼多多",
+    "messages": [
+      {
+        "sender": "蜜**熊",
+        "content": "消费者申请售后，建议先与消费者友好协商",
+        "timestamp": "2026-01-07 13:58:41"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "亲，现在优惠活动很划算哦，这边看到您订单已经发出了，请问是什么原因要退呢",
+        "timestamp": "2026-01-07 13:58:45",
+        "agent_type": "人工"
+      }
+    ],
+    "user_id": "USER_5918",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "conversation_id": "PDD_SIM_20260107_0002",
+    "merchant_name": "仕马汽车保养旗舰店",
+    "product_name": "玻璃水",
+    "platform": "拼多多",
+    "messages": [
+      {
+        "sender": "**",
+        "content": "https://mobile.yangkeduo.com/goods.html?goods_id=618384120879",
+        "timestamp": "2026-01-07 10:04:44"
+      },
+      {
+        "sender": "**",
+        "content": "你们一件是多少瓶？",
+        "timestamp": "2026-01-07 10:04:44"
+      },
+      {
+        "sender": "车品一号专卖店余夕",
+        "content": "一箱24瓶的",
+        "timestamp": "2026-01-07 10:05:44",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "**",
+        "content": "多少钱",
+        "timestamp": "2026-01-07 10:06:21"
+      },
+      {
+        "sender": "车品一号专卖店余夕",
+        "content": "拿一箱的话 这边可以给您申请按220的价格的",
+        "timestamp": "2026-01-07 10:07:01",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "车品一号专卖店余夕",
+        "content": "这是优惠后的价格",
+        "timestamp": "2026-01-07 10:07:17",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "**",
+        "content": "给个12瓶的链接吧",
+        "timestamp": "2026-01-07 10:07:53"
+      },
+      {
+        "sender": "**",
+        "content": "用的可以再买整箱",
+        "timestamp": "2026-01-07 10:08:11"
+      },
+      {
+        "sender": "车品一号专卖店余夕",
+        "content": "这是12瓶的",
+        "timestamp": "2026-01-07 10:08:17",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "**",
+        "content": "便宜点 不是说可以议价",
+        "timestamp": "2026-01-07 10:08:47"
+      },
+      {
+        "sender": "车品一号专卖店余夕",
+        "content": "小主一看您就是个有眼光有品位的人，这款我也非常喜欢呢，价格已经是很优惠了，宝贝性价比是很高的，买回去您一定喜欢哒~",
+        "timestamp": "2026-01-07 10:08:48",
+        "agent_type": "机器人"
+      },
+      {
+        "sender": "车品一号专卖店余夕",
+        "content": "12瓶对吧 稍等",
+        "timestamp": "2026-01-07 10:09:54",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "**",
+        "content": "是的",
+        "timestamp": "2026-01-07 10:10:04"
+      },
+      {
+        "sender": "车品一号专卖店余夕",
+        "content": "小主，有心仪的宝贝千万不要错过喔~这边会尽快为您安排发货哒(●ˇ∀ˇ●)",
+        "timestamp": "2026-01-07 10:10:04",
+        "agent_type": "机器人"
+      },
+      {
+        "sender": "车品一号专卖店余夕",
+        "content": "可以了 12瓶的  优惠后的价格",
+        "timestamp": "2026-01-07 10:10:20",
+        "agent_type": "人工"
+      }
+    ],
+    "user_id": "USER_9494",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "conversation_id": "PDD_SIM_20260107_0003",
+    "merchant_name": "仕马汽车保养旗舰店",
+    "product_name": "柏油清洗剂",
+    "platform": "拼多多",
+    "messages": [
+      {
+        "sender": "1*********6",
+        "content": "https://mobile.yangkeduo.com/goods.html?goods_id=577102980621",
+        "timestamp": "2026-01-07 20:33:32"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "您好，欢迎光临，🥰很高兴为您服务，请问有什么可以帮助您的呢?",
+        "timestamp": "2026-01-07 20:33:33",
+        "agent_type": "机器人"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "小主，关于这款商品，请问有什么可以帮您~",
+        "timestamp": "2026-01-07 20:33:33",
+        "agent_type": "机器人"
+      },
+      {
+        "sender": "1*********6",
+        "content": "https://mobile.yangkeduo.com/goods.html?goods_id=577102980621",
+        "timestamp": "2026-01-07 20:33:46"
+      },
+      {
+        "sender": "1*********6",
+        "content": "只要是洗不掉的都能去掉吗",
+        "timestamp": "2026-01-07 20:33:46"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "柏油清洗剂： 快速去除车漆表面一些不知名的 “黄点黑点 ” 比如 柏油，沥青，树粘，虫渍，鸟屎，胶印 虫尸 漆点 等。一喷一擦快速解决！",
+        "timestamp": "2026-01-07 20:34:01",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "主要是清理这些污渍的哦 亲",
+        "timestamp": "2026-01-07 20:34:07",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "1*********6",
+        "content": "好的",
+        "timestamp": "2026-01-07 20:34:17"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "小主，有心仪的宝贝千万不要错过喔~这边会尽快为您安排发货哒(●ˇ∀ˇ●)",
+        "timestamp": "2026-01-07 20:34:17",
+        "agent_type": "机器人"
+      }
+    ],
+    "user_id": "USER_8680",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "conversation_id": "PDD_SIM_20260107_0004",
+    "merchant_name": "仕马汽车保养旗舰店",
+    "product_name": "玻璃水(0度)",
+    "platform": "拼多多",
+    "messages": [
+      {
+        "sender": "**",
+        "content": "订单号:251225-446997481103105(交易，识别附加字段)",
+        "timestamp": "2026-01-07 07:58:46"
+      },
+      {
+        "sender": "车品一号专卖店售后",
+        "content": "亲爱哒~现在是夜间店铺休息时间，如需指定快递下单后留言即可（本店随机发圆通韵达申通极兔快递），如下单地址选择错误，您无需退款重拍在订单中申请修改，请放心，客服会在早上8点统一处理，如果有对于产品方面的问题需要了解或售后问题，请您在人工时间8:30-23:00联系我们客服小姐姐为您解答和处理，祝您购物愉快！么么哒~",
+        "timestamp": "2026-01-07 07:58:48",
+        "agent_type": "机器人"
+      },
+      {
+        "sender": "**",
+        "content": "https://chat-img.pddugc.com/chat-pic-mall-user-v1/2026-01-07/36008db7-62f2-4bc4-b15d-826ad9f47eed.jpeg",
+        "timestamp": "2026-01-07 07:59:01"
+      },
+      {
+        "sender": "**",
+        "content": "https://video3.yangkeduo.com/idaho-api-video/2026-01-07/93d3f89c4016e93be54f21d7c9d2614f.mp4",
+        "timestamp": "2026-01-07 07:59:13"
+      },
+      {
+        "sender": "**",
+        "content": "这怎么就冻上了",
+        "timestamp": "2026-01-07 07:59:21"
+      },
+      {
+        "sender": "**",
+        "content": "质量不行啊",
+        "timestamp": "2026-01-07 07:59:26"
+      },
+      {
+        "sender": "**",
+        "content": "调解助手：帮您更好地解决售后问题",
+        "timestamp": "2026-01-07 07:59:31"
+      },
+      {
+        "sender": "**",
+        "content": "订单号:251225-446997481103105(交易，识别附加字段)",
+        "timestamp": "2026-01-07 07:59:34"
+      },
+      {
+        "sender": "车品一号专卖店售后",
+        "content": "亲亲 零度的是没有防冻的功效的哈",
+        "timestamp": "2026-01-07 08:09:00",
+        "agent_type": "人工"
+      }
+    ],
+    "user_id": "USER_9494",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "conversation_id": "PDD_SIM_20260107_0005",
+    "merchant_name": "仕马汽车保养旗舰店",
+    "product_name": "玻璃水",
+    "platform": "拼多多",
+    "messages": [
+      {
+        "sender": "萌***福",
+        "content": "https://mobile.yangkeduo.com/goods.html?goods_id=588433377563",
+        "timestamp": "2026-01-07 12:04:34"
+      },
+      {
+        "sender": "萌***福",
+        "content": "你好！",
+        "timestamp": "2026-01-07 12:04:34"
+      },
+      {
+        "sender": "车品一号专卖店余夕",
+        "content": "您好，欢迎光临，🥰很高兴为您服务，请问有什么可以帮助您的呢?",
+        "timestamp": "2026-01-07 12:04:36",
+        "agent_type": "机器人"
+      },
+      {
+        "sender": "萌***福",
+        "content": "这个保质期多久啊",
+        "timestamp": "2026-01-07 12:04:45"
+      },
+      {
+        "sender": "车品一号专卖店余夕",
+        "content": "亲亲 产品保质期是三年的呢 ~",
+        "timestamp": "2026-01-07 12:04:46",
+        "agent_type": "机器人"
+      },
+      {
+        "sender": "萌***福",
+        "content": "好的谢谢",
+        "timestamp": "2026-01-07 12:05:01"
+      },
+      {
+        "sender": "车品一号专卖店余夕",
+        "content": "您客气了呢~祝您购物愉快~",
+        "timestamp": "2026-01-07 12:05:01",
+        "agent_type": "机器人"
+      },
+      {
+        "sender": "萌***福",
+        "content": "下单了帮忙尽快安排发货",
+        "timestamp": "2026-01-07 12:23:51"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "亲亲 您放心 我们会尽快帮您发出的呢[玫瑰]",
+        "timestamp": "2026-01-07 12:23:52",
+        "agent_type": "机器人"
+      }
+    ],
+    "user_id": "USER_1345",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "conversation_id": "PDD_SIM_20260107_0006",
+    "merchant_name": "仕马汽车保养旗舰店",
+    "product_name": "柏油清洗剂",
+    "platform": "拼多多",
+    "messages": [
+      {
+        "sender": "A***e",
+        "content": "https://mobile.yangkeduo.com/goods.html?goods_id=577102980621",
+        "timestamp": "2026-01-07 20:15:12"
+      },
+      {
+        "sender": "A***e",
+        "content": "你好，车上的飞溅的油漆可以去除吗？",
+        "timestamp": "2026-01-07 20:15:12"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "亲亲这种飞漆是可以清理的哦",
+        "timestamp": "2026-01-07 20:15:21",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "亲亲 原车漆和玻璃上是可以使用的",
+        "timestamp": "2026-01-07 20:15:23",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "A***e",
+        "content": "https://chat-img.pddugc.com/chat-pic-mall-user-v1/2026-01-07/681daa8c-82f0-4399-a601-fc6132841569.jpeg",
+        "timestamp": "2026-01-07 20:15:26"
+      },
+      {
+        "sender": "A***e",
+        "content": "https://chat-img.pddugc.com/chat-pic-mall-user-v1/2026-01-07/b4a9a080-770b-4b1b-9ca2-0a56dacd5e78.jpeg",
+        "timestamp": "2026-01-07 20:15:27"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "注意事项：不可以用于塑料、皮革、二次漆面位置上，汽车的ABC柱不可使用",
+        "timestamp": "2026-01-07 20:15:27",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "这种小漆点可以的哦 亲",
+        "timestamp": "2026-01-07 20:15:45",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "A***e",
+        "content": "我用指甲抠了一下，可以抠掉。",
+        "timestamp": "2026-01-07 20:16:07"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "嗯嗯这种都是很好清理的哦  可以放心使用",
+        "timestamp": "2026-01-07 20:16:39",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "A***e",
+        "content": "好的，我买一个试试。",
+        "timestamp": "2026-01-07 20:17:01"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "好的亲亲 有任何问题随时联系我们哦",
+        "timestamp": "2026-01-07 20:17:07",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "A***e",
+        "content": "去不掉可以退吗",
+        "timestamp": "2026-01-07 20:47:16"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "亲，您放心，产品顾客反馈效果都是很好的，很少有退的亲，您收到之后也可以试一下的呢，都是有售后保障的呢",
+        "timestamp": "2026-01-07 20:47:17",
+        "agent_type": "机器人"
+      }
+    ],
+    "user_id": "USER_4634",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "conversation_id": "PDD_SIM_20260107_0007",
+    "merchant_name": "仕马汽车保养旗舰店",
+    "product_name": "柏油清洗剂",
+    "platform": "拼多多",
+    "messages": [
+      {
+        "sender": "依**你",
+        "content": "https://mobile.yangkeduo.com/goods.html?goods_id=577102980621&_oak_rcto=YWJesIROaNmc9pbNb4lJX4evf-woY5RSS0DqBgFkiyzBJ461m_wHbQwF&page_from=26&_oc_trace_mark=199&_oc_refer_ad=1&_oak_actype=34&_oak_sub_actype=0",
+        "timestamp": "2026-01-07 14:21:20"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "您好，欢迎光临，🥰很高兴为您服务，请问有什么可以帮助您的呢?",
+        "timestamp": "2026-01-07 14:21:21",
+        "agent_type": "机器人"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "小主，关于这款商品，请问有什么可以帮您~",
+        "timestamp": "2026-01-07 14:21:21",
+        "agent_type": "机器人"
+      },
+      {
+        "sender": "依**你",
+        "content": "https://mobile.yangkeduo.com/goods.html?goods_id=577102980621",
+        "timestamp": "2026-01-07 14:21:24"
+      },
+      {
+        "sender": "依**你",
+        "content": "可以开发票嘛",
+        "timestamp": "2026-01-07 14:21:24"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "亲亲可以的 签收后联系我们开的哦",
+        "timestamp": "2026-01-07 14:21:30",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "依**你",
+        "content": "好，拍了",
+        "timestamp": "2026-01-07 14:22:19"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "好的亲亲 有任何问题随时联系我们哦[爱心]",
+        "timestamp": "2026-01-07 14:22:27",
+        "agent_type": "人工"
+      }
+    ],
+    "user_id": "USER_5041",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "conversation_id": "PDD_SIM_20260107_0008",
+    "merchant_name": "仕马汽车保养旗舰店",
+    "product_name": "柏油清洗剂",
+    "platform": "拼多多",
+    "messages": [
+      {
+        "sender": "**",
+        "content": "https://mobile.yangkeduo.com/goods.html?goods_id=577102980621",
+        "timestamp": "2026-01-07 20:25:29"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "您好，欢迎光临，🥰很高兴为您服务，请问有什么可以帮助您的呢?",
+        "timestamp": "2026-01-07 20:25:29",
+        "agent_type": "机器人"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "小主，关于这款商品，请问有什么可以帮您~",
+        "timestamp": "2026-01-07 20:25:29",
+        "agent_type": "机器人"
+      },
+      {
+        "sender": "**",
+        "content": "https://mobile.yangkeduo.com/goods.html?goods_id=577102980621",
+        "timestamp": "2026-01-07 20:25:40"
+      },
+      {
+        "sender": "**",
+        "content": "这个质量好不好",
+        "timestamp": "2026-01-07 20:25:40"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "亲 产品质量效果都是有保障的  放心使用哦",
+        "timestamp": "2026-01-07 20:25:49",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "柏油清洗剂： 快速去除车漆表面一些不知名的 “黄点黑点 ” 比如 柏油，沥青，树粘，虫渍，鸟屎，胶印 虫尸 漆点 等。一喷一擦快速解决！",
+        "timestamp": "2026-01-07 20:25:50",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "**",
+        "content": "水泥浆可不可以用",
+        "timestamp": "2026-01-07 20:26:26"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "亲亲 这种不好清理的",
+        "timestamp": "2026-01-07 20:26:40",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "**",
+        "content": "沥青能去掉吗",
+        "timestamp": "2026-01-07 20:27:10"
+      },
+      {
+        "sender": "**",
+        "content": "确定",
+        "timestamp": "2026-01-07 20:27:17"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "亲亲可以的哦",
+        "timestamp": "2026-01-07 20:27:17",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "小主，有心仪的宝贝千万不要错过喔~这边会尽快为您安排发货哒(●ˇ∀ˇ●)",
+        "timestamp": "2026-01-07 20:27:17",
+        "agent_type": "机器人"
+      },
+      {
+        "sender": "**",
+        "content": "不管多厚百之百清了",
+        "timestamp": "2026-01-07 20:27:53"
+      },
+      {
+        "sender": "**",
+        "content": "沥青",
+        "timestamp": "2026-01-07 20:28:03"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "车上的一般都是很好清理的",
+        "timestamp": "2026-01-07 20:28:56",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "**",
+        "content": "如果你这个质量不好用一点没动静，那退款",
+        "timestamp": "2026-01-07 20:29:58"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "亲  少量使用，没有效果可以申请退货退款的  订单都是有运险的呢",
+        "timestamp": "2026-01-07 20:30:12",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "产品质量效果都是有保障的  放心使用",
+        "timestamp": "2026-01-07 20:30:20",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "**",
+        "content": "如果我买两瓶回来，我试一瓶用完，还是车沥青泵没动静，剩下一瓶退货",
+        "timestamp": "2026-01-07 20:32:07"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "柏油清洗剂使用方法:摇晃瓶身对准污垢喷3-4次，等待污渍慢慢分解，最后用湿毛巾轻轻擦拭干净，如果有条件用清水冲洗清洗更好哦~（注意：顽固污渍建议反复清洗，切勿大力擦拭避免擦花漆面或玻璃）",
+        "timestamp": "2026-01-07 20:32:08",
+        "agent_type": "机器人"
+      },
+      {
+        "sender": "车品一号专卖店星星",
+        "content": "亲亲 可以的哦 有问题随时联系我们就好的",
+        "timestamp": "2026-01-07 20:50:56",
+        "agent_type": "人工"
+      }
+    ],
+    "user_id": "USER_9494",
+    "data_crawl_date": "2026-01-12"
+  },
+  {
+    "conversation_id": "PDD_SIM_20260107_0009",
+    "merchant_name": "仕马汽车保养旗舰店",
+    "product_name": null,
+    "platform": "拼多多",
+    "messages": [
+      {
+        "sender": "遇***********5",
+        "content": "https://chat-img.pddugc.com/chat-pic-mall-user-v1/2026-01-07/4071ba26-f84f-4d20-96af-7b5fdea78df9.jpeg",
+        "timestamp": "2026-01-07 10:33:49"
+      },
+      {
+        "sender": "遇***********5",
+        "content": "空的",
+        "timestamp": "2026-01-07 10:33:58"
+      },
+      {
+        "sender": "车品一号专卖店余夕",
+        "content": "亲稍等一下哦，这边帮您转接售后，麻烦耐心等待一下呢~",
+        "timestamp": "2026-01-07 10:34:03",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "遇***********5",
+        "content": "都跑完了",
+        "timestamp": "2026-01-07 10:34:24"
+      },
+      {
+        "sender": "车品一号专卖店售后",
+        "content": "亲 可以把包裹情况和快递面单发给我看看吗 我好给您处理",
+        "timestamp": "2026-01-07 10:34:54",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "遇***********5",
+        "content": "https://chat-img.pddugc.com/chat-pic-mall-user-v1/2026-01-07/6c0ddcca-0503-4942-9fb9-dcda82ae3e45.jpeg",
+        "timestamp": "2026-01-07 10:34:57"
+      },
+      {
+        "sender": "车品一号专卖店售后",
+        "content": "好的 亲 这个我给您登记重新发出一个可以吗",
+        "timestamp": "2026-01-07 10:36:36",
+        "agent_type": "人工"
+      },
+      {
+        "sender": "遇***********5",
+        "content": "可以",
+        "timestamp": "2026-01-07 10:37:10"
+      },
+      {
+        "sender": "车品一号专卖店售后",
+        "content": "小主非常感谢小主的支持，我们这边会尽快为您安排发货的哦，请您耐心等待一下收货，如果有任何问题请您及时联系我们~~祝您购物愉快",
+        "timestamp": "2026-01-07 10:37:11",
+        "agent_type": "机器人"
+      }
+    ],
+    "user_id": "USER_4932",
+    "data_crawl_date": "2026-01-12"
+  }
+]
